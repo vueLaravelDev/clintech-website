@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <style>
+      .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      background: #f0f0f0; /* Light background for better visibility */
+    }
+
+    .logos-list {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll 20s linear infinite;
+    }
+
+    .logos-list li {
+      flex: none;
+      margin: 0 16px; /* Margin for spacing between logos */
+    }
+    .bg-blue {
+      background-color: #013088;
+    }
+
+    .rounded {
+      border-radius: 0.375rem; /* Tailwind-like border radius */
+    }
+
+  @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+
+  </style>
+</head>
+<body class="roboto-bold">
+    <div class="bg-[#FFFAFA] min-h-screen flex flex-col justify-between ">
+        <!-- Navbar -->
+        <div id="header"></div>
+        <!-- Banner Section -->
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 md:px-16 lg:px-24 py-12">
+          <div class="md:w-1/2 text-center md:text-left mb-28">
+            <p class="text-white text-sm md:text-md mb-4 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: gray;">
+                  <path d="m12.954 11.616 2.957-2.957L6.36 3.291c-.633-.342-1.226-.39-1.746-.016l8.34 8.341zm3.461 3.462 3.074-1.729c.6-.336.929-.812.929-1.34 0-.527-.329-1.004-.928-1.34l-2.783-1.563-3.133 3.132 2.841 2.84zM4.1 4.002c-.064.197-.1.417-.1.658v14.705c0 .381.084.709.236.97l8.097-8.098L4.1 4.002zm8.854 8.855L4.902 20.91c.154.059.32.09.495.09.312 0 .637-.092.968-.276l9.255-5.197-2.666-2.67z"></path>
+                </svg>
+                <span class="ml-2 text-gray-900">Watch: Why Transilience</span>
+              </p>
+                          <h1 class="text-gray-900 text-3xl md:text-5xl font-bold mb-6">Transilience AI-Powered Cybersecurity</h1>
+            <p class="text-gray-900 text-md mb-6">Proving to be our clients' most resilient Cybersecurity Transformation Agent</p>
+            <button class="bg-[#013088] text-white px-6 py-3 rounded-md">Explore how we help</button>
+          </div>
+          <div class="md:w-1/2 mb-8 md:mt-0">
+            <img src="logo1.png" alt="Banner Image" class="mx-auto md:ml-auto md:mr-0 w-96 md:max-w-lg">
+          </div>
+        </div>
+      </div>
+      <div class="slider-wrapper">
+        <ul class="logos-list">
+          <!-- List items here -->
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="airtel.svg" class="w-36" alt="Airtel" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="saint-gobain.svg" class="w-36" alt="Saint Gobain" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="tcs.svg" class="w-36" alt="TCS" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="capgemini.svg" class="w-36" alt="Capgemini" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="amex.svg" class="w-36" alt="Amex" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="western-union-1.svg" class="w-36" alt="Western Union" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="fis.svg" class="w-36" alt="FIS" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="jack-henry-1.svg" class="w-36" alt="Jack Henry" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="morg-stan.svg" class="w-36" alt="Morgan Stanley" />
+          </li>
+          <li class="bg-blue px-4 py-12 rounded">
+            <img src="std-chtd.svg" class="w-36" alt="STD CHTD" />
+          </li>
+          <!-- Duplicated list items for seamless scrolling -->
+        </ul>
+      </div>
+        <!-- <div
+        x-data="{}"
+        x-init="$nextTick(() => {
+            let ul = $refs.logos;
+            ul.insertAdjacentHTML('afterend', ul.outerHTML);
+            ul.nextSibling.setAttribute('aria-hidden', 'true');
+        })"
+        class="w-full mt-4 mb-4 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+    >
+        <ul x-ref="logos" class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="airtel.svg" class="w-36" alt="Facebook" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="saint-gobain.svg" class="w-36" alt="Disney" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="tcs.svg"  class="w-36" alt="Airbnb" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="capgemini.svg" class="w-36" alt="Apple" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="amex.svg" class="w-36" alt="Spark" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="western-union-1.svg" class="w-36" alt="Samsung" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="fis.svg" class="w-36" alt="Samsung" />
+            </li> 
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="jack-henry-1.svg" class="w-36" alt="Samsung" />
+            </li> 
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="morg-stan.svg" class="w-36" alt="Samsung" />
+            </li>
+            <li class="bg-[#013088] px-4 py-12 rounded">
+                <img src="std-chtd.svg" class="w-36" alt="Samsung" />
+            </li>
+           
+        </ul>                
+    </div> -->
+    <section class="py-8 bg-[#FFFAFA]">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex flex-wrap justify-center"> 
+            <div class="w-full md:w-1/2 lg:w-1/2 mb-12 md:mb-0 text-left px-4 whitespace-pre-line break-all">
+              <h2 class="text-4xl font-bold text-gray-900 text-left ">Services and Offers</h2>
+              <p class="text-xl  text-gray-900 text-left break-all whitespace-normal">We appreciate your trust greatly. Our clients choose us and our services because they know we are the best. We offer complete cybersecurity to various organizations.</p>
+              <div class="text-left ">
+                <button class="bg-[#013088] hover:bg-[#013088] text-white font-bold py-3 px-6 rounded">Explore all Services</button>
+              </div>
+            </div>
+      
+            <!-- Cards -->
+            <div class="w-full md:w-1/2 lg:w-1/2">
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6">
+                <!-- Card 1 -->
+                <div class="bg-[#013088] p-6 rounded-lg shadow-md hover:shadow-lg ">
+                  <div class="flex items-center mb-4">
+                    <img src="fingerprint-regular-24 (1).png" alt="Icon" class="h-12 w-12 ">
+                    <h3 class="text-xl font-semibold ml-4 text-white">Advanced Detection and Response</h3>
+                  </div>
+                  <p class="text-white mb-4">Advanced SOC services for superior threat protection</p>
+                  <a href="#" class="text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                </div>
+      
+                <!-- Card 2 -->
+                <div class="bg-[#013088] p-6 rounded-lg shadow-md hover:shadow-lg ">
+                  <div class="flex items-center mb-4">
+                    <img src="privacy.png" alt="Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4">Data Privacy and AI Security</h3>
+                  </div>
+                  <p class="text-white mb-4">Ensuring ethical AI adoption with privacy focus</p>
+                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                </div>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Card 3 -->
+                <div class="bg-[#013088] p-6 rounded-lg shadow-md hover:shadow-lg">
+                  <div class="flex items-center mb-4">
+                    <img src="risk.png" alt="Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4">Governance Risk Management and Compliance</h3>
+                  </div>
+                  <p class="text-white mb-4">Comprehensive GRC for today’s evolving threats</p>
+                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                </div>
+      
+                <!-- Card 4 -->
+                <div class="bg-[#013088] p-6 rounded-lg shadow-md hover:shadow-lg">
+                  <div class="flex items-center mb-4">
+                    <img src="security.png" alt="Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4">Secure Digital Transformation</h3>
+                  </div>
+                  <p class="text-white mb-4">Innovate faster with seamless digital transformation</p>
+                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 px-4 py-6">
+        <div class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+          <div class="min-h-[245px]">
+            <img src="Oil-Power.jpg" class="w-full rounded-lg" />
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-xl font-bold">Oil Power</h3>
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
+              arcu,
+              at fermentum dui. Maecenas</p>
+            <button type="button"
+              class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
+          </div>
+    </div>
+    <div class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+      <div class="min-h-[245px]">
+        <img src="Airlines.jpg" class="w-full rounded-lg" />
+      </div>
+      <div class="p-6 text-center">
+        <h3 class="text-xl font-bold">Airlines</h3>
+        <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
+          arcu,
+          at fermentum dui. Maecenas</p>
+        <button type="button"
+          class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
+      </div>
+</div>
+<div class="bg-white shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+  <div class="min-h-[245px]">
+    <img src="hospital.png" class="w-full rounded-lg" />
+  </div>
+  <div class="p-6 text-center">
+    <h3 class="text-xl font-bold">Hospitals</h3>
+    <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
+      arcu,
+      at fermentum dui. Maecenas</p>
+    <button type="button"
+      class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
+  </div>
+</div>
+  </div>
+      </section>
+      <section class="bg-[#FFFAFA] text-white">
+        <div class="px-4 py-10 mx-auto  ">
+            <div class="flex flex-wrap justify-center px-4 bg-[#FFFAFA] space-x-4 border border-white rounded shadow py-2">
+                <button id="banksButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Banks and Financial Services</button>
+                <button id="technologyButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Technology and Media</button>
+                <button id="oilButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Oil and Power</button>
+                <button id="airlinesButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Airlines</button>
+                <button id="ecommerceButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">E-commerce</button>
+                <button id="retailButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Retail</button>
+                <button id="healthcareButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Healthcare</button>
+            </div>
+            <div id="content" class="mt-10 p-6 rounded-lg bg-[#013088]">
+                <!-- Default content will be loaded here -->
+            </div>
+        </div>
+    </section>
+  
+
+    <section class="text-gray-700 body-font">
+      <div class="container px-5 py-24 mx-auto">
+       
+        <div class="flex flex-wrap -m-4 text-center">
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <path d="M8 17l4 4 4-4m-4-5v9"></path>
+                <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
+              </svg>
+              <h2 class="title-font font-medium text-3xl text-gray-900">2.7K</h2>
+              <p class="leading-relaxed">Downloads</p>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
+              </svg>
+              <h2 class="title-font font-medium text-3xl text-gray-900">1.3K</h2>
+              <p class="leading-relaxed">Users</p>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <path d="M3 18v-6a9 9 0 0118 0v6"></path>
+                <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
+              </svg>
+              <h2 class="title-font font-medium text-3xl text-gray-900">74</h2>
+              <p class="leading-relaxed">Files</p>
+            </div>
+          </div>
+          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <h2 class="title-font font-medium text-3xl text-gray-900">46</h2>
+              <p class="leading-relaxed">Places</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bg-[#FFFAFA] p-4 min-h-screen">
+      <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-20">
+        <div class="blur-[106px] h-56 bg-gradient-to-br  to-purple-400 from-blue-700"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400  to-indigo-600"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+        <div class="md:w-2/3 lg:w-1/2 mt-12 text-gray-100">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-secondary">
+            <path fill-rule="evenodd"
+              d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <h2 class="my-8 text-2xl font-bold text-gray-900 md:text-4xl">Our Work</h2>
+          <p class="text-gray-600">We have built many products and some of them are below</p>
+        </div>
+        <div
+          class="mt-16 grid divide-x divide-y  divide-gray-700 overflow-hidden  rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4  lg:divide-y-0 xl:grid-cols-4">
+          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl  hover:shadow-gray-600/10">
+            <div class="relative space-y-8 py-12 p-8">
+              <img src="https://www.svgrepo.com/show/164986/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent">
+              <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Xyz.com</h5>
+                <p class="text-gray-300">Platform to convert Domains into Content websites.</p>
+              </div>
+            </div>
+          </div>
+          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+            <div class="relative space-y-8 py-12 p-8">
+              <img src="https://www.svgrepo.com/show/120853/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent" >
+              <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">ABC.com</h5>
+                <p class="text-gray-300">Platform to create dynamic widgets for websites.</p>
+              </div>
+            </div>
+          </div>
+          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+            <div class="relative space-y-8 py-12 p-8">
+              <img src="https://www.svgrepo.com/show/120852/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent" >
+              <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">ASD.com</h5>
+                <p class="text-gray-300">API SaaS Platform that provides API Suit to help you ship fast.</p>
+              </div>
+            </div>
+          </div>
+          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
+            <div class="relative space-y-8 py-12 p-8">
+              <img src="https://www.svgrepo.com/show/120850/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent">
+              <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">TMK.co</h5>
+                <p class="text-gray-300">Chrome Extension that lets you add ChatGPT on any website</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+      <div id="footer"></div>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var swiper = new Swiper('.swiper-container', {
+            loop: true, // Enable infinite loop mode
+            autoplay: {
+              delay: 2500, // Delay in milliseconds
+              disableOnInteraction: false, // Keep autoplay running even when user interacts
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          });
+        });
+      </script>
+      <script
+         src="https://code.jquery.com/jquery-3.3.1.js"
+         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+         crossorigin="anonymous">
+     </script>     
+   
+         <script> 
+          $(function(){
+            $("#header").load("header.html"); 
+            $("#footer").load("footer.html"); 
+          });
+          </script> 
+          <script>
+               const buttons = document.querySelectorAll('button');
+   const contentDiv = document.getElementById('content');
+   
+   function setActiveButton(buttonId) {
+       buttons.forEach(button => {
+           button.classList.toggle('bg-[#013088]', button.id === buttonId);
+           button.classList.toggle('bg-[#001d3d]', button.id !== buttonId);
+       });
+   }
+   
+   function loadContent(buttonId) {
+       contentDiv.innerHTML = '';
+       
+       if (buttonId === 'banksButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold text-left mt-4">Banks and Financial Services</h2>
+                       <p class="text-gray-400 text-left">
+                           In the fast-paced world of finance, our cybersecurity solutions ensure the integrity and confidentiality of sensitive financial data. From safeguarding transactions to protecting customer information, we provide robust defences against cyber threats, guaranteeing a secure and resilient financial ecosystem.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download.png" alt="Banks and Financial Services" class="w-full max-w-xs mt-4 rounded-lg">
+                   </div>
+               </div>`;
+       } else if (buttonId === 'technologyButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">Technology and Media</h2>
+                       <p class="text-gray-400">
+                           The technology and media industry is constantly evolving, and we help our clients navigate this dynamic landscape. From developing innovative solutions to managing data effectively, we empower businesses to stay ahead of the curve.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download.jfif" alt="Technology and Media" class="w-full max-w-xs mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       } else if (buttonId === 'oilButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">Oil and Power</h2>
+                       <p class="text-gray-400">
+                           The oil and power sector faces unique challenges, and we provide tailored solutions to meet those needs. From optimizing energy production to mitigating environmental impact, we are committed to sustainability and innovation.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download (1).jfif" alt="Oil and Power" class="w-full max-w-xl mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       } else if (buttonId === 'airlinesButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">Airlines</h2>
+                       <p class="text-gray-400">
+                           The airline industry is highly competitive and requires a deep understanding of passenger needs. We help airlines optimize operations, enhance customer experiences, and navigate regulatory complexities.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download (2).jfif" alt="Airlines" class="w-full max-w-lg mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       } else if (buttonId === 'ecommerceButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">E-commerce</h2>
+                       <p class="text-gray-400">
+                           The world of e-commerce is constantly evolving, and we help businesses thrive in this dynamic space. From building secure online platforms to optimizing customer journeys, we provide comprehensive solutions.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download (1).png" alt="E-commerce" class="w-full max-w-lg mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       } else if (buttonId === 'retailButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">Retail</h2>
+                       <p class="text-gray-400">
+                           The retail landscape is facing unprecedented change, and we help businesses adapt and thrive. From improving in-store experiences to enhancing online presence, we provide strategies for success.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download (3).jfif" alt="Retail" class="w-full max-w-lg mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       } else if (buttonId === 'healthcareButton') {
+           contentDiv.innerHTML = `
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                   <div>
+                       <h2 class="text-2xl font-bold mb-4">Healthcare</h2>
+                       <p class="text-gray-400">
+                           The healthcare industry is complex and rapidly evolving, and we provide solutions to meet the unique needs of healthcare providers. From improving patient outcomes to streamlining administrative processes, we are dedicated to improving healthcare delivery.
+                       </p>
+                   </div>
+                   <div class="flex justify-center items-center">
+                       <img src="download (4).jfif" alt="Healthcare" class="w-full max-w-lg mt-4 rounded-lg">
+                   </div>
+               </div>
+           `;
+       }
+   }
+
+   window.addEventListener('DOMContentLoaded', () => {
+       const defaultButtonId = 'banksButton'; 
+       setActiveButton(defaultButtonId);
+       loadContent(defaultButtonId);
+   });
+
+   buttons.forEach(button => {
+       button.addEventListener('click', () => {
+           const buttonId = button.id;
+           setActiveButton(buttonId);
+           loadContent(buttonId);
+       });
+   });
+
+   
+          </script>
+         <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const list = document.querySelector('.logos-list');
+            const items = list.innerHTML;
+            
+            // Duplicate the list items to create a seamless scroll effect
+            list.innerHTML += items;
+          });
+        </script>
+          
+ <!-- <script src="script.js"></script> -->
+</body>
+</html>
