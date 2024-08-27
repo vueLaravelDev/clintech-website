@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     <style>
       .slider-wrapper {
       position: relative;
@@ -104,14 +104,22 @@
   position: relative;
 }
 .roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto; /* Optional, controls optical sizing */
+  font-weight: 700; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
 }
-.roboto-regular {
+/* .roboto-regular {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
+} */
+.roboto-regular {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto; /* Optional, controls optical sizing */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal;
+  font-size: large; /* Adjust as needed */
 }
   </style>
 </head>
@@ -235,13 +243,22 @@
           </div>
         </div>
       </section>
-      
-      <section class="bg-black">
+      <section class="mb-12">
+      <div class="relative w-full h-72  bg-center" style="background-image: url('security1.jpg');">
+        <div class="flex items-center justify-center w-full h-full absolute top-0 left-0 bg-black bg-opacity-50">
+            <div class="text-center text-white">
+                <h4 class="lg:text-4xl sm:xl font-bold mb-4  text-center lg:px-44 ">“If You Spend More On Coffee Than On IT Security, You Will Be Hacked. What’s More, You Deserve To Be Hacked.”</h4>
+                <p class="lg:text-lg sm:text-sm mb-6 font-normal "><i> White House Cybersecurity Advisor, Richard Clarke</i></p>
+            </div>
+        </div>
+    </div>
+  </section>
+      <section class="bg-black mt-8">
         <div class="w-full mb-12 md:mb-0 text-left px-4">
-          <h2 class="lg:text-4xl font-bold text-white text-center sm:text-5xl  sm:leading-relaxed sm:whitespace-normal">
+          <h2 class="lg:text-3xl font-bold text-white text-center sm:text-5xl  sm:leading-relaxed sm:whitespace-normal">
             Prowess Strategy To Defend Your Business From Security Incidents
           </h2>
-          <p class="text-sm font-light sm:whitespace-normal break-all text-white text-center mt-4 roboto-regular">We Are A Forward-Looking Information Security Consulting Company CLINTECH is a trusted name in the information technology industry. Our fast-growing company fulfills all the business requirements and provides you with genuine information, IT solutions, and training via our top-notch delivery process.</p>
+          <p class="text-sm font-light sm:whitespace-normal break-all text-white text-center mt-4 px-12 roboto-regular">We Are A Forward-Looking Information Security Consulting Company CLINTECH is a trusted name in the information technology industry. Our fast-growing company fulfills all the business requirements and provides you with genuine information, IT solutions, and training via our top-notch delivery process.</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 gap-4 px-4 py-6 bg-black">
         <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
