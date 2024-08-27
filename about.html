@@ -8,6 +8,53 @@
     <title>Document</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.min.css" integrity="sha512-H/zVLBHVS8ZRNSR8wrNZrGFpuHDyN6+p6uaADRefLS4yZYRxfF4049g1GhT+gDExFRB5Kf9jeGr8vueDsyBhhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    @font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif !important  ;
+}
+#slider {
+        width: 100%; 
+        display: flex;
+        width: 100%;
+    }
+
+    .slider-image {
+        flex-shrink: 0;
+        width: 100%; 
+        height: auto; 
+        object-fit: cover; 
+    }
+ 
+@media (max-width: 768px) {
+    #slider {
+        width: 100%; 
+    }
+
+    .slider-image {
+        max-height: 300px;
+    }
+}
+
+@media (min-width: 769px) {
+    #slider {
+        width: 100%;
+    }
+
+    .slider-image {
+        max-height: 500px;
+    }
+}
+</style>
 </head>
 <body class="roboto-bold bg-black">
     <div id="header"></div>
@@ -43,13 +90,13 @@
         </div>
       </main>
       
-    <section class="bg-black">
+    <section class="bg-black mb-8">
         <div class="container mx-auto">
             <div class="flex flex-col items-center justify-center h-full">
     
                 <div class="flex flex-col items-center justify-center mt-12 px-2">
                     <h2 class="mb-4 text-3xl font-extrabold leading-tight text-center lg:text-4xl text-white">CLIN TECHNOLOGIES</h2>
-                    <p class="text-lg text-center lg:w-8/12 text-white">Being a well-established and well-reputed service provider in the field of IT security, ASHAL TECH is determined to provide all businesses with dependable security solutions at competitive rates. The foundation of this firm was led in 2012. Our dedicated teams of highly qualified and certified individuals put their best knowledge and expertise to offer top-notch security solutions that fit every client’s unique needs and preferences.</p>
+                    <p class="text-lg text-center lg:w-8/12 text-white">Being a well-established and well-reputed service provider in the field of IT security, CLIN TECH is determined to provide all businesses with dependable security solutions at competitive rates. The foundation of this firm was led in 2012. Our dedicated teams of highly qualified and certified individuals put their best knowledge and expertise to offer top-notch security solutions that fit every client’s unique needs and preferences.</p>
                     <p class="text-lg text-center lg:w-8/12 text-white">At CLIN TECH, we implement an advanced yet simplified approach for the management of security infrastructure and deliver high-end security services solutions to eliminate the need for a variety of stand-alone and bolt-on security devices.</p>
                     <p class="text-lg text-center lg:w-8/12 text-white">Our next-generation security systems and solutions will help you run your business in a more protected and secure way. Our state-of-the-art security technologies are matchless in the industry in terms of intelligence, performance, and deployment, effectively making you able to detect, analyze, fix, and prevent all cyber and internal security threats.</p>
                     <p class="text-lg text-center lg:w-8/12 text-white">This is what makes CLIN TECH an industry’s leading IT security service provider who can serve you the best beyond your expectations.</p>
@@ -137,7 +184,47 @@
             </div>
         </div>
       </section>
-      <section class="bg-black">
+     
+      <section class="mt-8">
+        <div class="relative w-full max-w-6xl mt-8 mx-auto overflow-hidden">
+            <div class="flex flex-col lg:flex-row">
+                <!-- Static Text Section -->
+                <div class="w-full lg:w-1/2 p-8">
+                    <h2 class="text-3xl font-bold text-white">How Do We Help Our Customers?</h2>
+                    <p class="mt-4 text-gray-300">
+                        We help the business firms and industries in modifying all their business activities and processes in line with their set of goals, which are as follows:
+                    </p>
+                    <ul class="list-disc pl-5 mt-4 space-y-2 text-gray-400">
+                        <li>To enhance the real-time visibility and performance</li>
+                        <li>To reduce the chances of litigation to a remarkable extent to make all the activities simple and free from problems</li>
+                        <li>To synchronize the relationships between the participants of an organization to boost the working</li>
+                        <li>To help the firms in the quick and effective adoption of ITIL for a better management framework</li>
+                        <li>To improve customer satisfaction and retention to increase contract renewals</li>
+                    </ul>
+                </div>
+                <!-- Image Slider Section -->
+                <div class="w-full lg:w-1/2 relative overflow-hidden">
+                    <div id="slider" class="flex transition-transform duration-300 ease-out">
+                        <img src="feature1.jpg" alt="Image 1" class="slider-image">
+                        <img src="feature2.jpg" alt="Image 2" class="slider-image">
+                        <img src="feature3.jpg" alt="Image 3" class="slider-image">
+                    </div>
+                    <!-- Navigation Dots -->
+                    <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                        <button onclick="moveSlider(0)" class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                        <button onclick="moveSlider(1)" class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                        <button onclick="moveSlider(2)" class="w-3 h-3 bg-gray-300 rounded-full"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    
+    
+      <!-- <section class="bg-black">
         <div class="w-full bg-black">
             <div class="container flex flex-col items-center gap-16 mx-auto my-32 bg-black">
                 <div class="flex flex-col gap-16">
@@ -201,8 +288,8 @@
                 </div>
             </div>
         </div>
-      </section>
-      <section id="testimonies" class="py-20 bg-black">
+      </section> -->
+      <!-- <section id="testimonies" class="py-20 bg-black">
         <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
     
     
@@ -497,7 +584,8 @@
     
             </div>
         </div>
-    </section>
+    </section> -->
+
     <div class="bg-black  text-white py-10 px-4 sm:px-12 mx-auto">
         <div class="text-2xl font-bold text-center">Follow Us:</div>
         <div class="flex flex-wrap justify-center gap-8 mt-10">
@@ -557,6 +645,13 @@
           </div>
         </div>
       </div>
+      <section id="contact" class="bg-black text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Contact With Us</h2>
+            <p class="text-lg mb-8">CLIN TECH is the fast-growing All-in-one service provider to meet all the security needs of your business. We provide top-notch security services, solutions, and training through our best-in-class delivery processes.</p>
+           <button id="btn"><a href="contactus.html"   class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors">Contact Us</a></button> 
+        </div>
+    </section>
       <div id="footer"></div>
       <script
       src="https://code.jquery.com/jquery-3.3.1.js"
@@ -569,6 +664,23 @@
          $("#footer").load("footer.html"); 
        });
        </script> 
-      
+       <script>
+       let currentSlide = 0;
+        const slider = document.getElementById('slider');
+        const totalSlides = slider.children.length;
+
+        function moveSlider(slideIndex) {
+            const slideWidth = slider.clientWidth; // Full width of the slider container
+            currentSlide = slideIndex;
+            slider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+        }
+
+        // Initialize the slider position on load and resize
+        window.addEventListener('load', () => moveSlider(currentSlide));
+        window.addEventListener('resize', () => moveSlider(currentSlide));
+
+
+
+    </script>
 </body>
 </html>
