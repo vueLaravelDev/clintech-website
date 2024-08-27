@@ -6,7 +6,9 @@
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
       .slider-wrapper {
       position: relative;
@@ -42,10 +44,78 @@
       }
     }
 
+/* CSS */
+.button-48 {
+  appearance: none;
+  background-color: #FFFFFF;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Clarkson,Helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
 
+.button-48:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #EBEBEB;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.button-48:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.button-48:after {
+  background-color: #FFFFFF;
+}
+
+.button-48 span {
+  z-index: 1;
+  position: relative;
+}
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
   </style>
 </head>
-<body class="roboto-bold bg-black">
+<body class="roboto-bold bg-black new-amsterdam-regular">
     <div class="bg-black min-h-screen flex flex-col justify-between ">
         <!-- Navbar -->
         <div id="header"></div>
@@ -58,9 +128,11 @@
                 </svg>
                 <span class="ml-2 text-white">Watch: Why Transilience</span>
               </p>
-                          <h1 class="text-white text-3xl md:text-5xl font-bold mb-6">Transilience AI-Powered Cybersecurity</h1>
-            <p class="text-white text-md mb-6">Proving to be our clients' most resilient Cybersecurity Transformation Agent</p>
-            <button class="bg-[#013088] text-white px-6 py-3 rounded-md">Explore how we help</button>
+                          <h1 class="text-white text-xl md:text-5xl font-bold mb-6">Emergent Security Solutions</h1>
+            <p class="text-white text-md mb-6">Run Your Business Smoothly Without Any Security Threats & Breaches</p>
+            <!-- <button class="bg-[#013088] text-white px-6 py-3 rounded-md">Explore how we help</button> -->
+            <button class="button-48" role="button"><span class="text text-white hover:text-black">Explore how we help</span></button>
+
           </div>
           <div class="md:w-1/2 mb-8 md:mt-0">
             <img src="logo1.png" alt="Banner Image" class="mx-auto md:ml-auto md:mr-0 w-96 md:max-w-lg">
@@ -104,104 +176,116 @@
         </ul>
       </div>
   
-    <section class="py-8 bg-black">
+      <section class="py-8 bg-black">
         <div class="max-w-6xl mx-auto px-4">
           <div class="flex flex-wrap justify-center"> 
-            <div class="w-full md:w-1/2 lg:w-1/2 mb-12 md:mb-0 text-left px-4 whitespace-pre-line break-all">
-              <h2 class="text-4xl font-bold text-white text-left ">Services and Offers</h2>
-              <p class="text-xl  text-white text-left break-all whitespace-normal">We appreciate your trust greatly. Our clients choose us and our services because they know we are the best. We offer complete cybersecurity to various organizations.</p>
-              <div class="text-left ">
-                <button class="bg-[#001d3d] hover:bg-[#013088] text-white font-bold py-3 px-6 rounded">Explore all Services</button>
-              </div>
+            <div class="w-full mb-12 md:mb-0 text-left px-4">
+              <h2 class="lg:text-4xl font-bold text-white text-center sm:text-5xl  sm:leading-relaxed sm:whitespace-normal">
+                Globally-Famed Experts In Information Security & Technology
+              </h2>
+              <p class="lg:text-md sm:text-xs sm:whitespace-normal break-all text-white text-center mt-4 roboto-regular">CLIN TECH was launched in 2012 with an aim to provide beyond-comparison IT security for businesses. We provide expert guidelines to information securities that protect you the best. We promise to offer more visibility, innovative security protection, and budget-friendly opportunities to protect your business. </p>
+              <p class="lg:text-md sm:text-xs sm:whitespace-normal break-all text-white text-center mt-4 roboto-regular">Our strategy enables you to order the network security infrastructure without the need for various fixed and stand-alone security devices. More than this, CLINTECH offers you the greatest information technology solutions so that you can run your businesses confidentially without worrying about security problems.</p>
             </div>
-      
+        
             <!-- Cards -->
-            <div class="w-full md:w-1/2 lg:w-1/2">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-6">
+            <div class="w-full mt-8">
+              <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-6">
                 <!-- Card 1 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg ">
+                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div class="flex items-center mb-4">
-                    <img src="fingerprint-regular-24 (1).png" alt="Icon" class="h-12 w-12 ">
-                    <h3 class="text-xl font-semibold ml-4 text-white">Advanced Detection and Response</h3>
+                    <img src="fingerprint-regular-24 (1).png" alt="Advanced Detection and Response Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold ml-4 text-white uppercase">Compliance & Audit</h3>
                   </div>
-                  <p class="text-white mb-4">Advanced SOC services for superior threat protection</p>
+                  <p class="text-white mb-4 roboto-regular">We provide the best-in-class services to deal with those industry regulations and noncompliance that negatively influence your business.</p>
                   <a href="#" class="text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
                 </div>
-      
+        
                 <!-- Card 2 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg ">
+                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div class="flex items-center mb-4">
-                    <img src="privacy.png" alt="Icon" class="h-12 w-12">
-                    <h3 class="text-xl font-semibold text-white ml-4">Data Privacy and AI Security</h3>
+                    <img src="privacy.png" alt="Data Privacy and AI Security Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4 uppercase">VA & PEN TEST</h3>
                   </div>
-                  <p class="text-white mb-4">Ensuring ethical AI adoption with privacy focus</p>
-                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                  <p class="text-white mb-4 roboto-regular">VA and Pen testing are considered the most effective processes to assure your defences against modern cyberattack techniques.</p>
+                  <a href="#" class="text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
                 </div>
-              </div>
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          
+            
                 <!-- Card 3 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div class="flex items-center mb-4">
-                    <img src="risk.png" alt="Icon" class="h-12 w-12">
-                    <h3 class="text-xl font-semibold text-white ml-4">Governance Risk Management and Compliance</h3>
+                    <img src="risk.png" alt="Governance Risk Management and Compliance Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4 uppercase">GRC Consulting</h3>
                   </div>
-                  <p class="text-white mb-4">Comprehensive GRC for today’s evolving threats</p>
-                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                  <p class="text-white mb-4 roboto-regular">Governance, Risk Management, and Compliance or GRC is the umbrella term covering an organization’s approach across these three areas.</p>
+                  <a href="#" class="text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
                 </div>
-      
+        
                 <!-- Card 4 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg">
+                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                   <div class="flex items-center mb-4">
-                    <img src="security.png" alt="Icon" class="h-12 w-12">
-                    <h3 class="text-xl font-semibold text-white ml-4">Secure Digital Transformation</h3>
+                    <img src="security.png" alt="Secure Digital Transformation Icon" class="h-12 w-12">
+                    <h3 class="text-xl font-semibold text-white ml-4 uppercase">OPEN SOURCE CONSULTING</h3>
                   </div>
-                  <p class="text-white mb-4">Innovate faster with seamless digital transformation</p>
-                  <a href="#" class=" text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
+                  <p class="text-white mb-4 roboto-regular">CLIN TECH provide dynamic and highly specialized open source consultancy</p>
+                  <a href="#" class="text-white hover:text-purple-400 flex items-center">Learn more <span class="ml-2">→</span></a>
                 </div>
-              </div>
+             
             </div>
           </div>
         </div>
       </section>
+      
       <section class="bg-black">
-        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-1 gap-2 px-4 py-6 bg-black">
+        <div class="w-full mb-12 md:mb-0 text-left px-4">
+          <h2 class="lg:text-4xl font-bold text-white text-center sm:text-5xl  sm:leading-relaxed sm:whitespace-normal">
+            Prowess Strategy To Defend Your Business From Security Incidents
+          </h2>
+          <p class="text-sm font-light sm:whitespace-normal break-all text-white text-center mt-4 roboto-regular">We Are A Forward-Looking Information Security Consulting Company CLINTECH is a trusted name in the information technology industry. Our fast-growing company fulfills all the business requirements and provides you with genuine information, IT solutions, and training via our top-notch delivery process.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-1 gap-4 px-4 py-6 bg-black">
         <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
           <div class="min-h-[245px]">
-            <img src="Oil-Power.jpg" class="w-full rounded-lg" />
+            <img src="ISO.jpg" class="w-full rounded-lg" />
           </div>
           <div class="p-6 text-center">
-            <h3 class="text-xl font-bold">Oil Power</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-              arcu,
-              at fermentum dui. Maecenas</p>
+            <h3 class="text-xl font-bold text-white">ISO Consultancy</h3>
+            <p class="mt-3 text-sm text-gray-500 leading-relaxed">By getting any of ISMS 27001, BCM 22301, QMS 9001, or ITSM 20000-1 certifications, you can protect your business and data from cyber-attacks.</p>
             <button type="button"
               class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
           </div>
     </div>
     <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
       <div class="min-h-[245px]">
-        <img src="Airlines.jpg" class="w-full rounded-lg" />
+        <img src="VA.jpg" class="w-full h-44 rounded-lg" />
       </div>
       <div class="p-6 text-center">
-        <h3 class="text-xl font-bold">Airlines</h3>
-        <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-          arcu,
-          at fermentum dui. Maecenas</p>
+        <h3 class="text-xl font-bold text-white">VA & Pen Test</h3>
+        <p class="mt-3 text-sm text-gray-500 leading-relaxed"> VA and Pen testing help you to identify vulnerabilities and bugs in your mobile app, or networking or management systems to avoid security threats.</p>
         <button type="button"
           class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
       </div>
 </div>
 <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
   <div class="min-h-[245px]">
-    <img src="hospital.png" class="w-full rounded-lg" />
+    <img src="open.jpg" class="w-full rounded-lg" />
   </div>
   <div class="p-6 text-center">
-    <h3 class="text-xl font-bold">Hospitals</h3>
-    <p class="mt-3 text-sm text-gray-500 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor auctor
-      arcu,
-      at fermentum dui. Maecenas</p>
+    <h3 class="text-xl font-bold text-white">Open Source Consultancy</h3>
+    <p class="mt-3 text-sm text-gray-500 leading-relaxed">We cover all areas of open-source software development whether it is a web engine, Linux Kernel, graphics, or multimedia. So, call us to take expert advice.</p>
     <button type="button"
       class="mt-6 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
+  </div>
+</div>
+<div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto mt-4">
+  <div class="min-h-[245px]">
+    <img src="grc.jpg" class="w-full h-44 rounded-lg" />
+  </div>
+  <div class="p-6 text-center">
+    <h3 class="text-xl font-bold text-white">GRC Consultancy</h3>
+    <p class="mt-3 text-sm text-gray-500 leading-relaxed">GRC consulting offers help to organizations to integrate cycles of governance, risk management, and compliance (GRC) initiatives.</p>
+    <button type="button"
+      class="mt-12 px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button>
   </div>
 </div>
   </div>
@@ -224,7 +308,7 @@
     </section>
   
 
-    <section class="text-white body-font bg-black">
+    <!-- <section class="text-white body-font bg-black">
       <div class="container px-5 py-24 mx-auto bg-black">
        
         <div class="flex flex-wrap -m-4 text-center">
@@ -270,7 +354,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <div class="bg-black p-4 min-h-screen">
       <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-20">
@@ -284,44 +368,50 @@
               d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
               clip-rule="evenodd"></path>
           </svg>
-          <h2 class="my-8 text-2xl font-bold text-white md:text-4xl">Our Work</h2>
-          <p class="text-gray-600">We have built many products and some of them are below</p>
+          <h2 class="my-8 text-2xl font-bold text-white md:text-4xl">Our Core Values</h2>
+          <p class="text-gray-600">A company that is known globally has some common principles and beliefs to strengthen the core of its business. The core values and principles of a company encourage personal commitment and assist to explain customer value. For CLINTECH, the following four commitments work as a reminder that we add to our daily work.</p>
         </div>
         <div
           class="mt-16 grid divide-x divide-y  divide-gray-700 overflow-hidden  rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4  lg:divide-y-0 xl:grid-cols-4">
           <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl  hover:shadow-gray-600/10">
             <div class="relative space-y-8 py-12 p-8">
-              <img src="https://www.svgrepo.com/show/164986/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent">
-              <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Xyz.com</h5>
-                <p class="text-gray-300">Platform to convert Domains into Content websites.</p>
+              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon text-white" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path>
+                </svg>
+            </div> <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Customer Focused</h5>
+                <p class="text-gray-300">Every step of us is to fulfill the customer's expectations and to add value for them. So, we develop trustable and long-term cooperation with our customers.</p>
               </div>
             </div>
           </div>
           <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
             <div class="relative space-y-8 py-12 p-8">
-              <img src="https://www.svgrepo.com/show/120853/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent" >
-              <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">ABC.com</h5>
-                <p class="text-gray-300">Platform to create dynamic widgets for websites.</p>
+              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z"></path><path d="m2.845 16.136 1 1.73c.531.917 1.809 1.261 2.73.73l.529-.306A8.1 8.1 0 0 0 9 19.402V20c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-.598a8.132 8.132 0 0 0 1.896-1.111l.529.306c.923.53 2.198.188 2.731-.731l.999-1.729a2.001 2.001 0 0 0-.731-2.732l-.505-.292a7.718 7.718 0 0 0 0-2.224l.505-.292a2.002 2.002 0 0 0 .731-2.732l-.999-1.729c-.531-.92-1.808-1.265-2.731-.732l-.529.306A8.1 8.1 0 0 0 15 4.598V4c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2v.598a8.132 8.132 0 0 0-1.896 1.111l-.529-.306c-.924-.531-2.2-.187-2.731.732l-.999 1.729a2.001 2.001 0 0 0 .731 2.732l.505.292a7.683 7.683 0 0 0 0 2.223l-.505.292a2.003 2.003 0 0 0-.731 2.733zm3.326-2.758A5.703 5.703 0 0 1 6 12c0-.462.058-.926.17-1.378a.999.999 0 0 0-.47-1.108l-1.123-.65.998-1.729 1.145.662a.997.997 0 0 0 1.188-.142 6.071 6.071 0 0 1 2.384-1.399A1 1 0 0 0 11 5.3V4h2v1.3a1 1 0 0 0 .708.956 6.083 6.083 0 0 1 2.384 1.399.999.999 0 0 0 1.188.142l1.144-.661 1 1.729-1.124.649a1 1 0 0 0-.47 1.108c.112.452.17.916.17 1.378 0 .461-.058.925-.171 1.378a1 1 0 0 0 .471 1.108l1.123.649-.998 1.729-1.145-.661a.996.996 0 0 0-1.188.142 6.071 6.071 0 0 1-2.384 1.399A1 1 0 0 0 13 18.7l.002 1.3H11v-1.3a1 1 0 0 0-.708-.956 6.083 6.083 0 0 1-2.384-1.399.992.992 0 0 0-1.188-.141l-1.144.662-1-1.729 1.124-.651a1 1 0 0 0 .471-1.108z"></path></svg>
+            </div>               <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Achieving Together</h5>
+                <p class="text-gray-300">We consider our customers as a part of our organization and all our ideas and goals rely on each other. Furthermore, we work together, achieve together, and celebrate together.</p>
               </div>
             </div>
           </div>
           <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
             <div class="relative space-y-8 py-12 p-8">
-              <img src="https://www.svgrepo.com/show/120852/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent" >
-              <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">ASD.com</h5>
-                <p class="text-gray-300">API SaaS Platform that provides API Suit to help you ship fast.</p>
+              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4 3.91 3.91 0 0 0-4 4zm6 0a1.91 1.91 0 0 1-2 2 1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2zM4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"></path></svg>
+            </div>               <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Proactive </h5>
+                <p class="text-gray-300">We never stop and always continue to enhance our competencies and inclinations. Therefore, we are always one step ahead to provide you with quality security solutions.</p>
               </div>
             </div>
           </div>
           <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
             <div class="relative space-y-8 py-12 p-8">
-              <img src="https://www.svgrepo.com/show/120850/logo.svg" loading="lazy" width="200" height="200"class="w-12 h-12 rounded-full" style="color:transparent">
-              <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">TMK.co</h5>
-                <p class="text-gray-300">Chrome Extension that lets you add ChatGPT on any website</p>
+              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M9 20h6v2H9zm7.906-6.288C17.936 12.506 19 11.259 19 9c0-3.859-3.141-7-7-7S5 5.141 5 9c0 2.285 1.067 3.528 2.101 4.73.358.418.729.851 1.084 1.349.144.206.38.996.591 1.921H8v2h8v-2h-.774c.213-.927.45-1.719.593-1.925.352-.503.726-.94 1.087-1.363zm-2.724.213c-.434.617-.796 2.075-1.006 3.075h-2.351c-.209-1.002-.572-2.463-1.011-3.08a20.502 20.502 0 0 0-1.196-1.492C7.644 11.294 7 10.544 7 9c0-2.757 2.243-5 5-5s5 2.243 5 5c0 1.521-.643 2.274-1.615 3.413-.373.438-.796.933-1.203 1.512z"></path></svg>
+            </div>               <div class="space-y-2">
+                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Engaged To Perform</h5>
+                <p class="text-gray-300">We never get tired of challenges; we face and enjoy them! We are always active, work efficiently, and perfectly perform every task to ensure you serve the best.</p>
               </div>
             </div>
           </div>
