@@ -18,21 +18,35 @@
         .transform-rotate {
             transform: rotate(-3deg);
         }
-        .parallax {
-            background-image: url('https://source.unsplash.com/random/1920x1080');
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-        }
-        .overlay {
-            background: rgba(0, 0, 0, 0.5);
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+        #btn:hover { 
+            animation: effect 0.8s infinite; 
+        } 
+  
+        @keyframes effect { 
+            0% { 
+                transform: translateX(0px) rotate(0deg); 
+            } 
+  
+            20% { 
+                transform: translateX(-4px) rotate(-4deg); 
+            } 
+  
+            40% { 
+                transform: translateX(-2px) rotate(-2deg); 
+            } 
+  
+            60% { 
+                transform: translateX(4px) rotate(4deg); 
+            } 
+  
+            80% { 
+                transform: translateX(2px) rotate(2deg); 
+            } 
+  
+            100% { 
+                transform: translateX(0px) rotate(0deg); 
+            } 
+        } 
         .section-content {
             position: relative;
             z-index: 1;
@@ -42,14 +56,14 @@
             color: #4B5563;
         }
         .card-custom {
-            background: linear-gradient(135deg, #34d399 0%, #22d3ee 100%);
+            background: linear-gradient(135deg, #001d3d 0%, #001d3d 100%);
             color: white;
             padding: 2rem;
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .button-custom {
-            background-color: #ff4500;
+            background-color: #001d3d;
             color: white;
             border-radius: 50px;
             padding: 0.5rem 2rem;
@@ -58,26 +72,26 @@
             transition: background-color 0.3s ease;
         }
         .button-custom:hover {
-            background-color: #ff5722;
+            background-color: #001d3d;
         }
     </style>
 </head>
 <body>
     <div id="header"></div>
     <!-- Hero Section -->
-    <section class="relative parallax flex items-center justify-center">
+    <section class="bg-black flex items-center justify-center">
         <div class="overlay"></div>
         <div class="section-content text-center text-white py-24 px-6">
             <h1 class="text-5xl font-bold mb-4">Offensive and Defensive Strategies</h1>
             <p class="text-lg mb-8">Explore advanced and innovative approaches to both offensive and defensive cybersecurity strategies.</p>
-            <a href="#overview" class="button-custom">Learn More</a>
+            <a href="offensive&defensive.html" class="button-custom">Learn More</a>
         </div>
     </section>
 
     <!-- Offensive Strategies Section -->
-    <section id="offensive" class="py-16 bg-light-custom">
+    <section id="offensive" class="py-16 bg-black">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-10">Offensive Strategies</h2>
+            <h2 class="text-4xl font-bold text-center mb-10 text-white">Offensive Strategies</h2>
             <div class="flex flex-wrap justify-between gap-8">
                 <div class="bg-white p-6 rounded-lg shadow-lg transform-rotate">
                     <div class="flex items-center mb-4">
@@ -98,15 +112,15 @@
     </section>
 
     <!-- Defensive Strategies Section -->
-    <section id="defensive" class="py-16 bg-secondary-custom">
+    <section id="defensive" class="py-16 bg-black">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-10">Defensive Strategies</h2>
+            <h2 class="text-4xl font-bold text-center text-white mb-10">Defensive Strategies</h2>
             <div class="relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-200 to-blue-500 opacity-20"></div>
+                <div class="absolute inset-0  opacity-20"></div>
                 <div class="relative z-10">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-light-custom p-6 rounded-lg shadow-lg">
-                            <h3 class="text-2xl font-semibold mb-4">Incident Response</h3>
+                        <div class="bg-light-custom p-6  rounded-lg shadow-lg">
+                            <h3 class="text-2xl font-semibold mb-4 ">Incident Response</h3>
                             <p class="text-gray-700">Develop and implement a robust incident response plan to quickly address security breaches.</p>
                         </div>
                         <div class="bg-light-custom p-6 rounded-lg shadow-lg">
@@ -120,11 +134,11 @@
     </section>
 
     <!-- Comparative Analysis Section -->
-    <section id="analysis" class="py-16 bg-primary-custom text-white">
+    <section id="analysis" class="py-16 bg-black text-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-10">Comparative Analysis</h2>
             <div class="relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-500 opacity-30"></div>
+                <div class="absolute inset-0  opacity-30"></div>
                 <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="card-custom p-6 rounded-lg">
                         <h3 class="text-2xl font-semibold mb-4">Offensive</h3>
@@ -144,19 +158,19 @@
     </section>
 
     <!-- Key Takeaways Section -->
-    <section id="takeaways" class="py-16 bg-light-custom">
+    <section id="takeaways" class="py-16 bg-black">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-10">Key Takeaways</h2>
+            <h2 class="text-4xl font-bold text-center text-white mb-10">Key Takeaways</h2>
             <div class="flex flex-wrap justify-around gap-8">
-                <div class="bg-primary-custom text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
+                <div class="bg-[#001d3d] text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
                     <h3 class="text-2xl font-semibold mb-4">Continuous Improvement</h3>
                     <p>Regularly update and refine your strategies to adapt to evolving threats.</p>
                 </div>
-                <div class="bg-primary-custom text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
+                <div class="bg-[#001d3d] text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
                     <h3 class="text-2xl font-semibold mb-4">Holistic Approach</h3>
                     <p>Adopt a holistic approach that combines offensive and defensive tactics for optimal security.</p>
                 </div>
-                <div class="bg-primary-custom text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
+                <div class="bg-[#001d3d] text-white p-6 rounded-lg shadow-lg flex-1 max-w-xs">
                     <h3 class="text-2xl font-semibold mb-4">Expert Collaboration</h3>
                     <p>Work with experts in both fields to strengthen your overall cybersecurity posture.</p>
                 </div>
@@ -164,30 +178,30 @@
         </div>
     </section>
 <!-- Advanced Threats Section -->
-<section id="advanced-threats" class="py-16 bg-gray-100">
+<section id="advanced-threats" class="py-16 bg-black">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-10">Advanced Threats</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="relative group">
-                <img src="https://via.placeholder.com/300" alt="Threat Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <img src="offensive1.jpg" alt="Threat Image 1" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p class="text-xl font-semibold">Threat 1</p>
                 </div>
             </div>
             <div class="relative group">
-                <img src="https://via.placeholder.com/300" alt="Threat Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <img src="offensive2.jpg" alt="Threat Image 2" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p class="text-xl font-semibold">Threat 2</p>
                 </div>
             </div>
             <div class="relative group">
-                <img src="https://via.placeholder.com/300" alt="Threat Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <img src="offensive3.jpg" alt="Threat Image 3" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p class="text-xl font-semibold">Threat 3</p>
                 </div>
             </div>
             <div class="relative group">
-                <img src="https://via.placeholder.com/300" alt="Threat Image 4" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
+                <img src="offensive4.jpg" alt="Threat Image 4" class="w-full h-64 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105">
                 <div class="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <p class="text-xl font-semibold">Threat 4</p>
                 </div>
@@ -196,27 +210,27 @@
     </div>
 </section>
 <!-- Integration & Automation Section -->
-<section id="integration" class="py-16 bg-white">
+<section id="integration" class="py-16 bg-black">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center mb-10">Integration & Automation</h2>
+        <h2 class="text-4xl font-bold text-center text-white mb-10">Integration & Automation</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                <img src="https://via.placeholder.com/150" alt="Integration 1" class="w-24 h-24 mb-4 rounded-full">
+                <img src="defensive.jpg" alt="Integration 1" class="w-24 h-24 mb-4 rounded-full">
                 <h3 class="text-2xl font-semibold mb-2">Integration 1</h3>
                 <p class="text-gray-700">Seamlessly integrate various security systems and tools to enhance overall efficiency.</p>
             </div>
             <div class="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                <img src="https://via.placeholder.com/150" alt="Integration 2" class="w-24 h-24 mb-4 rounded-full">
+                <img src="defensive1.jpg" alt="Integration 2" class="w-24 h-24 mb-4 rounded-full">
                 <h3 class="text-2xl font-semibold mb-2">Integration 2</h3>
                 <p class="text-gray-700">Optimize your system integrations with advanced strategies and tools.</p>
             </div>
             <div class="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                <img src="https://via.placeholder.com/150" alt="Integration 3" class="w-24 h-24 mb-4 rounded-full">
+                <img src="defensive2.jpg" alt="Integration 3" class="w-24 h-24 mb-4 rounded-full">
                 <h3 class="text-2xl font-semibold mb-2">Integration 3</h3>
                 <p class="text-gray-700">Implement automated processes to reduce manual tasks and improve efficiency.</p>
             </div>
             <div class="bg-gray-200 p-6 rounded-lg shadow-lg flex flex-col items-center transition-transform duration-300 hover:scale-105">
-                <img src="https://via.placeholder.com/150" alt="Integration 4" class="w-24 h-24 mb-4 rounded-full">
+                <img src="defensive3.jpg" alt="Integration 4" class="w-24 h-24 mb-4 rounded-full">
                 <h3 class="text-2xl font-semibold mb-2">Integration 4</h3>
                 <p class="text-gray-700">Enhance your system's capabilities through smart integrations and automation.</p>
             </div>
@@ -225,11 +239,11 @@
 </section>
 
     <!-- Call to Action Section -->
-    <section id="cta" class="py-16 bg-primary-custom text-white text-center">
+    <section id="cta" class="py-16 bg-black text-white text-center">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-4">Ready to Secure Your Systems?</h2>
             <p class="text-lg mb-8">Contact us to learn more about our offensive and defensive cybersecurity strategies tailored to your needs.</p>
-            <a href="mailto:info@yourcompany.com" class="button-custom">Get In Touch</a>
+           <button id="btn"> <a href="contactus.html" class="button-custom">Get In Touch</a></button>
         </div>
     </section>
     <div id="footer"></div>

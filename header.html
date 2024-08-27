@@ -1,142 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Header</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Animate.css</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the mobile menu */
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #019cde;
+            border: 1px solid #013088;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            z-index: 10;
+           
+            overflow-y: auto; /* Allow scrolling within dropdown */
+        }
+        .dropdown-menu.show {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background-color: #013088;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            animation: slideInDown 2.3s;
+        }
+        @keyframes slideInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #services-dropdown, #offensive-dropdown {
+    display: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom CSS */
-.group:hover .dropdown-menu,
-.group:hover .dropdown-menu .dropdown-submenu {
-  display: block;
+
+#services-dropdown, #offensive-dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%; /* Adjust based on where you want the dropdown to appear */
+    transition: opacity 0.3s ease;
 }
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+
+#mobile-menu {
+    transform: translateX(-100%);
 }
-  </style>
+
+#mobile-menu.open {
+    transform: translateX(0);
+}
+#services-dropdown, #offensive-dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 100%; /* Adjust based on where you want the dropdown to appear */
+            width: 100%;
+            transition: opacity 0.3s ease;
+            background: #019cde;
+            border: 1px solid #013088;
+            border-radius: 0.5rem;
+        }
+        #services-dropdown.show, #offensive-dropdown.show {
+            display: block;
+        }
+
+    </style>
 </head>
-<body class="roboto-bold">
-  <nav class="flex items-center bg-gradient-to-r from-[#019cde] via-[#019cde] to-[#013088] justify-between px-6 py-1 border-b">
-    <div class="text-white font-bold text-2xl">
-      <a href="index.html"><img src="logo1.png" class="w-18 h-16" alt="Logo" /></a>
-    </div>
-    <ul class="hidden md:flex space-x-8 text-white">
-      <li><a href="index.html">Home</a></li>
-      <li class="relative group">
-        <a href="service.html" class="block text-white">Services</a>
-        <ul class="absolute left-0 mt-1 hidden w-56 bg-[#019cde] border border-[#013088] rounded-lg group-hover:block group-hover:opacity-100">
-          <li><a href="cybersecurity.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Strategy</a></li>
-          <li><a href="cloud.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cloud Architecture Review</a></li>
-          <li><a href="SOC_assesment.html" class="block px-4 py-2 text-white hover:bg-[#013088]">SOC Maturity Assessment</a></li>
-          <li><a href="Grn.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Strategy - GRC</a></li>
-          <li><a href="operating.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Operating System</a></li>
-          <li><a href="compliance.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Compliance</a></li>
+<body>
+    <nav class="flex items-center bg-gradient-to-r from-[#001d3d] via-[#001d3d] to-[#013088] justify-between px-6 py-1 border-b">
+        <div class="text-white font-bold text-2xl">
+            <a href="index.html"><img src="logo1.png" class="w-18 h-16" alt="Logo" /></a>
+        </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-8 text-white">
+            <li><a href="index.html">Home</a></li>
+            <li class="relative dropdown">
+                <a href="service.html" class="block text-white">Services</a>
+                <ul class="absolute left-0 mt-1 w-56 bg-[#019cde] border border-[#013088] rounded-lg dropdown-menu">
+                    <li><a href="cybersecurity.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Strategy</a></li>
+                    <li><a href="cloud.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cloud Architecture Review</a></li>
+                    <li><a href="SOC_assesment.html" class="block px-4 py-2 text-white hover:bg-[#013088]">SOC Maturity Assessment</a></li>
+                    <li><a href="Grs.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Strategy - GRC</a></li>
+                    <li><a href="operating.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Cybersecurity Operating System</a></li>
+                    <li><a href="compliance.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Compliance</a></li>
+                </ul>
+            </li>
+            <li class="relative dropdown">
+                <a href="offensive&defensive.html" class="block text-white">Offensive & Defensive</a>
+                <ul class="absolute left-0 mt-2 w-56 bg-[#019cde] border border-[#013088] rounded-lg dropdown-menu">
+                    <li><a href="red-teaming.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Red Teaming</a></li>
+                    <li><a href="application.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Comprehensive Application Security</a></li>
+                    <li><a href="data-integration.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Data Integration</a></li>
+                </ul>
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
         </ul>
-      </li>
-      <li class="relative group">
-        <a href="offensive&defensive.html" class="block text-white">Offensive & Defensive</a>
-        <ul class="absolute left-0 mt-2 hidden w-56 bg-[#019cde] border border-[#013088] rounded-lg group-hover:block group-hover:opacity-100">
-          <li><a href="red-teaming.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Red Teaming</a></li>
-          <li><a href="application.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Comprehensive Application Security</a></li>
-          <li><a href="data-integration.html" class="block px-4 py-2 text-white hover:bg-[#013088]">Data Integration</a></li>
-        </ul>
-      </li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contactus.html">Contact Us</a></li>
-    </ul>
-    <div class="hidden md:flex space-x-4">
-      <button class="bg-[#019cde] text-white px-4 py-2 rounded">Experiencing a Breach?</button>
-      <button class="bg-[#019cde] text-white px-4 py-2 rounded">Talk to an Expert</button>
-    </div>
-    <div class="md:hidden flex items-center">
-      <button id="menu-toggle" class="text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-  </nav>
-  
-    
-    
+        <!-- Desktop Buttons -->
+        <div class="hidden md:flex space-x-4">
+            <button class="bg-[#019cde] text-white px-4 py-2 rounded">Experiencing a Breach?</button>
+            <button class="bg-[#019cde] text-white px-4 py-2 rounded">Talk to an Expert</button>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed right-0 top-0 h-full w-2/3 bg-[#013088] p-6 z-50 hidden peer-checked:block">
-      <div class="flex justify-end">
-        <label for="menu-toggle" class="text-white text-2xl cursor-pointer">&times;</label>
-      </div>
-      <ul class="space-y-4 text-white">
-        
-        <li>
-          <!-- Dropdown for Services -->
-          <input type="checkbox" id="services-toggle" class="hidden peer">
-          <label for="services-toggle" class="w-full text-left flex items-center justify-between cursor-pointer">
-          <a href="service.html">Services </a>  
-            <span class="px-2 py-1 rounded border border-gray-200 bg-[#013088] text-white shadow-lg">+</span>
-          </label>
-          <ul id="services-dropdown" class="hidden peer-checked:block pl-4 mt-2 space-y-2">
-            <li class="font-xs text-sm font-sans"><a href="cybersecurity.html">Cybersecurity Strategy</a></li>
-            <li class="font-xs text-sm font-sans"><a href="cloud.html">Cloud Architecture Review</a></li>
-            <li class="font-xs text-sm font-sans"><a href="SOC_assesment.html">SOC Maturity Assessment</a></li>
-            <li class="font-xs text-sm font-sans"><a href="Grn.html">Cybersecurity Strategy - GRC</a></li>
-            <li class="font-xs text-sm font-sans"><a href="operating.html">Cybersecurity Operating Model</a></li>
-            <li class="font-xs text-sm font-sans"><a href="compliance.html">Compliance</a></li>
-          </ul>
-        </li>
-        <li>
-          <!-- Dropdown for Offensive & Defensive -->
-          <input type="checkbox" id="offensive-toggle" class="hidden peer">
-          <label for="offensive-toggle" class="w-full text-left flex items-center justify-between cursor-pointer">
-            <a href="service.html">Offensive & Defensive</a> 
-            <span class="px-2 py-1 rounded border border-gray-200 bg-[#013088] text-white shadow-lg">+</span>
-          </label>
-          <ul id="services-dropdown1" class="hidden peer-checked:block pl-4 mt-2 space-y-2">
-            <li class="font-xs text-sm font-sans"><a href="red-teaming.html">Red Teaming</a></li>
-            <li class="font-xs text-sm font-sans"><a href="application.html">Comprehensive Application Security</a></li>
-            <li class="font-xs text-sm font-sans"><a href="data-integration.html">Data Integration</a></li>
-          </ul>
-        </li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-64 bg-[#001d3d] text-white h-full z-10">
+      <button id="mobile-menu-close" class="p-4 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+      </button>
+      <ul class="mt-4 px-4 space-y-4">
+          <li><a href="index.html" class="block py-2 hover:bg-[#013088]">Home</a></li>
+          <li class="relative">
+
+            <div class="flex justify-between items-center">
+              <Span><a href="service.html">Service</a></Span>
+                <button id="mobile-services-toggle" class=" py-2 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+                </button>
+            </div>
+              <ul id="mobile-services-dropdown" class="dropdown-menu ">
+                  <li><a href="cybersecurity.html">Cybersecurity Strategy</a></li>
+                  <li><a href="cloud.html">Cloud Architecture Review</a></li>
+                  <li><a href="SOC_assesment.html">SOC Maturity Assessment</a></li>
+                  <li><a href="Grs.html">Cybersecurity Strategy - GRC</a></li>
+                  <li><a href="operating.html">Cybersecurity Operating System</a></li>
+                  <li><a href="compliance.html">Compliance</a></li>
+              </ul>
+          </li>
+          <li class="relative">
+            <div class="flex justify-between items-center">
+              <Span><a href="offensive&defensive.html">Offensive & Defensive</a></Span>
+                <button id="mobile-offensive-toggle" class=" py-2 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+                </button>
+            </div>  
+              <ul id="mobile-offensive-dropdown" class="dropdown-menu">
+                  <li><a href="red-teaming.html">Red Teaming</a></li>
+                  <li><a href="application.html">Comprehensive Application Security</a></li>
+                  <li><a href="data-integration.html">Data Integration</a></li>
+              </ul>
+          </li>
+          <li><a href="about.html" class="block py-2 hover:bg-[#013088]">About Us</a></li>
+          <li><a href="contactus.html" class="block py-2 hover:bg-[#013088]">Contact Us</a></li>
       </ul>
-    </div>
-    
-  
+  </div>
   <script>
-    document.getElementById('menu-toggle').addEventListener('click', function () {
-   const mobileMenu = document.getElementById('mobile-menu');
-   if (mobileMenu) {
-     mobileMenu.classList.toggle('hidden');
-   } else {
-     console.error("Mobile menu element not found");
-   }
-  });
+    document.getElementById('services-toggle').addEventListener('click', function () {
+        const servicesDropdown = document.getElementById('services-dropdown');
+        servicesDropdown.classList.toggle('hidden');
+    });
+</script>
+
+  <script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenu.classList.remove('animate__slideOutLeft'); 
+          mobileMenu.classList.add('animate__slideInLeft');    
+          mobileMenu.classList.toggle('open');                 
+      });
   
-  function closeMenu() {
-   const mobileMenu = document.getElementById('mobile-menu');
-   if (mobileMenu) {
-     mobileMenu.classList.add('hidden');
-   }
-  }
+      document.getElementById('mobile-menu-close').addEventListener('click', function() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenu.classList.remove('animate__slideInLeft'); 
+          mobileMenu.classList.add('animate__slideOutLeft');   
+          setTimeout(() => mobileMenu.classList.remove('open'), 300);
+      });
   
-  function toggleDropdown(dropdownId, iconId) {
-   const dropdown = document.getElementById(dropdownId);
-   const icon = document.getElementById(iconId);
+      // document.addEventListener('DOMContentLoaded', function () {
+      //     const servicesToggle = document.getElementById('services-toggle');
+      //     const servicesDropdown = document.getElementById('services-dropdown');
+      //     const offensiveToggle = document.getElementById('offensive-toggle');
+      //     const offensiveDropdown = document.getElementById('offensive-dropdown');
   
-   if (dropdown && icon) {
-     const isHidden = dropdown.classList.toggle('hidden');
-     icon.textContent = isHidden ? '+' : '-';
-   } else {
-     console.error(`Element with id ${dropdownId} or ${iconId} not found`);
-   }
-  }
+      //     servicesToggle.addEventListener('click', function () {
+      //         servicesDropdown.classList.toggle('hidden');
+      //         servicesToggle.querySelector('path').setAttribute('d', 
+      //             servicesDropdown.classList.contains('hidden') 
+      //                 ? 'm4.5 15.75l7.5-7.5 7.5 7.5' 
+      //                 : 'm19.5 8.25-7.5 7.5-7.5-7.5'
+      //         );
+      //     });
   
+      //     offensiveToggle.addEventListener('click', function () {
+      //         offensiveDropdown.classList.toggle('hidden');
+      //         offensiveToggle.querySelector('path').setAttribute('d', 
+      //             offensiveDropdown.classList.contains('hidden') 
+      //                 ? 'm4.5 15.75l7.5-7.5 7.5 7.5' 
+      //                 : 'm19.5 8.25-7.5 7.5-7.5-7.5'
+      //         );
+      //     });
+      // });
   </script>
+  <script>
+    document.getElementById('mobile-services-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-services-dropdown').classList.toggle('show');
+        });
+
+        document.getElementById('mobile-offensive-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
+        });
+
+        // Desktop dropdowns
+        document.getElementById('services-toggle').addEventListener('click', function () {
+            document.getElementById('services-dropdown').classList.toggle('show');
+        });
+
+        document.getElementById('offensive-toggle').addEventListener('click', function () {
+            document.getElementById('offensive-dropdown').classList.toggle('show');
+        });
+
+        // Close dropdowns if clicked outside
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.relative')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(function (dropdown) {
+                    dropdown.classList.remove('show');
+                });
+            }
+        });
+</script>
+
 </body>
 </html>
