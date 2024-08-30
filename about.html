@@ -54,15 +54,33 @@ h1 {
         max-height: 500px;
     }
 }
+.hover-slide:hover {
+    color: #9f7aea; /* Keeps the hover color consistent */
+}
+.hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white; /* Text color change on hover */
+}
 </style>
 </head>
 <body class="roboto-bold bg-black">
     <div id="header"></div>
     <main class=" py-16 px-4 bg-black">
-        <nav class="text-sm mb-8 px-6 py-4 bg-gray-800 hover:bg-yellow-100 rounded-md shadow-md">
-            <a href="#" class="text-purple-400 hover:underline">Home</a>
+        <nav class="text-sm mb-8 px-6 py-4 bg-gray-800  rounded-md shadow-md">
+            <a href="index.html" class="text-purple-400  hover-bg-slide">Home</a>
             <span class="text-gray-500 mx-2">»</span>
-            <span class="text-gray-300 hover:text-gray-400">About</span>
+            <span class="text-gray-300  hover-bg-slide"><a href="about.html">About</a></span>
         </nav>
         
         <!-- Main Title and Description -->
@@ -95,11 +113,11 @@ h1 {
             <div class="flex flex-col items-center justify-center h-full">
     
                 <div class="flex flex-col items-center justify-center mt-12 px-2">
-                    <h2 class="mb-4 text-3xl font-extrabold leading-tight text-center lg:text-4xl text-white">CLIN TECHNOLOGIES</h2>
-                    <p class="text-lg text-center lg:w-8/12 text-white">Being a well-established and well-reputed service provider in the field of IT security, CLIN TECH is determined to provide all businesses with dependable security solutions at competitive rates. The foundation of this firm was led in 2012. Our dedicated teams of highly qualified and certified individuals put their best knowledge and expertise to offer top-notch security solutions that fit every client’s unique needs and preferences.</p>
-                    <p class="text-lg text-center lg:w-8/12 text-white">At CLIN TECH, we implement an advanced yet simplified approach for the management of security infrastructure and deliver high-end security services solutions to eliminate the need for a variety of stand-alone and bolt-on security devices.</p>
+                    <h2 class="mb-4 text-3xl font-extrabold leading-tight text-center lg:text-4xl text-white">CLINTECHNOLOGIES</h2>
+                    <p class="text-lg text-center lg:w-8/12 text-white">Being a well-established and well-reputed service provider in the field of IT security, CLINTECH is determined to provide all businesses with dependable security solutions at competitive rates. The foundation of this firm was led in 2012. Our dedicated teams of highly qualified and certified individuals put their best knowledge and expertise to offer top-notch security solutions that fit every client’s unique needs and preferences.</p>
+                    <p class="text-lg text-center lg:w-8/12 text-white">At CLINTECH, we implement an advanced yet simplified approach for the management of security infrastructure and deliver high-end security services solutions to eliminate the need for a variety of stand-alone and bolt-on security devices.</p>
                     <p class="text-lg text-center lg:w-8/12 text-white">Our next-generation security systems and solutions will help you run your business in a more protected and secure way. Our state-of-the-art security technologies are matchless in the industry in terms of intelligence, performance, and deployment, effectively making you able to detect, analyze, fix, and prevent all cyber and internal security threats.</p>
-                    <p class="text-lg text-center lg:w-8/12 text-white">This is what makes CLIN TECH an industry’s leading IT security service provider who can serve you the best beyond your expectations.</p>
+                    <p class="text-lg text-center lg:w-8/12 text-white">This is what makes CLINTECH an industry’s leading IT security service provider who can serve you the best beyond your expectations.</p>
                 </div>
                 <div class="grid grid-cols-1 gap-10 mt-20 lg:grid-cols-3 md:grid-cols-2">
                     <div class="flex flex-col items-center col-span-1 gap-6 px-10 py-5">
@@ -648,8 +666,8 @@ h1 {
       <section id="contact" class="bg-black text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-4">Contact With Us</h2>
-            <p class="text-lg mb-8">CLIN TECH is the fast-growing All-in-one service provider to meet all the security needs of your business. We provide top-notch security services, solutions, and training through our best-in-class delivery processes.</p>
-           <button id="btn"><a href="contactus.html"   class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors">Contact Us</a></button> 
+            <p class="text-lg mb-8">CLINTECH is the fast-growing All-in-one service provider to meet all the security needs of your business. We provide top-notch security services, solutions, and training through our best-in-class delivery processes.</p>
+           <button id="btn"><a href="contactus.html"   class="hover-bg-slide bg-white text-blue-600 font-bold py-2 px-6 rounded-lg ">Contact Us</a></button> 
         </div>
     </section>
       <div id="footer"></div>
