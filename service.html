@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
-    
+ 
 <style>.roboto-thin {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -94,7 +94,24 @@ h1 {
   font-weight: 900;
   font-style: italic;
 }
+.hover-slide:hover {
+    color: #9f7aea; /* Keeps the hover color consistent */
+}
+.hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
 
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white; /* Text color change on hover */
+}
 </style>
 </head>
 <body class="bg-black roboto-bold">
@@ -136,10 +153,11 @@ h1 {
 <section>
   <div class="bg-black text-white min-h-screen p-8">
       <!-- Breadcrumb -->
-      <nav class="text-sm mb-8 px-6 py-4 bg-gray-800 hover:bg-yellow-100 rounded-md shadow-md">
-        <a href="#" class="text-purple-400 hover:underline">Home</a>
+      <nav class="text-sm mt-8 px-24 container mx-auto py-4 bg-gray-800 rounded-md shadow-md">
+        <a href="index.html" class="text-purple-400 hover-bg-slide">Home</a>
         <span class="text-gray-500 mx-2">»</span>
-        <span class="text-gray-300 hover:text-gray-400">Services</span>
+        <span class="text-gray-400 hover-bg-slide"><a href="service.html">Services</a></span>
+      
     </nav>
     
     <!-- Main Title and Description -->
@@ -266,13 +284,13 @@ h1 {
   <div class="text-center space-y-4">
       <p class="text-white font-bold">Cutting-Edge Cybersecurity and AI Solutions</p>
       <h1 class="text-4xl font-bold text-white">The Pinnacle of Security and Intelligence</h1>
-      <button class="mt-4 bg-lime-500 text-black font-semibold px-6 py-2 rounded-lg hover:bg-lime-600">
+      <button class="mt-4 bg-lime-500 text-black font-semibold px-6 py-2 rounded-lg hover-bg-slide">
           Get Started
       </button>
   </div>
 </div>
 </section>
-  <section class="bg-black">
+  <!-- <section class="bg-black">
     <div class="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
       <div class="max-w-7xl items-end justify-between sm:flex sm:pe-6 lg:pe-8">
         <h2 class="max-w-xl text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -561,7 +579,7 @@ h1 {
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section class="bg-black">
   <div class="container  relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
       <h2 class="mb-1 text-3xl font-extrabold leading-tight text-white">Services</h2>
