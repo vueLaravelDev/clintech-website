@@ -15,16 +15,43 @@
         .hover-scale:hover {
             transform: scale(1.05);
         }
+        .hover-slide:hover {
+    color: #9f7aea; /* Keeps the hover color consistent */
+        }
+        .hover-bg-slide {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            padding: 4px 8px;
+            display: inline-block;
+            background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+            background-size: 240%;
+            transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+        }
+
+        .hover-bg-slide:hover {
+            background-position: 100%;
+            color: white; /* Text color change on hover */
+        }
     </style>
 </head>
 <body class="roboto-bold bg-black">
   <div id="header"></div>
+  <div class=" px-1">
+    <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+        <a href="index.html" class="text-purple-400  px-1 py-1 rounded hover-bg-slide">Home</a>
+        <span class="text-gray-500 mx-1">»</span>
+        <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+        <span class="text-gray-500 mx-1">»</span>
+        <a href="operating.html" class="text-gray-400  px-1 py-1 rounded hover-bg-slide">Cybersecurity Operating Model</a>
+    </nav>
+</div>
     <!-- Hero Section -->
     <section class="bg-black text-white py-20 text-center">
         <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-extrabold mb-4">Cybersecurity Operating Model</h1>
+            <h1 class="text-5xl text-[#019cde] font-extrabold mb-4">Cybersecurity Operating Model</h1>
             <p class="text-xl mb-8">Building a robust cybersecurity framework to protect your organization's assets and data.</p>
-            <a href="#overview" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors">Learn More</a>
+            <a href="#" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors">Learn More</a>
         </div>
     </section>
 
@@ -38,7 +65,7 @@
                 <div class="md:w-1/2 md:pl-8">
                     <h2 class="text-3xl font-bold mb-4 text-white">Overview</h2>
                     <p class="text-gray-700 mb-6">Our Cybersecurity Operating Model integrates best practices, frameworks, and technologies to ensure comprehensive protection against cyber threats. We provide a structured approach to manage risks, respond to incidents, and maintain compliance.</p>
-                    <a href="#framework" class="bg-[#001d3d] text-white font-bold py-2 px-4 rounded-lg hover:bg-[#001d3d] transition-colors">Explore Framework</a>
+                    <a href="#" class="bg-[#001d3d] text-white font-bold py-2 px-4 rounded-lg hover-bg-slide">Explore Framework</a>
                 </div>
             </div>
         </div>
@@ -51,17 +78,17 @@
                 <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
                     <h3 class="text-2xl font-bold mb-4">Risk Management</h3>
                     <p class="text-gray-600 mb-4">Identify, assess, and mitigate risks to safeguard your organization's critical assets. Our approach ensures that potential threats are managed effectively.</p>
-                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
                     <h3 class="text-2xl font-bold mb-4">Incident Response</h3>
                     <p class="text-gray-600 mb-4">Prepare for and respond to cybersecurity incidents with a clear, actionable plan. We provide support for quick recovery and minimizing impact.</p>
-                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
                     <h3 class="text-2xl font-bold mb-4">Compliance & Governance</h3>
                     <p class="text-gray-600 mb-4">Ensure adherence to relevant regulations and standards. Our services help you stay compliant and maintain effective governance.</p>
-                    <a href="#" class="text-blue-600 hover:underline">Read More</a>
+                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
                 </div>
             </div>
         </div>
@@ -92,38 +119,12 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">What Our Clients Say</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
-                        <blockquote class="text-gray-700 mb-4">
-                            <p class="text-lg italic">"The cybersecurity model provided by this team has transformed our approach to managing risks and responding to incidents. Their expertise is unmatched."</p>
-                        </blockquote>
-                        <p class="font-bold">Jane Doe</p>
-                        <p class="text-gray-600">CEO, Example Corp</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg h-52">
-                        <blockquote class="text-gray-700 mb-4">
-                            <p class="text-lg italic">"Their proactive approach to threat detection and compliance has greatly enhanced our security posture. Highly recommended!"</p>
-                        </blockquote>
-                        <p class="font-bold">John Smith</p>
-                        <p class="text-gray-600">CISO, Another Company</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Contact Section -->
     <section id="contact" class="bg-black text-white py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
             <p class="text-lg mb-8">Have questions or need more information? Contact us to discuss how our Cybersecurity Operating Model can benefit your organization.</p>
-            <a href="contactus.html" class="bg-[#001d3d] text-white font-bold py-2 px-6 rounded-md hover:bg-[#001d3d] transition-colors">Contact Us</a>
+            <a href="contactus.html" class="bg-[#001d3d] text-white font-bold py-2 px-6 rounded-md hover-bg-slide ">Contact Us</a>
         </div>
     </section>
     <footer class="bg-gradient-to-r from-[#019cde] via-[#019cde] to-[#013088]   py-14 px-16 font-sans tracking-wide relative">
