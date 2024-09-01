@@ -13,16 +13,44 @@
         .card-hover:hover {
             transform: scale(1.05);
         }
+        .hover-slide:hover {
+            color: #9f7aea; 
+        }
+        .hover-bg-slide {
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            padding: 4px 8px;
+            display: inline-block;
+            background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+            background-size: 240%;
+            transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+        }
+
+        .hover-bg-slide:hover {
+            background-position: 100%;
+            color: white;
+        }
     </style>
 </head>
-<body>
+<body class="bg-black"> 
   <div id="header"></div>
 <!-- Hero Section -->
+
+<div class=" px-1" >
+    <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+     <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
+     <span class="text-gray-500 mx-2">»</span>
+     <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+     <span class="text-gray-500 mx-2">»</span>
+     <a href="data-integration.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Data Integration</a>
+   </nav>
+</div>
 <section class="bg-black py-20 text-white text-center">
     <div class="container mx-auto px-6">
-        <h1 class="text-5xl font-bold mb-4">Seamless Data Integration</h1>
+        <h1 class="text-5xl font-bold mb-4 text-[#019cde]">Seamless Data Integration</h1>
         <p class="text-lg mb-8">Integrate your data effortlessly with our innovative solutions and make informed decisions faster.</p>
-        <a href="#features" class="bg-[#001d3d] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#001d3d] transition-colors">Explore Features</a>
+        <a href="#" class="bg-[#001d3d] text-white px-6 py-3 rounded-full font-semibold hover-bg-slide">Explore Features</a>
     </div>
 </section>
 
@@ -57,35 +85,39 @@
             </div>
             <div class="w-full md:w-1/2 p-6">
                 <h3 class="text-2xl font-semibold mb-4">Step-by-Step Approach</h3>
-                <p>Our process involves careful planning and execution to ensure seamless data integration. We follow a structured approach that includes analysis, design, implementation, and ongoing support.</p>
+                <p class="mb-4">Our data integration process is designed to ensure a smooth and effective integration of your data systems. We adhere to a structured methodology that includes the following key phases:</p>
+                <p class="mb-4">We start by assessing your current systems and understanding your integration needs. This involves evaluating existing data sources, identifying integration points, and understanding your business requirements.</p>
+                <p class="mb-4">Our team designs a tailored integration plan that outlines the architecture, data flow, and technologies required. This phase includes creating detailed design documents and planning the implementation strategy.</p>
             </div>
         </div>
     </div>
 </section>
 
+
 <!-- Customer Success Stories Section -->
-<section id="success" class="py-16 bg-black">
+<section id="integration" class="py-16 bg-black">
     <div class="container mx-auto px-6">
-        <h2 class="text-4xl font-bold text-center text-white mb-8">Customer Success Stories</h2>
+        <h2 class="text-4xl font-bold text-center text-white mb-8">Data Integration Solutions</h2>
         <div class="flex flex-col md:flex-row md:space-x-8">
             <div class="bg-white p-8 rounded-lg shadow-lg mb-8 md:mb-0 md:w-1/3">
-                <p class="text-lg mb-4">“Thanks to the seamless integration, our data processes are now much more efficient and reliable. The impact on our decision-making has been remarkable.”</p>
-                <p class="font-semibold">Jane Doe</p>
-                <p class="text-gray-600">Chief Data Officer, Company A</p>
+                <h3 class="text-2xl font-semibold mb-4">Streamlined Data Processes</h3>
+                <p class="text-lg mb-4">Our data integration solutions provide seamless connectivity between disparate systems, ensuring that data flows smoothly across your organization. This integration helps in reducing manual data entry, minimizing errors, and ensuring that your data is up-to-date and accurate.</p>
+                <p class="text-gray-600">Integration Type: System Connectivity</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg mb-8 md:mb-0 md:w-1/3">
-                <p class="text-lg mb-4">“The integration solution provided was exactly what we needed to connect our disparate systems and improve our data accuracy.”</p>
-                <p class="font-semibold">John Smith</p>
-                <p class="text-gray-600">IT Manager, Company B</p>
+                <h3 class="text-2xl font-semibold mb-4">Enhanced Data Accuracy</h3>
+                <p class="text-lg mb-4">By integrating your data sources, you can eliminate data silos and ensure that all your systems are working with the same information. This leads to improved data accuracy and consistency, which is crucial for making informed business decisions.</p>
+                <p class="text-gray-600">Integration Type: Data Synchronization</p>
             </div>
             <div class="bg-white p-8 rounded-lg shadow-lg md:w-1/3">
-                <p class="text-lg mb-4">“Exceptional support and a smooth integration process. Our operations have never been more streamlined.”</p>
-                <p class="font-semibold">Emily Johnson</p>
-                <p class="text-gray-600">Operations Lead, Company C</p>
+                <h3 class="text-2xl font-semibold mb-4">Optimized Operational Efficiency</h3>
+                <p class="text-lg mb-4">Our integration solutions are designed to streamline your business processes by automating data flows and reducing the need for manual intervention. This optimization leads to significant time and cost savings, allowing your team to focus on more strategic tasks.</p>
+                <p class="text-gray-600">Integration Type: Process Automation</p>
             </div>
         </div>
     </div>
 </section>
+
 
 <!-- Integration Tools Section -->
 <section id="tools" class="py-16 bg-black">
@@ -136,7 +168,7 @@
                     <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <textarea name="message" rows="4" placeholder="Your Message" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <button type="submit" class=" bg-[#013088] px-6 py-3 text-white rounded-lg font-semibold hover:bg-[#013088] transition-colors">Send Message</button>
+                    <button type="submit" class=" bg-[#013088] px-6 py-3 text-white rounded-lg font-semibold hover-bg-slide">Send Message</button>
                 </form>
             </div>
         </div>
