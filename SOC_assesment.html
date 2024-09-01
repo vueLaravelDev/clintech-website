@@ -1,231 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOC Maturity Assessment</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" defer></script>
-<style>
-    .hover-bg-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-    background-size: 240%;
-    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-}
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"
+      defer
+    ></script>
+    <style>
+      .hover-slide:hover {
+        color: #9f7aea;
+      }
+      .hover-bg-slide {
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+        padding: 4px 8px;
+        display: inline-block;
+        background: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          #9f7aea 50%
+        );
+        background-size: 240%;
+        transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+      }
 
-.hover-bg-slide:hover {
-    background-position: 100%;
-    color: white;
-}
-@media (max-width: 768px) {
-  nav {
-    text-align: center;
-  }
+      .hover-bg-slide:hover {
+        background-position: 100%;
+        color: white;
+      }
+      @media (max-width: 768px) {
+        nav {
+          text-align: center;
+        }
 
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
+        nav a {
+          display: block;
+          margin: 0.5rem 0;
+        }
 
-  nav span {
-    display: inline;
-    margin: 0 0.5rem;
-  }
-}
-</style>
-</head>
-<body class="bg-black text-gray-900 roboto-bold">
+        nav span {
+          display: inline;
+          margin: 0 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-gray-900 roboto-bold">
     <!-- Header Section -->
     <div id="header"></div>
-    
+
     <section>
-        <div class=" px-4">
-        <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
-            <a href="index.html" class="text-purple-400  px-1 py-1 rounded hover-bg-slide">Home</a>
-            <span class="text-gray-500 mx-1">»</span>
-            <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
-            <span class="text-gray-500 mx-1">»</span>
-            <a href="SOC_assesment.html" class="text-gray-400  px-1 py-1 rounded hover-bg-slide">SOC Maturity Assessment</a>
+      <div class="px-4">
+        <nav
+          class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center"
+        >
+          <a
+            href="index.html"
+            class="text-purple-400 px-1 py-1 rounded hover-bg-slide"
+            >Home</a
+          >
+          <span class="text-gray-500 mx-1">»</span>
+          <a
+            href="service.html"
+            class="text-gray-400 px-2 py-1 rounded hover-bg-slide"
+            >Services</a
+          >
+          <span class="text-gray-500 mx-1">»</span>
+          <a
+            href="SOC_assesment.html"
+            class="text-gray-400 px-1 py-1 rounded hover-bg-slide"
+            >SOC Maturity Assessment</a
+          >
         </nav>
-    </div>
-        <div class="bg-black text-gray-900  p-8">
-            <!-- Breadcrumb -->
-           
-            
-            <!-- Main Title and Description -->
-            <div class="flex flex-col md:flex-row md:justify-between mx-auto container">
-              <div>
-                <h1 class="text-4xl font-bold text-[#019cde] mt-4 text-center">SOC Maturity Assessment</h1>
-                <p class="text-lg text-white text-center px-4 mt-2">
-                    The ADVISE framework provides a comprehensive approach to cybersecurity, covering every facet from initial assessment to long-term evolution. It's a thorough and holistic methodology for guiding organizations through their cybersecurity journey.
-                  </p>  
-            </div>
-             
-            </div>
-          
-            <!-- Service Cards Section -->
-            <div class="mt-16 mx-auto container">
-              <h3 class="text-3xl font-bold text-white mb-8">Strategic</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Card 1 -->
-                <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
-                  <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center">
-                      <!-- Icon -->
-                    </div>
-                    <h4 class="text-xl font-semibold text-white ml-4">Cybersecurity Strategy</h4>
-                  </div>
-                  <p class="text-gray-400">Future-proof your business: cybersecurity strategy powered by AI</p>
-                  <a href="#" class="text-purple-400 hover:underline mt-4 inline-block">Learn more →</a>
+      </div>
+      <div class="bg-black text-gray-900 p-8">
+        <!-- Breadcrumb -->
+
+        <!-- Main Title and Description -->
+        <div
+          class="flex flex-col md:flex-row md:justify-between mx-auto container"
+        >
+          <div>
+            <h1 class="text-4xl font-bold text-[#019cde] mt-4 text-center">
+              SOC Maturity Assessment
+            </h1>
+            <p class="text-lg text-white text-center px-4 mt-2">
+              The ADVISE framework provides a comprehensive approach to
+              cybersecurity, covering every facet from initial assessment to
+              long-term evolution. It's a thorough and holistic methodology for
+              guiding organizations through their cybersecurity journey.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service Cards Section -->
+        <div class="mt-16 mx-auto container">
+          <h3 class="text-3xl font-bold text-white mb-8">Strategic</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center"
+                >
+                  <!-- Icon -->
                 </div>
-          
-                <!-- Card 2 -->
-                <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
-                  <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center">
-                      <!-- Icon -->
-                    </div>
-                    <h4 class="text-xl font-semibold text-white ml-4">Cloud Architecture Review</h4>
-                  </div>
-                  <p class="text-gray-400">Optimize & secure your cloud with AI-powered strategy</p>
-                  <a href="#" class="text-purple-400 hover:underline mt-4 inline-block">Learn more →</a>
-                </div>
-          
-                <!-- Card 3 -->
-                <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
-                  <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center">
-                      <!-- Icon -->
-                    </div>
-                    <h4 class="text-xl font-semibold text-white ml-4">SOC Maturity Assessment</h4>
-                  </div>
-                  <p class="text-gray-400">Unlock hidden potential for proactive defense</p>
-                  <a href="#" class="text-purple-400 hover:underline mt-4 inline-block">Learn more →</a>
-                </div>
-          
+                <h4 class="text-xl font-semibold text-white ml-4">
+                  Cybersecurity Strategy
+                </h4>
               </div>
+              <p class="text-gray-400">
+                Future-proof your business: cybersecurity strategy powered by AI
+              </p>
+              <a
+                href="#"
+                class="text-purple-400 hover:underline mt-4 inline-block"
+                >Learn more →</a
+              >
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center"
+                >
+                  <!-- Icon -->
+                </div>
+                <h4 class="text-xl font-semibold text-white ml-4">
+                  Cloud Architecture Review
+                </h4>
+              </div>
+              <p class="text-gray-400">
+                Optimize & secure your cloud with AI-powered strategy
+              </p>
+              <a
+                href="#"
+                class="text-purple-400 hover:underline mt-4 inline-block"
+                >Learn more →</a
+              >
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-[#013088] p-6 rounded-lg shadow-lg">
+              <div class="flex items-center mb-4">
+                <div
+                  class="w-12 h-12 bg-[#019cde] rounded-full flex items-center justify-center"
+                >
+                  <!-- Icon -->
+                </div>
+                <h4 class="text-xl font-semibold text-white ml-4">
+                  SOC Maturity Assessment
+                </h4>
+              </div>
+              <p class="text-gray-400">
+                Unlock hidden potential for proactive defense
+              </p>
+              <a
+                href="#"
+                class="text-purple-400 hover:underline mt-4 inline-block"
+                >Learn more →</a
+              >
             </div>
           </div>
-       </section>
+        </div>
+      </div>
+    </section>
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
+      <!-- Overview Section -->
+      <section id="overview" class="mb-12">
+        <h2 class="text-2xl text-white font-bold mb-4">Overview</h2>
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <p class="text-lg">
+            The SOC Maturity Assessment is designed to evaluate the
+            effectiveness and readiness of your Security Operations Center
+            (SOC). This assessment provides insights into your SOC’s
+            capabilities, processes, and technologies, helping you identify
+            areas for improvement and align with industry best practices.
+          </p>
+        </div>
+      </section>
 
-        <!-- Overview Section -->
-        <section id="overview" class="mb-12">
-            <h2 class="text-2xl text-white font-bold mb-4">Overview</h2>
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <p class="text-lg">
-                    The SOC Maturity Assessment is designed to evaluate the effectiveness and readiness of your Security Operations Center (SOC). This assessment provides insights into your SOC’s capabilities, processes, and technologies, helping you identify areas for improvement and align with industry best practices.
-                </p>
-            </div>
-        </section>
+      <!-- Assessment Section -->
+      <section id="assessment" class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Assessment Areas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Assessment Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Incident Response</h3>
+            <p class="text-gray-700">
+              Evaluate the processes and effectiveness of your incident response
+              strategy. Ensure timely detection, response, and mitigation of
+              security incidents.
+            </p>
+          </div>
+          <!-- Assessment Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Threat Intelligence</h3>
+            <p class="text-gray-700">
+              Assess your SOC’s ability to gather, analyze, and act on threat
+              intelligence. Focus on the integration of threat data into your
+              security operations.
+            </p>
+          </div>
+          <!-- Assessment Card 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Monitoring and Detection</h3>
+            <p class="text-gray-700">
+              Review the tools and processes in place for monitoring and
+              detecting security threats. Ensure comprehensive visibility and
+              effective alerting mechanisms.
+            </p>
+          </div>
+          <!-- Assessment Card 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Compliance and Reporting</h3>
+            <p class="text-gray-700">
+              Examine your SOC’s adherence to regulatory requirements and
+              standards. Evaluate the effectiveness of your reporting and
+              documentation processes.
+            </p>
+          </div>
+          <!-- Assessment Card 5 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Training and Awareness</h3>
+            <p class="text-gray-700">
+              Assess the training programs and awareness initiatives in place
+              for SOC personnel. Ensure ongoing education and skill development.
+            </p>
+          </div>
+          <!-- Assessment Card 6 -->
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Technology and Tools</h3>
+            <p class="text-gray-700">
+              Review the technology stack and tools used by your SOC. Evaluate
+              their effectiveness and integration within your security
+              infrastructure.
+            </p>
+          </div>
+        </div>
+      </section>
 
-        <!-- Assessment Section -->
-        <section id="assessment" class="mb-12">
-            <h2 class="text-2xl font-bold text-white mb-4">Assessment Areas</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Assessment Card 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Incident Response</h3>
-                    <p class="text-gray-700">
-                        Evaluate the processes and effectiveness of your incident response strategy. Ensure timely detection, response, and mitigation of security incidents.
-                    </p>
-                </div>
-                <!-- Assessment Card 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Threat Intelligence</h3>
-                    <p class="text-gray-700">
-                        Assess your SOC’s ability to gather, analyze, and act on threat intelligence. Focus on the integration of threat data into your security operations.
-                    </p>
-                </div>
-                <!-- Assessment Card 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Monitoring and Detection</h3>
-                    <p class="text-gray-700">
-                        Review the tools and processes in place for monitoring and detecting security threats. Ensure comprehensive visibility and effective alerting mechanisms.
-                    </p>
-                </div>
-                <!-- Assessment Card 4 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Compliance and Reporting</h3>
-                    <p class="text-gray-700">
-                        Examine your SOC’s adherence to regulatory requirements and standards. Evaluate the effectiveness of your reporting and documentation processes.
-                    </p>
-                </div>
-                <!-- Assessment Card 5 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Training and Awareness</h3>
-                    <p class="text-gray-700">
-                        Assess the training programs and awareness initiatives in place for SOC personnel. Ensure ongoing education and skill development.
-                    </p>
-                </div>
-                <!-- Assessment Card 6 -->
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">Technology and Tools</h3>
-                    <p class="text-gray-700">
-                        Review the technology stack and tools used by your SOC. Evaluate their effectiveness and integration within your security infrastructure.
-                    </p>
-                </div>
+      <!-- Results Section -->
+      <section id="results" class="mb-12">
+        <h2 class="text-2xl text-white font-bold mb-4">Assessment Results</h2>
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Summary</h3>
+          <p class="text-lg">
+            Based on the assessment, here is a summary of the current maturity
+            level of your SOC:
+          </p>
+          <div class="mt-6">
+            <div class="flex items-center mb-4">
+              <div class="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+              <p>High Maturity in Incident Response and Threat Intelligence.</p>
             </div>
-        </section>
+            <div class="flex items-center mb-4">
+              <div class="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
+              <p>
+                Moderate Maturity in Monitoring and Detection and Compliance.
+              </p>
+            </div>
+            <div class="flex items-center mb-4">
+              <div class="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
+              <p>Low Maturity in Training and Technology.</p>
+            </div>
+          </div>
+          <!-- <a href="#" class="text-blue-600 hover:underline mt-4 block">Download Full Report</a> -->
+        </div>
+      </section>
 
-        <!-- Results Section -->
-        <section id="results" class="mb-12">
-            <h2 class="text-2xl text-white font-bold mb-4">Assessment Results</h2>
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-4">Summary</h3>
-                <p class="text-lg">
-                    Based on the assessment, here is a summary of the current maturity level of your SOC:
-                </p>
-                <div class="mt-6">
-                    <div class="flex items-center mb-4">
-                        <div class="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
-                        <p>High Maturity in Incident Response and Threat Intelligence.</p>
-                    </div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-4 h-4 bg-yellow-500 rounded-full mr-2"></div>
-                        <p>Moderate Maturity in Monitoring and Detection and Compliance.</p>
-                    </div>
-                    <div class="flex items-center mb-4">
-                        <div class="w-4 h-4 bg-red-500 rounded-full mr-2"></div>
-                        <p>Low Maturity in Training and Technology.</p>
-                    </div>
-                </div>
-                <!-- <a href="#" class="text-blue-600 hover:underline mt-4 block">Download Full Report</a> -->
+      <!-- Contact Section -->
+      <section id="contact" class="mb-12">
+        <h2 class="text-2xl font-bold text-white mb-4">Contact Us</h2>
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+          <p class="text-lg mb-4">
+            For more information or to schedule a detailed SOC assessment,
+            please reach out to us through the following contact details:
+          </p>
+          <div class="flex flex-col md:flex-row md:space-x-8">
+            <div class="flex items-center mb-4 md:mb-0">
+              <i class="fas fa-phone-alt text-blue-600 mr-3"></i>
+              <p class="text-lg">+92307111229</p>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="mb-12">
-            <h2 class="text-2xl font-bold text-white mb-4">Contact Us</h2>
-            <div class="bg-white p-8 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
-                <p class="text-lg mb-4">For more information or to schedule a detailed SOC assessment, please reach out to us through the following contact details:</p>
-                <div class="flex flex-col md:flex-row md:space-x-8">
-                    <div class="flex items-center mb-4 md:mb-0">
-                        <i class="fas fa-phone-alt text-blue-600 mr-3"></i>
-                        <p class="text-lg">+92307111229</p>
-                    </div>
-                    <div class="flex items-center mb-4 md:mb-0">
-                        <i class="fas fa-envelope text-blue-600 mr-3"></i>
-                        <p class="text-lg">Admin-hr@clintech.co</p>
-                    </div>
-                    <div class="flex items-center">
-                        <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
-                        <p class="text-lg">Faisalabad, Punjab, Pakistan</p>
-                    </div>
-                </div>
+            <div class="flex items-center mb-4 md:mb-0">
+              <i class="fas fa-envelope text-blue-600 mr-3"></i>
+              <p class="text-lg">Admin-hr@clintech.co</p>
             </div>
-        </section>
+            <div class="flex items-center">
+              <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
+              <p class="text-lg">Faisalabad, Punjab, Pakistan</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-<!-- Key Metrics Section -->
-<!-- <section id="metrics" class="mb-12 mx-auto container">
+    <!-- Key Metrics Section -->
+    <!-- <section id="metrics" class="mb-12 mx-auto container">
     <h2 class="text-2xl font-bold text-white mb-4">Key Metrics</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       
@@ -261,8 +339,8 @@
         </div>
     </div>
 </section> -->
-<!-- Case Studies Section -->
-<!-- <section id="case-studies" class="mb-12 mx-auto container">
+    <!-- Case Studies Section -->
+    <!-- <section id="case-studies" class="mb-12 mx-auto container">
     <h2 class="text-2xl font-bold text-white mb-4">Case Studies</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     
@@ -301,16 +379,16 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-         <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
-          });
-          </script> 
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $("#header").load("header.html");
+        $("#footer").load("footer.html");
+      });
+    </script>
+  </body>
 </html>

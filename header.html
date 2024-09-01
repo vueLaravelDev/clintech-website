@@ -20,7 +20,6 @@ body {
 h1 {
     font-family: 'Montserrat', sans-serif !important  ;
 }
-        /* Custom styles for the mobile menu */
         #mobile-menu {
             transform: translateX(-100%);
             transition: transform 0.5s ease-in-out;
@@ -74,7 +73,6 @@ h1 {
 #services-dropdown, #offensive-dropdown {
     position: absolute;
     left: 0;
-    top: 100%; /* Adjust based on where you want the dropdown to appear */
     transition: opacity 0.3s ease;
 }
 
@@ -157,28 +155,29 @@ h1 {
       <ul class="mt-4 px-4 space-y-4">
           <li><a href="index.html" class="block py-2 hover:bg-[#013088]">Home</a></li>
           <li class="relative">
-
             <div class="flex justify-between items-center">
-              <Span><a href="service.html">Service</a></Span>
-                <button id="mobile-services-toggle" class=" py-2 "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                </svg>
+                <span><a href="service.html">Service</a></span>
+                <button id="mobile-services-toggle" class="py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
                 </button>
             </div>
-              <ul id="mobile-services-dropdown" class="dropdown-menu ">
-                  <li><a href="cybersecurity.html">Cybersecurity Strategy</a></li>
-                  <li><a href="it_solutions.html">IT Security Solutions</a></li>
-                  <li><a href="SOC_assesment.html">SOC Maturity Assessment</a></li>
-                  <li><a href="Grs.html">Cybersecurity Strategy - GRC</a></li>
-                  <li><a href="operating.html">Cybersecurity Operating System</a></li>
-                  <li><a href="compliance.html">Compliance</a></li>
-                  <li><a href="offensive&defensive.html">Offensive & Defensive</a></li>
-                  <li><a href="red-teaming.html">Red Teaming</a></li>
-                  <li><a href="application.html">Comprehensive Application Security</a></li>
-                  <li><a href="data-integration.html">Data Integration</a></li>
-              </ul>
-          </li>
-         
+            <ul id="mobile-services-dropdown" class="dropdown-menu max-h-48 overflow-y-auto hidden">
+                <li><a href="cybersecurity.html">Cybersecurity Strategy</a></li>
+                <li><a href="it_solutions.html">IT Security Solutions</a></li>
+                <li><a href="SOC_assesment.html">SOC Maturity Assessment</a></li>
+                <li><a href="Grs.html">Cybersecurity Strategy - GRC</a></li>
+                <li><a href="operating.html">Cybersecurity Operating System</a></li>
+                <li><a href="compliance.html">Compliance</a></li>
+                <li><a href="offensive&defensive.html">Offensive & Defensive</a></li>
+                <li><a href="red-teaming.html">Red Teaming</a></li>
+                <li><a href="application.html">Comprehensive Application Security</a></li>
+                <li><a href="data-integration.html">Data Integration</a></li>
+            </ul>
+        </li>
+        
+          
           <li><a href="about.html" class="block py-2 hover:bg-[#013088]">About Us</a></li>
           <li><a href="contactus.html" class="block py-2 hover:bg-[#013088]">Contact Us</a></li>
       </ul>
@@ -205,30 +204,8 @@ h1 {
           setTimeout(() => mobileMenu.classList.remove('open'), 300);
       });
   
-      // document.addEventListener('DOMContentLoaded', function () {
-      //     const servicesToggle = document.getElementById('services-toggle');
-      //     const servicesDropdown = document.getElementById('services-dropdown');
-      //     const offensiveToggle = document.getElementById('offensive-toggle');
-      //     const offensiveDropdown = document.getElementById('offensive-dropdown');
   
-      //     servicesToggle.addEventListener('click', function () {
-      //         servicesDropdown.classList.toggle('hidden');
-      //         servicesToggle.querySelector('path').setAttribute('d', 
-      //             servicesDropdown.classList.contains('hidden') 
-      //                 ? 'm4.5 15.75l7.5-7.5 7.5 7.5' 
-      //                 : 'm19.5 8.25-7.5 7.5-7.5-7.5'
-      //         );
-      //     });
   
-      //     offensiveToggle.addEventListener('click', function () {
-      //         offensiveDropdown.classList.toggle('hidden');
-      //         offensiveToggle.querySelector('path').setAttribute('d', 
-      //             offensiveDropdown.classList.contains('hidden') 
-      //                 ? 'm4.5 15.75l7.5-7.5 7.5 7.5' 
-      //                 : 'm19.5 8.25-7.5 7.5-7.5-7.5'
-      //         );
-      //     });
-      // });
   </script>
   <script>
     document.getElementById('mobile-services-toggle').addEventListener('click', function () {
@@ -239,7 +216,6 @@ h1 {
             document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
         });
 
-        // Desktop dropdowns
         document.getElementById('services-toggle').addEventListener('click', function () {
             document.getElementById('services-dropdown').classList.toggle('show');
         });
@@ -248,7 +224,6 @@ h1 {
             document.getElementById('offensive-dropdown').classList.toggle('show');
         });
 
-        // Close dropdowns if clicked outside
         document.addEventListener('click', function (e) {
             if (!e.target.closest('.relative')) {
                 document.querySelectorAll('.dropdown-menu.show').forEach(function (dropdown) {

@@ -74,17 +74,48 @@
         .button-custom:hover {
             background-color: #001d3d;
         }
+        .hover-slide:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover-slide:hover {
+    color: #9f7aea;
+}
+.hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+}
     </style>
 </head>
-<body>
+<body class="bg-black">
     <div id="header"></div>
     <!-- Hero Section -->
+    <div class=" px-1" >
+        <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+         <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
+         <span class="text-gray-500 mx-2">»</span>
+         <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+         <span class="text-gray-500 mx-2">»</span>
+         <a href="offensive&defensive.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Offensive and Defensive</a>
+       </nav>
+    </div>
     <section class="bg-black flex items-center justify-center">
         <div class="overlay"></div>
         <div class="section-content text-center text-white py-24 px-6">
-            <h1 class="text-5xl font-bold mb-4">Offensive and Defensive Strategies</h1>
+            <h1 class="text-4xl font-bold mb-4 text-[#019cde]">Offensive and Defensive Strategies</h1>
             <p class="text-lg mb-8">Explore advanced and innovative approaches to both offensive and defensive cybersecurity strategies.</p>
-            <a href="offensive&defensive.html" class="button-custom">Learn More</a>
+            <a href="offensive&defensive.html" class="bg-white text-gray-700 rounded-md shadow-md  hover-bg-slide ">Learn More</a>
         </div>
     </section>
 
@@ -210,7 +241,7 @@
     </div>
 </section>
 <!-- Integration & Automation Section -->
-<section id="integration" class="py-16 bg-black">
+<!-- <section id="integration" class="py-16 bg-black">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center text-white mb-10">Integration & Automation</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -236,7 +267,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
     <!-- Call to Action Section -->
     <section id="cta" class="py-16 bg-black text-white text-center">
