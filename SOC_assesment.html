@@ -6,32 +6,66 @@
     <title>SOC Maturity Assessment</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" defer></script>
+<style>
+    .hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white;
+}
+@media (max-width: 768px) {
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  nav span {
+    display: inline;
+    margin: 0 0.5rem;
+  }
+}
+</style>
 </head>
 <body class="bg-black text-gray-900 roboto-bold">
     <!-- Header Section -->
     <div id="header"></div>
     
     <section>
+        <div class=" px-4">
+        <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+            <a href="index.html" class="text-purple-400  px-1 py-1 rounded hover-bg-slide">Home</a>
+            <span class="text-gray-500 mx-1">»</span>
+            <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+            <span class="text-gray-500 mx-1">»</span>
+            <a href="SOC_assesment.html" class="text-gray-400  px-1 py-1 rounded hover-bg-slide">SOC Maturity Assessment</a>
+        </nav>
+    </div>
         <div class="bg-black text-gray-900  p-8">
             <!-- Breadcrumb -->
-            <nav class="text-sm mb-8 px-12">
-              <a href="#" class="text-purple-400 hover:underline">Home</a> <span class="text-gray-500">»</span>
-              <span class="text-gray-400">Services</span>
-              <span class="text-gray-500">»</span>
-              <span class="text-gray-400"> SOC Maturity Assessment</span>
-            </nav>
-          
+           
+            
             <!-- Main Title and Description -->
             <div class="flex flex-col md:flex-row md:justify-between mx-auto container">
               <div>
-                <h1 class="text-4xl font-bold text-[#013088]">Network Intelligence</h1>
-                <h2 class="text-5xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-[#013088] to-pink-500 mt-4">SOC Maturity Assessment</h2>
-              </div>
-              <div class="mt-8 md:mt-0 md:w-1/2">
-                <p class="text-lg text-white">
-                  The ADVISE framework provides a comprehensive approach to cybersecurity, covering every facet from initial assessment to long-term evolution. It's a thorough and holistic methodology for guiding organizations through their cybersecurity journey.
-                </p>
-              </div>
+                <h1 class="text-4xl font-bold text-[#019cde] mt-4 text-center">SOC Maturity Assessment</h1>
+                <p class="text-lg text-white text-center px-4 mt-2">
+                    The ADVISE framework provides a comprehensive approach to cybersecurity, covering every facet from initial assessment to long-term evolution. It's a thorough and holistic methodology for guiding organizations through their cybersecurity journey.
+                  </p>  
+            </div>
+             
             </div>
           
             <!-- Service Cards Section -->
@@ -163,7 +197,7 @@
                         <p>Low Maturity in Training and Technology.</p>
                     </div>
                 </div>
-                <a href="#" class="text-blue-600 hover:underline mt-4 block">Download Full Report</a>
+                <!-- <a href="#" class="text-blue-600 hover:underline mt-4 block">Download Full Report</a> -->
             </div>
         </section>
 
@@ -176,104 +210,94 @@
                 <div class="flex flex-col md:flex-row md:space-x-8">
                     <div class="flex items-center mb-4 md:mb-0">
                         <i class="fas fa-phone-alt text-blue-600 mr-3"></i>
-                        <p class="text-lg">+1 (123) 456-7890</p>
+                        <p class="text-lg">+92307111229</p>
                     </div>
                     <div class="flex items-center mb-4 md:mb-0">
                         <i class="fas fa-envelope text-blue-600 mr-3"></i>
-                        <p class="text-lg">info@socassessments.com</p>
+                        <p class="text-lg">Admin-hr@clintech.co</p>
                     </div>
                     <div class="flex items-center">
                         <i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>
-                        <p class="text-lg">123 Security St, Cyber City, CA</p>
+                        <p class="text-lg">Faisalabad, Punjab, Pakistan</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 <!-- Key Metrics Section -->
-<section id="metrics" class="mb-12 mx-auto container">
+<!-- <section id="metrics" class="mb-12 mx-auto container">
     <h2 class="text-2xl font-bold text-white mb-4">Key Metrics</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Metric Card 1 -->
+      
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Incident Response Time</h3>
             <p class="text-4xl font-bold mb-2">4 hrs</p>
             <p class="text-gray-700">Average time to respond to security incidents. Lower values indicate quicker response times.</p>
         </div>
-        <!-- Metric Card 2 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Threat Intelligence Coverage</h3>
             <p class="text-4xl font-bold mb-2">85%</p>
             <p class="text-gray-700">Percentage of threat intelligence sources integrated into the SOC's operations.</p>
         </div>
-        <!-- Metric Card 3 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Compliance Score</h3>
             <p class="text-4xl font-bold mb-2">92%</p>
             <p class="text-gray-700">Score indicating the SOC's adherence to relevant regulatory requirements and standards.</p>
         </div>
-        <!-- Metric Card 4 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Training Hours</h3>
             <p class="text-4xl font-bold mb-2">120 hrs</p>
             <p class="text-gray-700">Total hours of training provided to SOC personnel over the past year.</p>
         </div>
-        <!-- Metric Card 5 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Tool Utilization Rate</h3>
             <p class="text-4xl font-bold mb-2">78%</p>
             <p class="text-gray-700">Percentage of SOC tools and technologies effectively utilized in daily operations.</p>
         </div>
-        <!-- Metric Card 6 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Customer Satisfaction</h3>
             <p class="text-4xl font-bold mb-2">88%</p>
             <p class="text-gray-700">Percentage of positive feedback received from clients regarding SOC services.</p>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Case Studies Section -->
-<section id="case-studies" class="mb-12 mx-auto container">
+<!-- <section id="case-studies" class="mb-12 mx-auto container">
     <h2 class="text-2xl font-bold text-white mb-4">Case Studies</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Case Study Card 1 -->
+    
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Retail Sector Breach</h3>
             <p class="text-gray-700 mb-2">Our SOC successfully mitigated a significant data breach in a major retail organization, preventing a potential data leak.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
-        <!-- Case Study Card 2 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Financial Institution Attack</h3>
             <p class="text-gray-700 mb-2">We responded to a sophisticated cyber attack on a financial institution, securing their systems and protecting sensitive data.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
-        <!-- Case Study Card 3 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Healthcare Data Protection</h3>
             <p class="text-gray-700 mb-2">Implemented advanced threat detection and response strategies to safeguard healthcare data and comply with regulations.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
-        <!-- Case Study Card 4 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Manufacturing Cybersecurity</h3>
             <p class="text-gray-700 mb-2">Enhanced cybersecurity measures for a manufacturing company, reducing vulnerabilities and improving operational security.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
-        <!-- Case Study Card 5 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Education Sector Defense</h3>
             <p class="text-gray-700 mb-2">Developed a comprehensive security strategy for an educational institution, enhancing their ability to defend against cyber threats.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
-        <!-- Case Study Card 6 -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-xl font-semibold mb-2">Tech Company Breach Response</h3>
             <p class="text-gray-700 mb-2">Handled a critical breach for a tech company, leading to the successful containment and remediation of the security incident.</p>
             <a href="#" class="text-blue-600 hover:underline">Read More</a>
         </div>
     </div>
-</section>
+</section> -->
 
     <!-- Footer -->
     <div id="footer"></div>
