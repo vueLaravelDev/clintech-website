@@ -33,7 +33,19 @@
     transform-origin: bottom right;
     transition: transform 0.3s ease-out;
 }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif !important;
+    }
 
+    h1 {
+        font-family: 'Montserrat', sans-serif !important  ;
+    }
 .hover-slide:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -75,7 +87,7 @@
     <section class="bg-black text-white py-20 px-4">
        
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-4">IT Security Solutions</h1>
+            <h1 class="text-5xl text-[#019cde] font-bold mb-4">IT Security Solutions</h1>
             <p class="text-lg mb-8"> Discover the key elements of our IT security strategy and how they work together to safeguard your data and ensure a resilient, secure infrastructure.</p>
             <a href="service.html" class="bg-[#001d3d] hover:bg-[#001d3d] text-white font-semibold py-3 px-6 rounded hover-bg-slide">Get Started</a>
         </div>

@@ -17,7 +17,19 @@
     background-size: 240%;
     transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
 }
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+    body {
+        font-family: 'Montserrat', sans-serif !important;
+    }
 
+    h1 {
+        font-family: 'Montserrat', sans-serif !important  ;
+    }
 .hover-bg-slide:hover {
     background-position: 100%;
     color: white;
@@ -37,9 +49,32 @@
     margin: 0 0.5rem;
   }
 }
+.hover-slide:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hover-slide:hover {
+    color: #9f7aea; /* Keeps the hover color consistent */
+}
+.hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white; /* Text color change on hover */
+}
   </style>
 </head>
-<body class="bg-black text-white roboto-bold">
+<body class="bg-black text-white ">
 
   <!-- Header -->
  <div id="header"></div>
@@ -57,7 +92,7 @@
     <div class="container mx-auto px-4">
       
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-white">Our Cybersecurity Approach</h2>
+        <h2 class="text-3xl font-bold mb-6 text-[#019cde]">Our Cybersecurity Approach</h2>
         <p class="mb-8 text-lg text-white">
           In today's digital age, cybersecurity is more critical than ever. Our strategy focuses on a comprehensive approach to protect our systems and data from evolving threats.
         </p>
