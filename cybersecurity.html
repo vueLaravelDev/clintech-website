@@ -7,18 +7,55 @@
   <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Additional custom styles if needed */
+   .hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white;
+}
+@media (max-width: 768px) {
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  nav span {
+    display: inline;
+    margin: 0 0.5rem;
+  }
+}
   </style>
 </head>
 <body class="bg-black text-white roboto-bold">
 
   <!-- Header -->
  <div id="header"></div>
-  <!-- Main Content -->
-  <main class="py-12 bg-black">
+<div class="mx-auto container px-6" >
+ <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+  <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
+  <span class="text-gray-500 mx-2">»</span>
+  <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+  <span class="text-gray-500 mx-2">»</span>
+  <a href="cybersecurity.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Cybersecurity</a>
+</nav>
+</div>
+ <main class="py-12 bg-black">
+    
     <div class="container mx-auto px-4">
       
-      <!-- Cybersecurity Approach Section -->
       <section class="mb-16">
         <h2 class="text-3xl font-bold mb-6 text-white">Our Cybersecurity Approach</h2>
         <p class="mb-8 text-lg text-white">
