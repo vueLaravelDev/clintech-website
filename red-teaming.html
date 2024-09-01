@@ -7,32 +7,51 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
         <style>
-        /* Additional styles for specific effects */
-       
+      
         .card-shadow {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .card-hover:hover {
             transform: translateY(-10px);
         }
-        /* .hero-bg {
-            background: url('https://via.placeholder.com/1200x800') no-repeat center center;
-            background-size: cover;
-        } */
-        /* .overlay-bg {
-            background: rgba(0, 0, 0, 0.5);
-        } */
+        .hover-slide:hover {
+    color: #9f7aea; 
+}
+.hover-bg-slide {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    padding: 4px 8px;
+    display: inline-block;
+    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+    background-size: 240%;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.hover-bg-slide:hover {
+    background-position: 100%;
+    color: white; /* Text color change on hover */
+}
     </style>
 </head>
-<body class="roboto-bold">
+<body class="bg-black">
   <div id="header"></div>
 <!-- Hero Section -->
-<section class=" bg-black text-white py-24 ">
+<div class=" px-1" >
+    <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+     <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
+     <span class="text-gray-500 mx-2">»</span>
+     <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
+     <span class="text-gray-500 mx-2">»</span>
+     <a href="red-teaming.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Red Teaming</a>
+   </nav>
+</div>
+<section class=" bg-black text-white py-16 ">
     <!-- <div class="absolute inset-0 overlay-bg"></div> -->
     <div class=" container mx-auto px-6 py-12 text-center">
-        <h1 class="text-5xl font-bold mb-6">Mastering Red Teaming</h1>
+        <h1 class="text-4xl font-bold mb-6 text-[#019cde]">Mastering Red Teaming</h1>
         <p class="text-lg mb-8">Simulate real-world attack scenarios to test and strengthen your defenses. Experience the most realistic security assessments with our expert red teaming services.</p>
-        <a href="#services" class="bg-[#001d3d] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#001d3d] transition-colors">Learn More</a>
+        <a href="#services" class="bg-[#001d3d] text-white px-8 py-4 rounded-full font-semibold hover-bg-slide">Learn More</a>
     </div>
 </section>
 
@@ -81,18 +100,24 @@
 <section id="cases" class="py-16 bg-black text-white">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12">Case Studies</h2>
+        <p class="text-center mb-12">
+            Our case studies demonstrate the effectiveness of red teaming in identifying and addressing critical security vulnerabilities. By simulating real-world attack scenarios, we provide actionable insights and strategies to enhance your security posture.
+        </p>
         <div class="flex flex-col md:flex-row md:space-x-8">
             <div class="bg-[#013088] p-6 rounded-lg shadow-lg w-full md:w-1/3 mb-8 md:mb-0">
-                <h3 class="text-xl font-semibold mb-4">Case Study 1</h3>
-                <p>Our team uncovered critical vulnerabilities in a major financial institution, leading to significant improvements in their security posture.</p>
+                <img src="Star-1.png" class="w-20 h-20 mr-6" >
+                <h3 class="text-xl font-semibold mb-4 ">Financial Institution</h3>
+                <p>In this red teaming engagement, we employed advanced penetration testing techniques to uncover critical vulnerabilities in the security infrastructure of a major financial institution. Our simulated attacks included phishing, social engineering, and network penetration tests, leading to substantial improvements in their security posture and the implementation of stronger defensive measures.</p>
             </div>
             <div class="bg-[#013088] p-6 rounded-lg shadow-lg w-full md:w-1/3 mb-8 md:mb-0">
-                <h3 class="text-xl font-semibold mb-4">Case Study 2</h3>
-                <p>We simulated advanced persistent threats for a tech company, revealing gaps in their incident response strategy.</p>
+                <img src="Star-1.png" class="w-20 h-20 mr-6" >
+                <h3 class="text-xl font-semibold mb-4">Technology Company</h3>
+                <p>For a tech company, we conducted a red teaming exercise that simulated advanced persistent threats (APTs) to evaluate their incident response capabilities. Our approach included simulated data breaches, lateral movement, and exfiltration tactics. The engagement revealed critical gaps in their incident response strategy, leading to improved detection and response protocols.</p>
             </div>
             <div class="bg-[#013088] p-6 rounded-lg shadow-lg w-full md:w-1/3">
-                <h3 class="text-xl font-semibold mb-4">Case Study 3</h3>
-                <p>Our red teaming exercise for a healthcare organization highlighted vulnerabilities in their network security and access controls.</p>
+                <img src="Star-1.png" class="w-20 h-20 mr-6" >
+                <h3 class="text-xl font-semibold mb-4">Healthcare Organization</h3>
+                <p>Our red teaming exercise for a healthcare organization involved a comprehensive assessment of their network security and access controls. Using techniques such as vulnerability scanning, social engineering, and physical security assessments, we identified key weaknesses in their security framework, which prompted the organization to enhance their security measures and access control policies.</p>
             </div>
         </div>
     </div>
@@ -119,25 +144,29 @@
 <section id="resources" class="py-16 bg-black">
     <div class="container mx-auto px-6">
         <h2 class="text-4xl font-bold text-center mb-12 text-white">Tools & Resources</h2>
+        <p class="text-center text-white mb-12">
+            Explore these essential tools and resources designed for red teaming. Red teaming is a simulated adversarial approach used to test the effectiveness of security measures by emulating real-world attack scenarios. These tools will help you in identifying vulnerabilities, testing defenses, and enhancing overall cybersecurity.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img src="Cybersecurity-Strategy-1-768x439.webp" alt="Tool 1" class="w-full h-32 object-cover rounded-t-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Tool 1</h3>
-                <p>An advanced tool for vulnerability scanning and exploitation during red teaming engagements.</p>
+                <h3 class="text-xl font-semibold mb-2">Tool 1: Vulnerability Scanner</h3>
+                <p>A robust tool for identifying and exploiting vulnerabilities during red teaming engagements. This scanner helps in assessing the security posture of systems and applications, providing insights into potential weaknesses that attackers might exploit.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img src="Cybersecurity-Operating-Model-1.webp" alt="Tool 2" class="w-full h-32 object-cover rounded-t-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Tool 2</h3>
-                <p>A comprehensive resource for threat simulation and attack analysis.</p>
+                <h3 class="text-xl font-semibold mb-2">Tool 2: Threat Simulation Platform</h3>
+                <p>A comprehensive resource for simulating various attack scenarios and analyzing threats. This platform enables red teamers to emulate advanced persistent threats (APTs) and assess how well security measures respond to different types of cyber-attacks.</p>
             </div>
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img src="Cybersecurity-Maturity-Assessment-2.webp" alt="Tool 3" class="w-full h-32 object-cover rounded-t-lg mb-4">
-                <h3 class="text-xl font-semibold mb-2">Tool 3</h3>
-                <p>A powerful platform for real-time monitoring and incident response.</p>
+                <h3 class="text-xl font-semibold mb-2">Tool 3: Incident Response Platform</h3>
+                <p>A powerful tool for monitoring real-time attacks and managing incident responses. This platform provides critical capabilities for detecting, analyzing, and responding to security incidents, helping red teams to simulate and manage real-world attack scenarios effectively.</p>
             </div>
         </div>
     </div>
 </section>
+
 
 
 <div id="footer"></div>
