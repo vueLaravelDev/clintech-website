@@ -477,34 +477,94 @@
           });
         });
       </script>
-           <script>
+           <!-- <script>
             const chatbotImage = document.getElementById('chatbotImage');
             const chatbotContainer = document.getElementById('chatbotContainer');
             const closeBtn = document.getElementById('closeBtn');
             const sendEmailBtn = document.getElementById('sendEmailBtn');
             const userInput = document.getElementById('userInput');
     
-            // Show chatbot on image click
             chatbotImage.addEventListener('click', () => {
                 chatbotContainer.classList.remove('hidden');
             });
-    
-            // Hide chatbot on close button click
+  
             closeBtn.addEventListener('click', () => {
                 chatbotContainer.classList.add('hidden');
             });
     
-            // Handle email sending (dummy function)
             sendEmailBtn.addEventListener('click', () => {
-                const email = userInput.value.trim();
-                if (email) {
-                    alert(`Email sent to: ${email}`);
-                    userInput.value = '';  // Clear input field
-                } else {
-                    alert('Please enter a valid email address.');
-                }
+              const email = userInput.value.trim();
+              if (email) {
+                  const emailMessage = document.createElement('div');
+                  emailMessage.innerHTML = `
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFFAFA; transform: ; msFilter:;">
+                          <path d="M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z"></path>
+                          <path d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2-.897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z"></path>
+                      </svg>: ${email}`;
+                  emailMessage.classList.add('bg-blue-100', 'text-blue-800', 'p-2', 'rounded-md', 'mb-2', 'w-full', 'flex', 'items-center', 'space-x-2');
+                  chatbox.appendChild(emailMessage);
+                  userInput.value = '';
+                  chatbox.scrollTop = chatbox.scrollHeight;
+              } else {
+                  alert('Please enter a valid email address.');
+              }
+          });
+
+        </script> -->
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const chatbotImage = document.getElementById('chatbotImage');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const closeBtn = document.getElementById('closeBtn');
+            const sendEmailBtn = document.getElementById('sendEmailBtn');
+            const userInput = document.getElementById('userInput');
+            chatbotImage.addEventListener('click', () => {
+                chatbotContainer.classList.remove('hidden');
             });
-        </script>
+  
+            closeBtn.addEventListener('click', () => {
+                chatbotContainer.classList.add('hidden');
+            });
+
+    // Check if there are any saved email messages in localStorage
+    const savedEmailMessage = localStorage.getItem('emailMessage');
+    const savedTimestamp = localStorage.getItem('emailTimestamp');
+
+    if (savedEmailMessage && savedTimestamp) {
+        const now = new Date().getTime();
+        const oneDay = 24 * 60 * 60 * 1000; 
+        if (now - savedTimestamp < oneDay) {
+            chatbox.innerHTML += savedEmailMessage;
+            chatbox.scrollTop = chatbox.scrollHeight;
+        } else {
+            localStorage.removeItem('emailMessage');
+            localStorage.removeItem('emailTimestamp');
+        }
+    }
+
+    sendEmailBtn.addEventListener('click', () => {
+        const email = userInput.value.trim();
+        if (email) {
+            const emailMessage = `
+                <div class="bg-blue-100 text-blue-800 p-2 rounded-md mb-2 w-full flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1); transform: ; msFilter:;">
+                        <path d="M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z"></path>
+                        <path d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2-.897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z"></path>
+                    </svg>
+                    <span>${email}</span>
+                </div>`;
+            chatbox.innerHTML += emailMessage;
+            chatbox.scrollTop = chatbox.scrollHeight;
+            localStorage.setItem('emailMessage', emailMessage);
+            localStorage.setItem('emailTimestamp', new Date().getTime());
+            userInput.value = '';
+        } else {
+            alert('Please enter a valid email address.');
+        }
+    });
+});
+
+          </script>
       <script
          src="https://code.jquery.com/jquery-3.3.1.js"
          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
