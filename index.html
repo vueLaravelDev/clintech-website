@@ -57,7 +57,6 @@
       }
     }
 
-/* CSS */
 .button-48 {
   appearance: none;
   background-color: #FFFFFF;
@@ -116,6 +115,20 @@
   z-index: 1;
   position: relative;
 }
+@keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        #chatbotImage {
+            animation: bounce 2s infinite;
+        }
 
   </style>
 </head>
@@ -435,8 +448,11 @@
         </div>
       </div>
     </div>
-    <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8  bg-white shadow-lg rounded-lg z-10 mb-2 ml-2" class="cursor-pointer">
-
+    <!-- <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8  bg-white shadow-lg rounded-lg z-10 mb-2 ml-2" class="cursor-pointer"> -->
+    <div class="relative">
+      <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8 bg-white shadow-lg rounded-lg z-10 cursor-pointer">
+     
+  </div>
     <!-- Chatbot UI -->
     <div id="chatbotContainer" class="fixed bottom-8 right-8 z-10 w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden hidden">
         <div class="p-4 bg-[#001d3d] text-white text-lg font-semibold flex justify-between items-center">
