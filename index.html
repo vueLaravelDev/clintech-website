@@ -450,7 +450,7 @@
     </div>
     <!-- <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8  bg-white shadow-lg rounded-lg z-10 mb-2 ml-2" class="cursor-pointer"> -->
     <div class="relative">
-      <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8 bg-white shadow-lg rounded-lg z-10 cursor-pointer">
+      <img id="chatbotImage" src="robot-vectorart.png" alt="Chatbot" class="w-14 h-14 fixed bottom-8 right-8  shadow-lg rounded-lg z-10 cursor-pointer">
      
   </div>
     <!-- Chatbot UI -->
@@ -465,7 +465,7 @@
         <div class="p-4 border-t border-gray-200">
             <div class="flex items-center">
                 <div class="relative w-full">
-                    <input id="userInput" type="text" class="w-full border border-gray-300 p-2 pl-10 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email...">
+                    <input id="userInput" type="text" class="w-full border border-gray-300 p-2 pl-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email...">
                     <i class="fas fa-envelope text-gray-400 absolute left-3 top-2.5"></i>
                 </div>
                 <button id="sendEmailBtn" class="ml-2 bg-[#013088] text-white p-2 rounded-md hover:bg-[#019cde]">Send</button>
@@ -477,10 +477,10 @@
       <script>
         document.addEventListener('DOMContentLoaded', function () {
           var swiper = new Swiper('.swiper-container', {
-            loop: true, // Enable infinite loop mode
+            loop: true, 
             autoplay: {
-              delay: 2500, // Delay in milliseconds
-              disableOnInteraction: false, // Keep autoplay running even when user interacts
+              delay: 2500,
+              disableOnInteraction: false,
             },
             pagination: {
               el: '.swiper-pagination',
@@ -541,8 +541,6 @@
             closeBtn.addEventListener('click', () => {
                 chatbotContainer.classList.add('hidden');
             });
-
-    // Check if there are any saved email messages in localStorage
     const savedEmailMessage = localStorage.getItem('emailMessage');
     const savedTimestamp = localStorage.getItem('emailTimestamp');
 
@@ -563,10 +561,7 @@
         if (email) {
             const emailMessage = `
                 <div class="bg-blue-100 text-blue-800 p-2 rounded-md mb-2 w-full flex items-center space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1); transform: ; msFilter:;">
-                        <path d="M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z"></path>
-                        <path d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2-.897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z"></path>
-                    </svg>
+                    <img src="freepik.png" class="w-10 h-10" />
                     <span>${email}</span>
                 </div>`;
             chatbox.innerHTML += emailMessage;
