@@ -3,304 +3,493 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLINTECH - Cybersecurity Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>CLINTECH - Complete Cybersecurity Solutions for the AI Era</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #000;
             color: white;
+            scroll-behavior: smooth;
         }
-        
-        .nav-gradient {
+        .gradient-bg {
             background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
         }
-        
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background: #019cde;
-            border: 1px solid #013088;
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            z-index: 10;
-            min-width: 200px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: white;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border-radius: 0.25rem;
-        }
-        
-        .dropdown-menu a:hover {
-            background-color: #013088;
-            transform: translateX(5px);
-        }
-        
-        #mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
-        
-        .mobile-dropdown {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .mobile-dropdown.show {
-            max-height: 500px;
-        }
-        
-        .nav-link {
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
             position: relative;
-            padding: 0.5rem 0;
         }
-        
-        .nav-link::after {
+        .hero-section::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background: #019cde;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
             width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
         }
-        
-        .emergency-btn {
-            background: linear-gradient(135deg, #ff6b6b 0%, #c1121f 100%);
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(1, 48, 136, 0.3);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .core-value-card {
             transition: all 0.3s ease;
         }
-        
-        .emergency-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(193, 18, 31, 0.4);
+        .core-value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
         }
-        
-        .expert-btn {
+        .btn-clintech {
+            background: linear-gradient(135deg, #013088 0%, #001d3d 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(1, 48, 136, 0.3);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-clintech:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(1, 48, 136, 0.4);
+            background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
+        }
+        .btn-clintech i {
+            margin-right: 0.5rem;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
             background: linear-gradient(135deg, #019cde 0%, #013088 100%);
-            transition: all 0.3s ease;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        .expert-btn:hover {
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
+        }
+        #chatbotImage {
+            animation: bounce 3s infinite;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        #chatbotImage:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+        .industry-btn {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+        }
+        .industry-btn.active {
+            background: #001d3d !important;
+            border-color: #019cde;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.4);
+            box-shadow: 0 4px 8px rgba(1, 156, 222, 0.2);
+        }
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 2rem;
+            }
+            .banner-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body>
-    <!-- Header/Navigation -->
-    <header class="sticky top-0 z-50 shadow-lg">
-        <nav class="nav-gradient py-3 px-6">
-            <div class="container mx-auto flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="logo2.png" alt="CLINTECH" class="h-10 md:h-12">
+<body class="bg-black text-white min-h-screen flex flex-col">
+  <div id="header"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-20">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Protect Your Future with Cybersecurity Experts</h1>
+                    <p class="text-xl mb-8 text-gray-300">We empower your growth as you capitalize on security with complete cybersecurity solutions for the AI Era</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#contact" class="btn-clintech text-center">
+                            <i class="fas fa-phone"></i> Contact Us
+                        </a>
+                        <a href="#services" class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg font-semibold hover:bg-white hover:text-black transition-colors text-center">
+                            <i class="fas fa-list"></i> Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center md:justify-end">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Cybersecurity" class="rounded-xl shadow-2xl w-full max-w-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="stat-number">200+</div>
+                    <p class="text-gray-400">Clients Protected</p>
+                </div>
+                <div class="p-6">
+                    <div class="stat-number">98%</div>
+                    <p class="text-gray-400">Threat Detection Rate</p>
+                </div>
+                <div class="p-6">
+                    <div class="stat-number">24/7</div>
+                    <p class="text-gray-400">Security Monitoring</p>
+                </div>
+                <div class="p-6">
+                    <div class="stat-number">50+</div>
+                    <p class="text-gray-400">Security Experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Complete Cybersecurity Services</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Everything you need to secure with solutions for the AI Era. Our comprehensive services protect your business from evolving threats.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-900 p-8 rounded-lg service-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-search text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Vulnerability Assessment & Pen Testing</h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">Identify vulnerabilities and bugs in networks, mobile apps, and management systems to avoid security breaches or threats.</p>
+                    <a href="#" class="text-blue-400 font-semibold hover:text-blue-300 flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
 
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-6">
-                    <a href="index.html" class="nav-link text-white font-medium px-4 py-2">Home</a>
-                    
-                    <div class="dropdown relative">
-                        <a href="service.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
-                            Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="dropdown-menu mt-2 whitespace-nowrap">
-                            <a href="cybersecurity.html" class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> Cybersecurity Strategy</a>
-                            <a href="it_solutions.html" class="flex items-center"><i class="fas fa-laptop-code mr-2"></i> IT Security Solutions</a>
-                            <a href="SOC_assesment.html" class="flex items-center"><i class="fas fa-chart-line mr-2"></i> SOC Maturity Assessment</a>
-                            <a href="Grs.html" class="flex items-center"><i class="fas fa-balance-scale mr-2"></i> Cybersecurity Strategy - GRC</a>
-                            <a href="operating.html" class="flex items-center"><i class="fas fa-cogs mr-2"></i> Cybersecurity Operating System</a>
-                            <a href="compliance.html" class="flex items-center"><i class="fas fa-file-contract mr-2"></i> Compliance</a>
+                <!-- Service 2 -->
+                <div class="bg-gray-900 p-8 rounded-lg service-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-code-branch text-blue-400 text-2xl"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">Open Source Consultancy</h3>
                     </div>
-                    
-                    <div class="dropdown relative whitespace-nowrap">
-                        <a href="offensive&defensive.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
-                            Offensive & Defensive <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="dropdown-menu mt-2">
-                            <a href="red-teaming.html" class="flex items-center"><i class="fas fa-crosshairs mr-2"></i> Red Teaming</a>
-                            <a href="application.html" class="flex items-center"><i class="fas fa-mobile-alt mr-2"></i> Comprehensive Application Security</a>
-                            <a href="data-integration.html" class="flex items-center"><i class="fas fa-database mr-2"></i> Data Integration</a>
+                    <p class="text-gray-400 mb-6">We cover all areas of open-source software development, from operating systems to office suites. Get expert opinions for your projects.</p>
+                    <a href="#" class="text-blue-400 font-semibold hover:text-blue-300 flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-gray-900 p-8 rounded-lg service-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-chart-line text-blue-400 text-2xl"></i>
                         </div>
+                        <h3 class="text-2xl font-bold">GRC Consultancy</h3>
                     </div>
-                    
-                    <a href="about.html" class="nav-link text-white font-medium px-4 py-2">About Us</a>
-                    <a href="contactus.html" class="nav-link text-white font-medium px-4 py-2">Contact Us</a>
+                    <p class="text-gray-400 mb-6">GRC helps organizations integrate governance, risk management, and compliance initiatives for comprehensive security.</p>
+                    <a href="#" class="text-blue-400 font-semibold hover:text-blue-300 flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-
-                <!-- Desktop Buttons -->
-                <div class="hidden lg:flex items-center space-x-3">
-                    <button class="emergency-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                        <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
-                    </button>
-                    <button class="expert-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                        <i class="fas fa-headset mr-2"></i> Talk to an Expert
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <div class="lg:hidden flex items-center">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-80 bg-[#001d3d] text-white h-full z-50 overflow-y-auto">
-        <div class="p-5 border-b border-[#013088] flex justify-between items-center">
-            <img src="https://via.placeholder.com/150x50/001d3d/ffffff?text=CLINTECH" alt="CLINTECH" class="h-8">
-            <button id="mobile-menu-close" class="text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <div class="p-5">
-            <ul class="space-y-2">
-                <li><a href="index.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-home mr-3"></i> Home</a></li>
-                
-                <li>
-                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-services-toggle">
-                        <div><i class="fas fa-concierge-bell mr-3"></i> Services</div>
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </div>
-                    <ul id="mobile-services-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
-                        <li><a href="cybersecurity.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy</a></li>
-                        <li><a href="it_solutions.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">IT Security Solutions</a></li>
-                        <li><a href="SOC_assesment.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">SOC Maturity Assessment</a></li>
-                        <li><a href="Grs.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy - GRC</a></li>
-                        <li><a href="operating.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Operating System</a></li>
-                        <li><a href="compliance.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Compliance</a></li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-offensive-toggle">
-                        <div><i class="fas fa-fist-raised mr-3"></i> Offensive & Defensive</div>
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </div>
-                    <ul id="mobile-offensive-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
-                        <li><a href="red-teaming.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Red Teaming</a></li>
-                        <li><a href="application.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Comprehensive Application Security</a></li>
-                        <li><a href="data-integration.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Data Integration</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="about.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-info-circle mr-3"></i> About Us</a></li>
-                <li><a href="contactus.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-phone-alt mr-3"></i> Contact Us</a></li>
-            </ul>
-            
-            <div class="mt-8 space-y-3">
-                <button class="emergency-btn text-white w-full py-3 rounded-lg font-semibold">
-                    <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
-                </button>
-                <button class="expert-btn text-white w-full py-3 rounded-lg font-semibold">
-                    <i class="fas fa-headset mr-2"></i> Talk to an Expert
-                </button>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Page Content (for demonstration) -->
-    <div class="container mx-auto px-6 py-12">
-        <h1 class="text-4xl font-bold text-center mb-8">CLINTECH Cybersecurity Solutions</h1>
-        <p class="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-12">
-            Protecting your digital assets with cutting-edge security solutions and expert guidance.
-        </p>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
-                <h3 class="text-xl font-bold mb-2">Advanced Protection</h3>
-                <p class="text-gray-400">Comprehensive security solutions to safeguard your business from evolving cyber threats.</p>
+    <!-- About Section -->
+    <section id="about" class="py-16 gradient-bg">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Widely-Recognized Experts in Information Security & Technology</h2>
+                    <p class="text-gray-300 mb-6">CLINTECH was launched in 2017 with an objective to provide beyond-comparison cybersecurity services for businesses. We offer expert guidance in information security to ensure that you receive the highest level of protection, leading visibility, innovative security protection, and budget-friendly opportunities.</p>
+                    <p class="text-gray-300 mb-8">CLINTECH provides top-tier information technology solutions, ensuring that you can operate your business securely and confidently, free from a security or breach landscape.</p>
+                    <a href="#contact" class="btn-clintech">
+                        <i class="fas fa-user-tie"></i> Meet Our Experts
+                    </a>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Security Team" class="rounded-xl shadow-2xl w-full max-w-md">
+                </div>
             </div>
-            
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
-                <h3 class="text-xl font-bold mb-2">Continuous Monitoring</h3>
-                <p class="text-gray-400">24/7 surveillance of your systems to detect and respond to threats in real-time.</p>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Industries We Serve</h2>
+                <p class="text-xl text-gray-300">Our cybersecurity solutions are tailored to meet the unique needs of various industries</p>
             </div>
-            
-            <div class="bg-gray-800 p-6 rounded-lg">
-                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-users"></i></div>
-                <h3 class="text-xl font-bold mb-2">Expert Team</h3>
-                <p class="text-gray-400">Our cybersecurity specialists bring years of experience in protecting businesses of all sizes.</p>
+
+            <div class="bg-gray-900 rounded-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Banks and Financial Services</h3>
+                        <p class="text-gray-300 mb-6">In the rapidly growing era of finance, our cybersecurity solutions ensure the integrity, confidentiality, and availability of sensitive financial data. From safeguarding transactions to protecting customer information, we provide robust defences against cyber threats, guaranteeing a secure and resilient financial ecosystem.</p>
+                        <a href="#" class="text-blue-400 font-semibold hover:text-blue-300 flex items-center">
+                            Explore financial solutions <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="flex justify-center">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Financial Services" class="rounded-lg w-full max-w-md">
+                    </div>
+                </div>
             </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-university text-3xl text-blue-400 mb-2"></i>
+                    <p>Banking</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bolt text-3xl text-blue-400 mb-2"></i>
+                    <p>Energy</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-hospital text-3xl text-blue-400 mb-2"></i>
+                    <p>Healthcare</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-shopping-cart text-3xl text-blue-400 mb-2"></i>
+                    <p>Retail</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-plane text-3xl text-blue-400 mb-2"></i>
+                    <p>Aviation</p>
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-government text-3xl text-blue-400 mb-2"></i>
+                    <p>Government</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Core Values</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">A globally recognized company has some shared principles and beliefs to strengthen the core of its business. The principles and core values of a company inspire personal commitment and help to define customer value. For CLINTECH, the following four commitments serve as a reminder that we incorporate into our daily lives.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Value 1 -->
+                <div class="bg-black p-8 rounded-xl core-value-card">
+                    <div class="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-900 mb-6">
+                        <i class="fas fa-users text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Customer Focused</h3>
+                    <p class="text-gray-300">We strive to meet customers' expectations at every step and deliver added value, build trust, and establish long-term partnerships.</p>
+                </div>
+
+                <!-- Value 2 -->
+                <div class="bg-black p-8 rounded-xl core-value-card">
+                    <div class="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-900 mb-6">
+                        <i class="fas fa-handshake text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Achieving Together</h3>
+                    <p class="text-gray-300">We see our customers as an integral part of our organization, and all our ideas and goals are closely aligned. Together we work, celebrate, and achieve success.</p>
+                </div>
+
+                <!-- Value 3 -->
+                <div class="bg-black p-8 rounded-xl core-value-card">
+                    <div class="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-900 mb-6">
+                        <i class="fas fa-lightbulb text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Proactive</h3>
+                    <p class="text-gray-300">We continuously improve our competencies and capabilities, making sure we stay one step ahead in providing high-quality security solutions.</p>
+                </div>
+
+                <!-- Value 4 -->
+                <div class="bg-black p-8 rounded-xl core-value-card">
+                    <div class="w-16 h-16 rounded-full border-2 border-blue-500 flex items-center justify-center bg-blue-900 mb-6">
+                        <i class="fas fa-tasks text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Engaged to Perform</h3>
+                    <p class="text-gray-300">We accept challenges with energy and enthusiasm, converting them into opportunities for growth. By staying active, working efficiently, and perfectly performing every task, we ensure you receive the best.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Secure Your Business?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Contact us today for a comprehensive security assessment and discover how we can protect your digital assets.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+1234567890" class="btn-clintech">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+                <a href="mailto:info@clintech.com" class="bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="Logo3.png" alt="CLINTECH" class="h-10 mb-4">
+                    <p class="text-gray-400">Providing beyond-comparison cybersecurity services since 2017.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Vulnerability Assessment</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Penetration Testing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">GRC Consultancy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Open Source Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-map-marker-alt mr-2"></i> 123 Security Ave, Tech City</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> +1 (234) 567-8900</li>
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> info@clintech.com</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                <p>© 2023 CLINTECH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot Toggle -->
+    <img id="chatbotImage" src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png" alt="Chatbot" class="w-16 h-16 fixed bottom-8 right-8 shadow-xl rounded-full z-40">
+
+    <!-- Chatbot Container -->
+    <div id="chatbotContainer" class="fixed bottom-8 right-8 z-50 w-full max-w-md bg-white shadow-2xl rounded-xl overflow-hidden hidden transition-all duration-300">
+        <div class="p-4 bg-blue-900 text-white text-lg font-semibold flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png" alt="Chatbot" class="w-8 h-8 mr-2">
+                CLINTECH Assistant
+            </div>
+            <button id="closeBtn" class="text-white text-xl hover:text-gray-300">&times;</button>
+        </div>
+        <div id="chatbox" class="p-4 h-64 overflow-y-auto bg-gray-50">
+            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg mb-4">
+                <p>Hello! 👋 Please enter your email address below, and we'll get back to you with more information.</p>
+            </div>
+        </div>
+        <div class="p-4 border-t bg-white">
+            <div class="flex items-center">
+                <div class="relative flex-grow mr-2">
+                    <input id="userInput" type="email" class="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email...">
+                    <i class="fas fa-envelope text-gray-400 absolute left-3 top-3.5"></i>
+                </div>
+                <button id="sendEmailBtn" class="btn-clintech px-4 py-2">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <p class="text-xs text-gray-500 mt-2 text-center">We respect your privacy. Your email is safe with us.</p>
         </div>
     </div>
 
     <script>
-        // Mobile menu functionality
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.add('open');
-        });
-        
-        document.getElementById('mobile-menu-close').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.remove('open');
-        });
-        
-        // Mobile dropdown toggles
-        document.getElementById('mobile-services-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-services-dropdown').classList.toggle('show');
-        });
-        
-        document.getElementById('mobile-offensive-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuToggle = document.getElementById('menu-toggle');
-            
-            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target) && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chatbot Functionality
+            const chatbotToggle = document.getElementById('chatbotImage');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const closeBtn = document.getElementById('closeBtn');
+            const sendEmailBtn = document.getElementById('sendEmailBtn');
+            const userInput = document.getElementById('userInput');
+            const chatbox = document.getElementById('chatbox');
+
+            chatbotToggle.addEventListener('click', () => {
+                chatbotContainer.classList.remove('hidden');
+                chatbotToggle.classList.add('hidden');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                chatbotContainer.classList.add('hidden');
+                chatbotToggle.classList.remove('hidden');
+            });
+
+            sendEmailBtn.addEventListener('click', () => {
+                const email = userInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email && emailRegex.test(email)) {
+                    const messageHtml = `
+                        <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mb-4 flex items-start">
+                            <img src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png" class="w-8 h-8 mr-3 rounded-full">
+                            <div>
+                                <span class="font-medium">You:</span> ${email}
+                                <p class="text-xs text-blue-600 mt-1">Thank you! Our team will contact you shortly.</p>
+                            </div>
+                        </div>`;
+                    chatbox.innerHTML += messageHtml;
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                    userInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendEmailBtn.click();
+                }
+            });
         });
     </script>
+  <script
+         src="https://code.jquery.com/jquery-3.3.1.js"
+         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+         crossorigin="anonymous">
+     </script>  
+         <script> 
+          $(function(){
+            $("#header").load("header.html"); 
+            $("#footer").load("footer.html"); 
+          });
+          </script> 
 </body>
 </html>
