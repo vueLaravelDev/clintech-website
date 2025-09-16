@@ -3,747 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CLINTECH - Cybersecurity Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
     <style>
-      @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
-    }
-      .slider-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      background: #f0f0f0; /* Light background for better visibility */
-    }
-
-    .logos-list {
-      display: flex;
-      white-space: nowrap;
-      animation: scroll 20s linear infinite;
-    }
-
-    .logos-list li {
-      flex: none;
-      margin: 0 16px; /* Margin for spacing between logos */
-    }
-    .bg-blue {
-      background-color: #001d3d;
-    }
-
-    .rounded {
-      border-radius: 0.375rem; /* Tailwind-like border radius */
-    }
-
-  @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-.button-48 {
-  appearance: none;
-  background-color: #FFFFFF;
-  border-width: 0;
-  box-sizing: border-box;
-  color: #000000;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Clarkson,Helvetica,sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1em;
-  margin: 0;
-  opacity: 1;
-  outline: 0;
-  padding: 1.0em 1.2em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  text-rendering: geometricprecision;
-  text-transform: uppercase;
-  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  white-space: nowrap;
-}
-
-.button-48:before {
-  animation: opacityFallbackOut .5s step-end forwards;
-  backface-visibility: hidden;
-  background-color: #EBEBEB;
-  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  transform: translateZ(0);
-  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
-  width: 100%;
-}
-
-.button-48:hover:before {
-  animation: opacityFallbackIn 0s step-start forwards;
-  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
-}
-
-.button-48:after {
-  background-color: #FFFFFF;
-}
-
-.button-48 span {
-  z-index: 1;
-  position: relative;
-}
-@keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
+        @font-face {
+            font-family: 'Montserrat';
+            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+            font-weight: normal;
+            font-style: normal;
         }
-        #chatbotImage {
-            animation: bounce 2s infinite;
-        }
-        @media (max-width: 768px) {
-        #chatbotContainer {
-            bottom: 4rem;
-            right: 1rem;
-            width: calc(100% - 2rem);
-            max-width: 100%;
-            height: 80vh; 
-        }
-        #chatbox {
-            height: calc(100% - 8rem);
-        }
-
-        #userInput {
-            padding-left: 1.2rem;
-        }
-    }
-  </style>
-</head>
-<body class="bg-black new-amsterdam-regular">
-    <div class="bg-black min-h-screen flex flex-col justify-between ">
-        <!-- Navbar -->
-        <div id="header"></div>
-        <!-- Banner Section -->
-        <div class="flex flex-col md:flex-row justify-between items-center px-8 md:px-16 lg:px-24 py-8 md:py-12">
-          <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-              <h1 class="text-white text-xl md:text-4xl font-bold mb-4 md:mb-6">Emergent Security Solutions</h1>
-              <p class="text-white text-md mb-4 md:mb-6">Run Your Business Smoothly And Confidently Without Any Security Threats & Breaches</p>
-              <button class="button-48" role="button">
-                  <span class="text text-white hover:text-black">
-                      <a href="contactus.html">Explore how we help</a>
-                  </span>
-              </button>
-          </div>
-          <div class="relative md:w-1/2 mb-8 md:mb-0">
-              <img src="Logo3.png" alt="Banner Image" class="mx-auto md:ml-auto md:mr-0 w-80 md:w-96 md:max-w-lg relative shadow-lg">
-              <!-- <div class="absolute bottom-0 right-0 h-12 w-full md:w-96 bg-gradient-to-t from-[#FFFAFA] to-transparent opacity-50"></div> -->
-          </div>
-      </div>
-      
-      <div class="slider-wrapper bg-black py-6">
-        <ul class="logos-list">
-          <!-- List items here -->
-          <li class=" px-4 py-8 rounded">
-            <img src="hbl.png" class="w-36" alt="Airtel" />
-          </li>
-          <li class=" px-4 py-8 rounded">
-            <img src="bank.jfif" class="w-36" alt="Saint Gobain" />
-          </li>
-          <li class=" px-4 py-8 rounded">
-            <img src="Alfalah.png" class="w-36" alt="TCS" />
-          </li>
-          <li class=" px-4 py-8 rounded">
-            <img src="UBL.png" class="w-36" alt="Capgemini" />
-          </li>
-          <li class=" px-4 py-8 rounded">
-            <img src="Meezan.png" class="w-36" alt="Amex" />
-          </li>
-         
-        </ul>
-      </div>
-  
-      <section class="py-8 bg-black">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="flex flex-wrap justify-center"> 
-            <div class="w-full mb-12 md:mb-0 text-left px-4">
-              <h2 class="lg:text-4xl font-bold text-white text-center sm:text-5xl  sm:leading-relaxed sm:whitespace-normal">
-                Globally-Famed Experts In Information Security & Technology
-              </h2>
-              <p class="lg:text-md sm:text-xs sm:whitespace-normal text-white text-center mt-4 roboto-regular">CLINTECH was launched in 2017 with an aim to provide beyond-comparison IT security for businesses. We offer expert guidance in information security to ensure you receive the highest level of protection leading visibility, innovative security protection and budget friendly opportunities.  </p>
-              <p class="lg:text-md sm:text-xs sm:whitespace-normal text-white text-center mt-4 roboto-regular">Our approach enables you to order the network security infrastructure Without relying on multiple fixed and stand-alone security devices. Additionally, CLINTECH provides top-tier information technology solutions, ensuring that you can operate you business securely and Confidently, free from envolving threat landscape.</p>
-            </div>
         
-            <!-- Cards -->
-            <div class="w-full mt-8">
-              <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 mb-6">
-                <!-- Card 1 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center mb-4">
-                      <img src="fingerprint-regular-24 (1).png" alt="Advanced Detection and Response Icon" class="h-12 w-12">
-                      <h3 class="text-xl font-semibold ml-4 text-white uppercase">Compliance & Audit</h3>
-                    </div>
-                    <p class="text-white mb-4 roboto-regular">We provide the best-in-class services to deal with the industry regulations and non-conformity that negatively impact your business.</p>
-                  </div>
-                  <!-- <a href="#" class="text-white hover:text-purple-400 flex items-center mt-auto">Learn more <span class="ml-2">→</span></a> -->
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: white;
+        }
+        
+        .nav-gradient {
+            background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: #019cde;
+            border: 1px solid #013088;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            z-index: 10;
+            min-width: 200px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 0.25rem;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #013088;
+            transform: translateX(5px);
+        }
+        
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .mobile-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .mobile-dropdown.show {
+            max-height: 500px;
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #019cde;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .emergency-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c1121f 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .emergency-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(193, 18, 31, 0.4);
+        }
+        
+        .expert-btn {
+            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .expert-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 shadow-lg">
+        <nav class="nav-gradient py-3 px-6">
+            <div class="container mx-auto flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="logo2.png" alt="CLINTECH" class="h-10 md:h-12">
+                    </a>
                 </div>
-            
-                <!-- Card 2 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center mb-4">
-                      <img src="privacy.png" alt="Data Privacy and AI Security Icon" class="h-12 w-12">
-                      <h3 class="text-xl font-semibold text-white ml-4 uppercase">VA & PEN TEST</h3>
-                    </div>
-                    <p class="text-white mb-4 roboto-regular">Vulnerability Assessment and Pen testing are considered the most effective techniques to assure your defences against evolving threat landscape.</p>
-                  </div>
-                  <!-- <a href="#" class="text-white hover:text-purple-400 flex items-center mt-auto">Learn more <span class="ml-2">→</span></a> -->
-                </div>
-            
-                <!-- Card 3 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center mb-4">
-                      <img src="risk.png" alt="Governance Risk Management and Compliance Icon" class="h-12 w-12">
-                      <h3 class="text-xl font-semibold text-white ml-4 uppercase">GRC Consulting</h3>
-                    </div>
-                    <p class="text-white mb-4 roboto-regular">CLINTECH offers a comprehensive approach to GRC leading to establish, manage and improve the cybersecurity posture of the organizations.</p>
-                  </div>
-                  <!-- <a href="#" class="text-white hover:text-purple-400 flex items-center mt-auto">Learn more <span class="ml-2">→</span></a> -->
-                </div>
-            
-                <!-- Card 4 -->
-                <div class="bg-[#001d3d] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex flex-col justify-between">
-                  <div>
-                    <div class="flex items-center mb-4">
-                      <img src="security.png" alt="Secure Digital Transformation Icon" class="h-12 w-12">
-                      <h3 class="text-xl font-semibold text-white ml-4 uppercase">OPEN SOURCE CONSULTING</h3>
-                    </div>
-                    <p class="text-white mb-4 roboto-regular">CLINTECH provides dynamic and highly specialized open source consultancy</p>
-                  </div>
-                  <!-- <a href="#" class="text-white hover:text-purple-400 flex items-center mt-auto">Learn more <span class="ml-2">→</span></a> -->
-                </div>
-              </div>
-            </div>
-            
-        </div>
-      </section>
-      <section class="mb-12">
-      <div class="relative w-full h-72  bg-center" style="background-image: url('security1.jpg');">
-        <div class="flex items-center justify-center w-full h-full absolute top-0 left-0 bg-black bg-opacity-50">
-            <div class="text-center text-white">
-                <h4 class="lg:text-4xl sm:xl font-bold mb-4  text-center lg:px-44 ">“If You Spend More On Coffee Than On IT Security, You Will Be Hacked. What’s More, You Deserve To Be Hacked.”</h4>
-                <p class="lg:text-lg sm:text-sm mb-6 font-normal "><i> White House Cybersecurity Advisor, Richard Clarke</i></p>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section class="bg-black mt-8">
-    <div class="w-full mb-12 text-left px-4">
-      <h2 class="lg:text-3xl font-bold text-white text-center sm:text-5xl sm:leading-relaxed sm:whitespace-normal">
-        Prowess Strategy To Defend Your Business From Security Incidents
-      </h2>
-      <p class="text-sm font-light sm:whitespace-normal text-white text-center mt-4 px-12 roboto-regular">
-        We Are A Forward-Looking Information Security Consulting Company CLINTECH is a trusted name in the information technology industry. Our fast-growing company fulfills all the business requirements and provides you with genuine information, IT solutions, and training via our top-notch delivery process.
-      </p>
-    </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 px-4 py-6 bg-black">
-      <!-- Card 1 -->
-      <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto flex flex-col">
-        <div class="flex-grow">
-          <div class="min-h-[245px]">
-            <img src="ISO.jpg" class="w-full h-40 rounded-lg object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-white">ISO Consultancy</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">By getting any of ISMS 27001, BCM 22301, QMS 9001, or ITSM 20000-1 certifications, you can protect your business and data from cyber-attacks.</p>
-          </div>
-        </div>
-        <a href="it_solutions.html"><button type="button" class="mt-auto px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button></a>
-      </div>
-      
-      <!-- Card 2 -->
-      <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto flex flex-col">
-        <div class="flex-grow">
-          <div class="min-h-[245px]">
-            <img src="VA.jpg" class="w-full h-44 rounded-lg object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-white">VA & Pen Test</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">Vulnerability Assessment and Pen testing help you to identify vulnerabilities and bugs in your mobile app, or networking or management systems to avoid security threats.</p>
-          </div>
-        </div>
-       <a href="cybersecurity.html"><button type="button" class="mt-auto px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button></a>
-      </div>
-      
-      <!-- Card 3 -->
-      <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto flex flex-col">
-        <div class="flex-grow">
-          <div class="min-h-[245px]">
-            <img src="open.jpg" class="w-full h-44 rounded-lg object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-white">Open Source Consultancy</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">We cover all areas of open-source software development whether it is a web engine, Linux Kernel, graphics, or multimedia. So, call us to take expert advice.</p>
-          </div>
-        </div>
-        <a href="SOC_assesment.html"><button type="button" class="mt-auto px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button></a>
-      </div>
-      
-      <!-- Card 4 -->
-      <div class="bg-black shadow-[0_4px_12px_-5px_rgba(0,0,0,0.4)] border p-2 w-full max-w-sm rounded-lg font-[sans-serif] overflow-hidden mx-auto flex flex-col">
-        <div class="flex-grow">
-          <div class="min-h-[245px]">
-            <img src="grc.jpg" class="w-full h-44 rounded-lg object-cover" />
-          </div>
-          <div class="p-6 text-center">
-            <h3 class="text-xl font-bold text-white">GRC Consultancy</h3>
-            <p class="mt-3 text-sm text-gray-500 leading-relaxed">GRC consulting offers help to organizations to integrate cycles of governance, risk management, and compliance (GRC) initiatives.</p>
-          </div>
-        </div>
-        <a href="Grs.html"><button type="button" class="mt-auto px-5 py-2.5 w-full rounded-lg text-white text-sm tracking-wider font-semibold border-none outline-none bg-[#013088] hover:bg-blue-700">View</button></a>
-      </div>
-    </div>
-  </section>
-  
-  
-      <section class="bg-black text-white">
-        <div class="px-4 py-10 mx-auto  ">
-            <div class="flex flex-wrap justify-center px-4 bg-black space-x-4 border border-gray-900 rounded shadow py-2">
-                <button id="banksButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Banks and Financial Services</button>
-                <button id="technologyButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Technology and Media</button>
-                <button id="oilButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Oil and Power</button>
-                <button id="airlinesButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Airlines</button>
-                <button id="ecommerceButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">E-commerce</button>
-                <button id="retailButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Retail</button>
-                <button id="healthcareButton" class="bg-[#013088] hover:bg-[#001d3d] text-white font-semibold py-2 px-4 rounded mb-2 md:mb-0">Healthcare</button>
-            </div>
-            <div id="content" class="mt-10 p-6 rounded-lg bg-[#001d3d]">
-                <!-- Default content will be loaded here -->
-            </div>
-        </div>
-    </section>
-  
 
-    <!-- <section class="text-white body-font bg-black">
-      <div class="container px-5 py-24 mx-auto bg-black">
-       
-        <div class="flex flex-wrap -m-4 text-center">
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                <path d="M8 17l4 4 4-4m-4-5v9"></path>
-                <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-              </svg>
-              <h2 class="title-font font-medium text-3xl text-white">2.7K</h2>
-              <p class="leading-relaxed">Downloads</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                <circle cx="9" cy="7" r="4"></circle>
-                <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-              </svg>
-              <h2 class="title-font font-medium text-3xl text-white">1.3K</h2>
-              <p class="leading-relaxed">Users</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                <path d="M3 18v-6a9 9 0 0118 0v6"></path>
-                <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
-              </svg>
-              <h2 class="title-font font-medium text-3xl text-white">74</h2>
-              <p class="leading-relaxed">Files</p>
-            </div>
-          </div>
-          <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
-            <div class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <h2 class="title-font font-medium text-3xl text-white">46</h2>
-              <p class="leading-relaxed">Places</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="nav-link text-white font-medium px-4 py-2">Home</a>
+                    
+                    <div class="dropdown relative">
+                        <a href="service.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
+                            Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <div class="dropdown-menu mt-2 whitespace-nowrap">
+                            <a href="cybersecurity.html" class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> Cybersecurity Strategy</a>
+                            <a href="it_solutions.html" class="flex items-center"><i class="fas fa-laptop-code mr-2"></i> IT Security Solutions</a>
+                            <a href="SOC_assesment.html" class="flex items-center"><i class="fas fa-chart-line mr-2"></i> SOC Maturity Assessment</a>
+                            <a href="Grs.html" class="flex items-center"><i class="fas fa-balance-scale mr-2"></i> Cybersecurity Strategy - GRC</a>
+                            <a href="operating.html" class="flex items-center"><i class="fas fa-cogs mr-2"></i> Cybersecurity Operating System</a>
+                            <a href="compliance.html" class="flex items-center"><i class="fas fa-file-contract mr-2"></i> Compliance</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown relative whitespace-nowrap">
+                        <a href="offensive&defensive.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
+                            Offensive & Defensive <i class="fas fa-chevron-down ml-2 text-xs"></i>
+                        </a>
+                        <div class="dropdown-menu mt-2">
+                            <a href="red-teaming.html" class="flex items-center"><i class="fas fa-crosshairs mr-2"></i> Red Teaming</a>
+                            <a href="application.html" class="flex items-center"><i class="fas fa-mobile-alt mr-2"></i> Comprehensive Application Security</a>
+                            <a href="data-integration.html" class="flex items-center"><i class="fas fa-database mr-2"></i> Data Integration</a>
+                        </div>
+                    </div>
+                    
+                    <a href="about.html" class="nav-link text-white font-medium px-4 py-2">About Us</a>
+                    <a href="contactus.html" class="nav-link text-white font-medium px-4 py-2">Contact Us</a>
+                </div>
 
-    <div class="bg-black p-4 min-h-screen">
-      <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-20">
-        <div class="blur-[106px] h-56 bg-gradient-to-br  to-purple-400 from-blue-700"></div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400  to-indigo-600"></div>
-      </div>
-      <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
-        <div class="md:w-2/3 lg:w-1/2 mt-12 text-gray-100">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-secondary">
-            <path fill-rule="evenodd"
-              d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <h2 class="my-8 text-2xl font-bold text-white md:text-4xl">Our Core Values</h2>
-          <p class="text-white">A company that is known globally has some common principles and beliefs to strengthen the core of its business. The core values and principles of a company encourage personal commitment and assist to explain customer value. For CLINTECH, the following four commitments work as a reminder that we add to our daily work.</p>
-        </div>
-        <div
-          class="mt-16 grid divide-x divide-y  divide-gray-700 overflow-hidden  rounded-3xl border text-gray-600 border-gray-700 sm:grid-cols-2 lg:grid-cols-4  lg:divide-y-0 xl:grid-cols-4">
-          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl  hover:shadow-gray-600/10">
-            <div class="relative space-y-8 py-12 p-8">
-              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon text-white" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586 6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"></path>
+                <!-- Desktop Buttons -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button class="emergency-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                        <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
+                    </button>
+                    <button class="expert-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
+                        <i class="fas fa-headset mr-2"></i> Talk to an Expert
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 left-0 w-80 bg-[#001d3d] text-white h-full z-50 overflow-y-auto">
+        <div class="p-5 border-b border-[#013088] flex justify-between items-center">
+            <img src="https://via.placeholder.com/150x50/001d3d/ffffff?text=CLINTECH" alt="CLINTECH" class="h-8">
+            <button id="mobile-menu-close" class="text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
-            </div> <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Customer Focused</h5>
-                <p class="text-gray-300">Every step of us is to fulfill the customer's expectations and to add value for them. So, we develop trustable and long-term cooperation with our customers.</p>
-              </div>
-            </div>
-          </div>
-          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-            <div class="relative space-y-8 py-12 p-8">
-              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M12 16c2.206 0 4-1.794 4-4s-1.794-4-4-4-4 1.794-4 4 1.794 4 4 4zm0-6c1.084 0 2 .916 2 2s-.916 2-2 2-2-.916-2-2 .916-2 2-2z"></path><path d="m2.845 16.136 1 1.73c.531.917 1.809 1.261 2.73.73l.529-.306A8.1 8.1 0 0 0 9 19.402V20c0 1.103.897 2 2 2h2c1.103 0 2-.897 2-2v-.598a8.132 8.132 0 0 0 1.896-1.111l.529.306c.923.53 2.198.188 2.731-.731l.999-1.729a2.001 2.001 0 0 0-.731-2.732l-.505-.292a7.718 7.718 0 0 0 0-2.224l.505-.292a2.002 2.002 0 0 0 .731-2.732l-.999-1.729c-.531-.92-1.808-1.265-2.731-.732l-.529.306A8.1 8.1 0 0 0 15 4.598V4c0-1.103-.897-2-2-2h-2c-1.103 0-2 .897-2 2v.598a8.132 8.132 0 0 0-1.896 1.111l-.529-.306c-.924-.531-2.2-.187-2.731.732l-.999 1.729a2.001 2.001 0 0 0 .731 2.732l.505.292a7.683 7.683 0 0 0 0 2.223l-.505.292a2.003 2.003 0 0 0-.731 2.733zm3.326-2.758A5.703 5.703 0 0 1 6 12c0-.462.058-.926.17-1.378a.999.999 0 0 0-.47-1.108l-1.123-.65.998-1.729 1.145.662a.997.997 0 0 0 1.188-.142 6.071 6.071 0 0 1 2.384-1.399A1 1 0 0 0 11 5.3V4h2v1.3a1 1 0 0 0 .708.956 6.083 6.083 0 0 1 2.384 1.399.999.999 0 0 0 1.188.142l1.144-.661 1 1.729-1.124.649a1 1 0 0 0-.47 1.108c.112.452.17.916.17 1.378 0 .461-.058.925-.171 1.378a1 1 0 0 0 .471 1.108l1.123.649-.998 1.729-1.145-.661a.996.996 0 0 0-1.188.142 6.071 6.071 0 0 1-2.384 1.399A1 1 0 0 0 13 18.7l.002 1.3H11v-1.3a1 1 0 0 0-.708-.956 6.083 6.083 0 0 1-2.384-1.399.992.992 0 0 0-1.188-.141l-1.144.662-1-1.729 1.124-.651a1 1 0 0 0 .471-1.108z"></path></svg>
-            </div>               <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Achieving Together</h5>
-                <p class="text-gray-300">We consider our customers as a part of our organization and all our ideas and goals rely on each other. Furthermore, we work together, achieve together, and celebrate together.</p>
-              </div>
-            </div>
-          </div>
-          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-            <div class="relative space-y-8 py-12 p-8">
-              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 8a3.91 3.91 0 0 0 4 4 3.91 3.91 0 0 0 4-4 3.91 3.91 0 0 0-4-4 3.91 3.91 0 0 0-4 4zm6 0a1.91 1.91 0 0 1-2 2 1.91 1.91 0 0 1-2-2 1.91 1.91 0 0 1 2-2 1.91 1.91 0 0 1 2 2zM4 18a3 3 0 0 1 3-3h2a3 3 0 0 1 3 3v1h2v-1a5 5 0 0 0-5-5H7a5 5 0 0 0-5 5v1h2z"></path></svg>
-            </div>               <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Proactive </h5>
-                <p class="text-gray-300">We never stop and always continue to enhance our competencies and inclinations. Therefore, we are always one step ahead to provide you with quality security solutions.</p>
-              </div>
-            </div>
-          </div>
-          <div class="group relative bg-[#013088] transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10">
-            <div class="relative space-y-8 py-12 p-8">
-              <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center bg-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M9 20h6v2H9zm7.906-6.288C17.936 12.506 19 11.259 19 9c0-3.859-3.141-7-7-7S5 5.141 5 9c0 2.285 1.067 3.528 2.101 4.73.358.418.729.851 1.084 1.349.144.206.38.996.591 1.921H8v2h8v-2h-.774c.213-.927.45-1.719.593-1.925.352-.503.726-.94 1.087-1.363zm-2.724.213c-.434.617-.796 2.075-1.006 3.075h-2.351c-.209-1.002-.572-2.463-1.011-3.08a20.502 20.502 0 0 0-1.196-1.492C7.644 11.294 7 10.544 7 9c0-2.757 2.243-5 5-5s5 2.243 5 5c0 1.521-.643 2.274-1.615 3.413-.373.438-.796.933-1.203 1.512z"></path></svg>
-            </div>               <div class="space-y-2">
-                <h5 class="text-xl font-semibold text-white transition group-hover:text-secondary">Engaged To Perform</h5>
-                <p class="text-gray-300">We never get tired of challenges; we face and enjoy them! We are always active, work efficiently, and perfectly perform every task to ensure you serve the best.</p>
-              </div>
-            </div>
-          </div>
+            </button>
         </div>
-      </div>
-    </div>
-    <!-- <img id="chatbotImage" src="chatbot.avif" alt="Chatbot" class="w-12 h-12 fixed bottom-8 right-8  bg-white shadow-lg rounded-lg z-10 mb-2 ml-2" class="cursor-pointer"> -->
-    <div class="relative">
-      <img id="chatbotImage" src="robot-vectorart.png" alt="Chatbot" class="w-14 h-14 fixed bottom-8 right-8  shadow-lg rounded-lg z-10 cursor-pointer">
-     
-  </div>
-    <!-- Chatbot UI -->
-
-    <div id="chatbotContainer" class="fixed bottom-8 right-8 z-10 w-full max-w-md bg-white shadow-lg rounded-lg overflow-hidden hidden">
-      <div class="p-4 bg-[#001d3d] text-white text-lg font-semibold flex justify-between items-center">
-          Chatbot
-          <button id="closeBtn" class="text-white text-xl px-2 rounded-md">&times;</button>
-      </div>
-      <div id="chatbox" class="p-4 h-64 overflow-y-auto">
-          <!-- Chat messages will appear here -->
-      </div>
-      <div class="p-4 border-t border-gray-200">
-          <div class="flex items-center">
-              <div class="relative w-full">
-                  <input id="userInput" type="text" class="w-full border border-gray-300 p-2 pl-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email...">
-                  <i class="fas fa-envelope text-gray-400 absolute left-3 top-2.5"></i>
-              </div>
-              <button id="sendEmailBtn" class="ml-2 bg-[#013088] text-white p-2 rounded-md hover:bg-[#019cde]">Send</button>
-          </div>
-      </div>
-  </div>
-      <div id="footer"></div>
-      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          var swiper = new Swiper('.swiper-container', {
-            loop: true, 
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-          });
-        });
-      </script>
-           <!-- <script>
-            const chatbotImage = document.getElementById('chatbotImage');
-            const chatbotContainer = document.getElementById('chatbotContainer');
-            const closeBtn = document.getElementById('closeBtn');
-            const sendEmailBtn = document.getElementById('sendEmailBtn');
-            const userInput = document.getElementById('userInput');
-    
-            chatbotImage.addEventListener('click', () => {
-                chatbotContainer.classList.remove('hidden');
-            });
-  
-            closeBtn.addEventListener('click', () => {
-                chatbotContainer.classList.add('hidden');
-            });
-    
-            sendEmailBtn.addEventListener('click', () => {
-              const email = userInput.value.trim();
-              if (email) {
-                  const emailMessage = document.createElement('div');
-                  emailMessage.innerHTML = `
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #FFFAFA; transform: ; msFilter:;">
-                          <path d="M5 18v3.766l1.515-.909L11.277 18H16c1.103 0 2-.897 2-2V8c0-1.103-.897-2-2-2H4c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h1zM4 8h12v8h-5.277L7 18.234V16H4V8z"></path>
-                          <path d="M20 2H8c-1.103 0-2 .897-2 2h12c1.103 0 2-.897 2 2v8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2z"></path>
-                      </svg>: ${email}`;
-                  emailMessage.classList.add('bg-blue-100', 'text-blue-800', 'p-2', 'rounded-md', 'mb-2', 'w-full', 'flex', 'items-center', 'space-x-2');
-                  chatbox.appendChild(emailMessage);
-                  userInput.value = '';
-                  chatbox.scrollTop = chatbox.scrollHeight;
-              } else {
-                  alert('Please enter a valid email address.');
-              }
-          });
-
-        </script> -->
-        <script>
-          document.addEventListener('DOMContentLoaded', () => {
-            const chatbotImage = document.getElementById('chatbotImage');
-            const chatbotContainer = document.getElementById('chatbotContainer');
-            const closeBtn = document.getElementById('closeBtn');
-            const sendEmailBtn = document.getElementById('sendEmailBtn');
-            const userInput = document.getElementById('userInput');
-            chatbotImage.addEventListener('click', () => {
-                chatbotContainer.classList.remove('hidden');
-            });
-  
-            closeBtn.addEventListener('click', () => {
-                chatbotContainer.classList.add('hidden');
-            });
-    const savedEmailMessage = localStorage.getItem('emailMessage');
-    const savedTimestamp = localStorage.getItem('emailTimestamp');
-
-    if (savedEmailMessage && savedTimestamp) {
-        const now = new Date().getTime();
-        const oneDay = 24 * 60 * 60 * 1000; 
-        if (now - savedTimestamp < oneDay) {
-            chatbox.innerHTML += savedEmailMessage;
-            chatbox.scrollTop = chatbox.scrollHeight;
-        } else {
-            localStorage.removeItem('emailMessage');
-            localStorage.removeItem('emailTimestamp');
-        }
-    }
-
-    sendEmailBtn.addEventListener('click', () => {
-        const email = userInput.value.trim();
-        if (email) {
-            const emailMessage = `
-                <div class="bg-blue-100 text-blue-800 p-2 rounded-md mb-2 w-full flex items-center space-x-2">
-                    <img src="freepik.png" class="w-10 h-10" />
-                    <span>${email}</span>
-                </div>`;
-            chatbox.innerHTML += emailMessage;
-            chatbox.scrollTop = chatbox.scrollHeight;
-            localStorage.setItem('emailMessage', emailMessage);
-            localStorage.setItem('emailTimestamp', new Date().getTime());
-            userInput.value = '';
-        } else {
-            alert('Please enter a valid email address.');
-        }
-    });
-});
-
-          </script>
-      <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-   
-         <script> 
-          $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
-          });
-          </script> 
-          <script>
-               const buttons = document.querySelectorAll('button');
-   const contentDiv = document.getElementById('content');
-   
-   function setActiveButton(buttonId) {
-       buttons.forEach(button => {
-           button.classList.toggle('bg-[#013088]', button.id === buttonId);
-           button.classList.toggle('bg-[#001d3d]', button.id !== buttonId);
-       });
-   }
-   
-   function loadContent(buttonId) {
-       contentDiv.innerHTML = '';
-       
-       if (buttonId === 'banksButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold text-left mt-4">Banks and Financial Services</h2>
-                       <p class="text-gray-400 text-left">
-                           In the fast-paced world of finance, our cybersecurity solutions ensure the integrity and confidentiality of sensitive financial data. From safeguarding transactions to protecting customer information, we provide robust defences against cyber threats, guaranteeing a secure and resilient financial ecosystem.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download.png" alt="Banks and Financial Services" class="w-full max-w-xs mt-4 rounded-lg">
-                   </div>
-               </div>`;
-       } else if (buttonId === 'technologyButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">Technology and Media</h2>
-                       <p class="text-gray-400">
-                           The technology and media industry is constantly evolving, and we help our clients navigate this dynamic landscape. From developing innovative solutions to managing data effectively, we empower businesses to stay ahead of the curve.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download.jfif" alt="Technology and Media" class="w-full max-w-xs mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       } else if (buttonId === 'oilButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">Oil and Power</h2>
-                       <p class="text-gray-400">
-                           The oil and power sector faces unique challenges, and we provide tailored solutions to meet those needs. From optimizing energy production to mitigating environmental impact, we are committed to sustainability and innovation.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download (1).jfif" alt="Oil and Power" class="w-full max-w-xl mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       } else if (buttonId === 'airlinesButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">Airlines</h2>
-                       <p class="text-gray-400">
-                           The airline industry is highly competitive and requires a deep understanding of passenger needs. We help airlines optimize operations, enhance customer experiences, and navigate regulatory complexities.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download (2).jfif" alt="Airlines" class="w-full max-w-lg mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       } else if (buttonId === 'ecommerceButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">E-commerce</h2>
-                       <p class="text-gray-400">
-                           The world of e-commerce is constantly evolving, and we help businesses thrive in this dynamic space. From building secure online platforms to optimizing customer journeys, we provide comprehensive solutions.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download (1).png" alt="E-commerce" class="w-full max-w-lg mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       } else if (buttonId === 'retailButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">Retail</h2>
-                       <p class="text-gray-400">
-                           The retail landscape is facing unprecedented change, and we help businesses adapt and thrive. From improving in-store experiences to enhancing online presence, we provide strategies for success.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download (3).jfif" alt="Retail" class="w-full max-w-lg mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       } else if (buttonId === 'healthcareButton') {
-           contentDiv.innerHTML = `
-               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                   <div>
-                       <h2 class="text-2xl font-bold mb-4">Healthcare</h2>
-                       <p class="text-gray-400">
-                           The healthcare industry is complex and rapidly evolving, and we provide solutions to meet the unique needs of healthcare providers. From improving patient outcomes to streamlining administrative processes, we are dedicated to improving healthcare delivery.
-                       </p>
-                   </div>
-                   <div class="flex justify-center items-center">
-                       <img src="download (4).jfif" alt="Healthcare" class="w-full max-w-lg mt-4 rounded-lg">
-                   </div>
-               </div>
-           `;
-       }
-   }
-
-   window.addEventListener('DOMContentLoaded', () => {
-       const defaultButtonId = 'banksButton'; 
-       setActiveButton(defaultButtonId);
-       loadContent(defaultButtonId);
-   });
-
-   buttons.forEach(button => {
-       button.addEventListener('click', () => {
-           const buttonId = button.id;
-           setActiveButton(buttonId);
-           loadContent(buttonId);
-       });
-   });
-
-   
-          </script>
-         <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const list = document.querySelector('.logos-list');
-            const items = list.innerHTML;
+        
+        <div class="p-5">
+            <ul class="space-y-2">
+                <li><a href="index.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-home mr-3"></i> Home</a></li>
+                
+                <li>
+                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-services-toggle">
+                        <div><i class="fas fa-concierge-bell mr-3"></i> Services</div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <ul id="mobile-services-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
+                        <li><a href="cybersecurity.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy</a></li>
+                        <li><a href="it_solutions.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">IT Security Solutions</a></li>
+                        <li><a href="SOC_assesment.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">SOC Maturity Assessment</a></li>
+                        <li><a href="Grs.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy - GRC</a></li>
+                        <li><a href="operating.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Operating System</a></li>
+                        <li><a href="compliance.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Compliance</a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-offensive-toggle">
+                        <div><i class="fas fa-fist-raised mr-3"></i> Offensive & Defensive</div>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </div>
+                    <ul id="mobile-offensive-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
+                        <li><a href="red-teaming.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Red Teaming</a></li>
+                        <li><a href="application.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Comprehensive Application Security</a></li>
+                        <li><a href="data-integration.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Data Integration</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="about.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-info-circle mr-3"></i> About Us</a></li>
+                <li><a href="contactus.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-phone-alt mr-3"></i> Contact Us</a></li>
+            </ul>
             
-            // Duplicate the list items to create a seamless scroll effect
-            list.innerHTML += items;
-          });
-        </script>
-          
- <!-- <script src="script.js"></script> -->
+            <div class="mt-8 space-y-3">
+                <button class="emergency-btn text-white w-full py-3 rounded-lg font-semibold">
+                    <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
+                </button>
+                <button class="expert-btn text-white w-full py-3 rounded-lg font-semibold">
+                    <i class="fas fa-headset mr-2"></i> Talk to an Expert
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content (for demonstration) -->
+    <div class="container mx-auto px-6 py-12">
+        <h1 class="text-4xl font-bold text-center mb-8">CLINTECH Cybersecurity Solutions</h1>
+        <p class="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-12">
+            Protecting your digital assets with cutting-edge security solutions and expert guidance.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="text-xl font-bold mb-2">Advanced Protection</h3>
+                <p class="text-gray-400">Comprehensive security solutions to safeguard your business from evolving cyber threats.</p>
+            </div>
+            
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+                <h3 class="text-xl font-bold mb-2">Continuous Monitoring</h3>
+                <p class="text-gray-400">24/7 surveillance of your systems to detect and respond to threats in real-time.</p>
+            </div>
+            
+            <div class="bg-gray-800 p-6 rounded-lg">
+                <div class="text-blue-400 text-3xl mb-4"><i class="fas fa-users"></i></div>
+                <h3 class="text-xl font-bold mb-2">Expert Team</h3>
+                <p class="text-gray-400">Our cybersecurity specialists bring years of experience in protecting businesses of all sizes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('open');
+        });
+        
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('open');
+        });
+        
+        // Mobile dropdown toggles
+        document.getElementById('mobile-services-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-services-dropdown').classList.toggle('show');
+        });
+        
+        document.getElementById('mobile-offensive-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuToggle = document.getElementById('menu-toggle');
+            
+            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target) && mobileMenu.classList.contains('open')) {
+                mobileMenu.classList.remove('open');
+            }
+        });
+    </script>
 </body>
 </html>
