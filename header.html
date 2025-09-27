@@ -4,276 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLINTECH - Cybersecurity Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @font-face {
-            font-family: 'Montserrat';
-            src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-            font-weight: normal;
-            font-style: normal;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cyber-dark': '#001d3d',
+                        'cyber-primary': '#013088',
+                        'cyber-blue': '#019cde',
+                        'cyber-light': '#61dafb'
+                    }
+                }
+            }
         }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            color: white;
-        }
-        
-        .nav-gradient {
-            background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
-        }
-        
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background: #019cde;
-            border: 1px solid #013088;
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            z-index: 10;
-            min-width: 200px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: white;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border-radius: 0.25rem;
-        }
-        
-        .dropdown-menu a:hover {
-            background-color: #013088;
-            transform: translateX(5px);
-        }
-        
-        #mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease-in-out;
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
-        
-        .mobile-dropdown {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .mobile-dropdown.show {
-            max-height: 500px;
-        }
-        
-        .nav-link {
-            position: relative;
-            padding: 0.5rem 0;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #019cde;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .emergency-btn {
-            background: linear-gradient(135deg, #ff6b6b 0%, #c1121f 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .emergency-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(193, 18, 31, 0.4);
-        }
-        
-        .expert-btn {
-            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .expert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.4);
-        }
-    </style>
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    <!-- Header/Navigation -->
-    <header class="sticky top-0 z-50 shadow-lg">
-        <nav class="nav-gradient py-3 px-6">
-            <div class="container mx-auto flex items-center justify-between">
+<body class="bg-black text-white font-sans">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gradient-to-r from-cyber-dark to-cyber-primary shadow-lg">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <img src="logo2.png" alt="CLINTECH" class="h-10 md:h-12">
+                    <a href="#" class="text-2xl font-bold text-white hover:text-cyber-light transition-colors duration-300">
+                        <i class="fas fa-shield-alt mr-2 text-cyber-blue"></i>
+                        CLINTECH
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-6">
-                    <a href="index.html" class="nav-link text-white font-medium px-4 py-2">Home</a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                     
-                    <div class="dropdown relative">
-                        <a href="service.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
-                            Services <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="dropdown-menu mt-2 whitespace-nowrap">
-                            <a href="cybersecurity.html" class="flex items-center"><i class="fas fa-shield-alt mr-2"></i> Cybersecurity Strategy</a>
-                            <a href="it_solutions.html" class="flex items-center"><i class="fas fa-laptop-code mr-2"></i> IT Security Solutions</a>
-                            <a href="SOC_assesment.html" class="flex items-center"><i class="fas fa-chart-line mr-2"></i> SOC Maturity Assessment</a>
-                            <a href="Grs.html" class="flex items-center"><i class="fas fa-balance-scale mr-2"></i> Cybersecurity Strategy - GRC</a>
-                            <a href="operating.html" class="flex items-center"><i class="fas fa-cogs mr-2"></i> Cybersecurity Operating System</a>
-                            <a href="compliance.html" class="flex items-center"><i class="fas fa-file-contract mr-2"></i> Compliance</a>
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                           <a href="service.html"> Services </a>
+                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-80 bg-cyber-primary border border-cyber-blue/20 rounded-lg shadow-2xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-shield-alt mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Cybersecurity Strategy</div>
+                                    <div class="text-xs text-gray-300">Comprehensive security planning</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-laptop-code mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">IT Security Solutions</div>
+                                    <div class="text-xs text-gray-300">Advanced technical security</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-chart-line mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">SOC Maturity Assessment</div>
+                                    <div class="text-xs text-gray-300">Security operations evaluation</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-balance-scale mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">GRC Solutions</div>
+                                    <div class="text-xs text-gray-300">Governance, risk & compliance</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-cogs mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Security Operating System</div>
+                                    <div class="text-xs text-gray-300">Integrated security platforms</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-file-contract mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Compliance</div>
+                                    <div class="text-xs text-gray-300">Regulatory compliance support</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     
-                    <div class="dropdown relative whitespace-nowrap">
-                        <a href="offensive&defensive.html" class="nav-link text-white font-medium px-4 py-2 flex items-center">
-                            Offensive & Defensive <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                        </a>
-                        <div class="dropdown-menu mt-2">
-                            <a href="red-teaming.html" class="flex items-center"><i class="fas fa-crosshairs mr-2"></i> Red Teaming</a>
-                            <a href="application.html" class="flex items-center"><i class="fas fa-mobile-alt mr-2"></i> Comprehensive Application Security</a>
-                            <a href="data-integration.html" class="flex items-center"><i class="fas fa-database mr-2"></i> Data Integration</a>
+                    <!-- Offensive & Defensive Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                            Offensive & Defensive
+                            <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-80 bg-cyber-primary border border-cyber-blue/20 rounded-lg shadow-2xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-crosshairs mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Red Teaming</div>
+                                    <div class="text-xs text-gray-300">Advanced penetration testing</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-mobile-alt mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Application Security</div>
+                                    <div class="text-xs text-gray-300">Comprehensive app testing</div>
+                                </div>
+                            </a>
+                            <a href="#" class="flex items-center px-6 py-3 hover:bg-cyber-blue/20 transition-colors duration-200">
+                                <i class="fas fa-database mr-3 text-cyber-light"></i>
+                                <div>
+                                    <div class="text-white font-medium">Data Integration</div>
+                                    <div class="text-xs text-gray-300">Secure data flow solutions</div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                     
-                    <a href="about.html" class="nav-link text-white font-medium px-4 py-2">About Us</a>
-                    <a href="contactus.html" class="nav-link text-white font-medium px-4 py-2">Contact Us</a>
+                    <a href="#" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                        About Us
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                        Contact Us
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
 
-                <!-- Desktop Buttons -->
+                <!-- Action Buttons -->
                 <div class="hidden lg:flex items-center space-x-3">
-                    <button class="emergency-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                        <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
+                    <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span class="text-sm">Experiencing a Breach?</span>
                     </button>
-                    <button class="expert-btn text-white px-4 py-2 rounded-lg text-sm font-semibold">
-                        <i class="fas fa-headset mr-2"></i> Talk to an Expert
+                    <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyber-blue to-cyber-primary text-white font-semibold rounded-lg hover:from-cyber-primary hover:to-cyber-blue transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
+                        <i class="fas fa-headset"></i>
+                        <span class="text-sm">Talk to an Expert</span>
                     </button>
                 </div>
 
-                <!-- Mobile Menu Toggle -->
-                <div class="lg:hidden flex items-center">
-                    <button id="menu-toggle" class="text-white focus:outline-none">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-cyber-light transition-colors duration-300">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-cyber-blue/20">
+                <div class="space-y-4 pt-4">
+                    <a href="#" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                        <i class="fas fa-home mr-3"></i>Home
+                    </a>
+                    
+                    <!-- Mobile Services -->
+                    <div>
+                        <button id="mobile-services-btn" class="flex items-center justify-between w-full text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                            <span><i class="fas fa-concierge-bell mr-3"></i>Services</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div id="mobile-services-menu" class="hidden mt-2 ml-6 space-y-2">
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Cybersecurity Strategy</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">IT Security Solutions</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">SOC Maturity Assessment</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">GRC Solutions</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Security Operating System</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Compliance</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile Offensive & Defensive -->
+                    <div>
+                        <button id="mobile-offensive-btn" class="flex items-center justify-between w-full text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                            <span><i class="fas fa-fist-raised mr-3"></i>Offensive & Defensive</span>
+                            <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                        </button>
+                        <div id="mobile-offensive-menu" class="hidden mt-2 ml-6 space-y-2">
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Red Teaming</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Application Security</a>
+                            <a href="#" class="block text-sm text-gray-300 hover:text-cyber-light transition-colors duration-300 py-2">Data Integration</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                        <i class="fas fa-info-circle mr-3"></i>About Us
+                    </a>
+                    <a href="#" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                        <i class="fas fa-phone-alt mr-3"></i>Contact Us
+                    </a>
+                    
+                    <!-- Mobile Action Buttons -->
+                    <div class="space-y-3 pt-4 border-t border-cyber-blue/20">
+                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transition-all duration-300">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Experiencing a Breach?</span>
+                        </button>
+                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyber-blue to-cyber-primary text-white font-semibold rounded-lg hover:from-cyber-primary hover:to-cyber-blue transition-all duration-300">
+                            <i class="fas fa-headset"></i>
+                            <span>Talk to an Expert</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-80 bg-[#001d3d] text-white h-full z-50 overflow-y-auto">
-        <div class="p-5 border-b border-[#013088] flex justify-between items-center">
-            <img src="https://via.placeholder.com/150x50/001d3d/ffffff?text=CLINTECH" alt="CLINTECH" class="h-8">
-            <button id="mobile-menu-close" class="text-white">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <div class="p-5">
-            <ul class="space-y-2">
-                <li><a href="index.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-home mr-3"></i> Home</a></li>
-                
-                <li>
-                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-services-toggle">
-                        <div><i class="fas fa-concierge-bell mr-3"></i> Services</div>
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </div>
-                    <ul id="mobile-services-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
-                        <li><a href="cybersecurity.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy</a></li>
-                        <li><a href="it_solutions.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">IT Security Solutions</a></li>
-                        <li><a href="SOC_assesment.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">SOC Maturity Assessment</a></li>
-                        <li><a href="Grs.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Strategy - GRC</a></li>
-                        <li><a href="operating.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Cybersecurity Operating System</a></li>
-                        <li><a href="compliance.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Compliance</a></li>
-                    </ul>
-                </li>
-                
-                <li>
-                    <div class="flex justify-between items-center py-3 px-4 hover:bg-[#013088] rounded-lg cursor-pointer" id="mobile-offensive-toggle">
-                        <div><i class="fas fa-fist-raised mr-3"></i> Offensive & Defensive</div>
-                        <i class="fas fa-chevron-down text-xs"></i>
-                    </div>
-                    <ul id="mobile-offensive-dropdown" class="mobile-dropdown pl-10 bg-[#013088] rounded-lg mt-1">
-                        <li><a href="red-teaming.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Red Teaming</a></li>
-                        <li><a href="application.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Comprehensive Application Security</a></li>
-                        <li><a href="data-integration.html" class="block py-3 px-4 hover:bg-[#019cde] rounded-lg">Data Integration</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="about.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-info-circle mr-3"></i> About Us</a></li>
-                <li><a href="contactus.html" class="block py-3 px-4 hover:bg-[#013088] rounded-lg"><i class="fas fa-phone-alt mr-3"></i> Contact Us</a></li>
-            </ul>
-            
-            <div class="mt-8 space-y-3">
-                <button class="emergency-btn text-white w-full py-3 rounded-lg font-semibold">
-                    <i class="fas fa-exclamation-circle mr-2"></i> Experiencing a Breach?
-                </button>
-                <button class="expert-btn text-white w-full py-3 rounded-lg font-semibold">
-                    <i class="fas fa-headset mr-2"></i> Talk to an Expert
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Page Content (for demonstration) -->
-    
     <script>
-        // Mobile menu functionality
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.add('open');
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuIcon.classList.toggle('fa-bars');
+            mobileMenuIcon.classList.toggle('fa-times');
         });
-        
-        document.getElementById('mobile-menu-close').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.remove('open');
-        });
-        
+
         // Mobile dropdown toggles
-        document.getElementById('mobile-services-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-services-dropdown').classList.toggle('show');
+        const mobileServicesBtn = document.getElementById('mobile-services-btn');
+        const mobileServicesMenu = document.getElementById('mobile-services-menu');
+        const mobileServicesIcon = mobileServicesBtn.querySelector('.fa-chevron-down');
+
+        mobileServicesBtn.addEventListener('click', function() {
+            mobileServicesMenu.classList.toggle('hidden');
+            mobileServicesIcon.classList.toggle('rotate-180');
         });
-        
-        document.getElementById('mobile-offensive-toggle').addEventListener('click', function() {
-            document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuToggle = document.getElementById('menu-toggle');
-            
-            if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target) && mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-            }
+
+        const mobileOffensiveBtn = document.getElementById('mobile-offensive-btn');
+        const mobileOffensiveMenu = document.getElementById('mobile-offensive-menu');
+        const mobileOffensiveIcon = mobileOffensiveBtn.querySelector('.fa-chevron-down');
+
+        mobileOffensiveBtn.addEventListener('click', function() {
+            mobileOffensiveMenu.classList.toggle('hidden');
+            mobileOffensiveIcon.classList.toggle('rotate-180');
         });
     </script>
 </body>
