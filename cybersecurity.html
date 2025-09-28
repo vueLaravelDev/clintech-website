@@ -5,182 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cybersecurity Strategy</title>
   <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-   .hover-bg-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-    background-size: 240%;
-    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-}
-@font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
+
     body {
-        font-family: 'Montserrat', sans-serif !important;
+      font-family: 'Montserrat', sans-serif !important;
     }
 
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif !important;
     }
-.hover-bg-slide:hover {
-    background-position: 100%;
-    color: white;
-}
-@media (max-width: 768px) {
-  nav {
-    text-align: center;
-  }
 
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
+    .hover-bg-slide {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      padding: 4px 8px;
+      display: inline-block;
+      background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
+      background-size: 240%;
+      transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+    }
 
-  nav span {
-    display: inline;
-    margin: 0 0.5rem;
-  }
-}
-.hover-slide:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+    .hover-bg-slide:hover {
+      background-position: 100%;
+      color: white;
+    }
 
-.hover-slide:hover {
-    color: #9f7aea; /* Keeps the hover color consistent */
-}
-.hover-bg-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-    background-size: 240%;
-    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-}
+    @media (max-width: 768px) {
+      nav {
+        text-align: center;
+      }
 
-.hover-bg-slide:hover {
-    background-position: 100%;
-    color: white; /* Text color change on hover */
-}
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+
+      nav span {
+        display: inline;
+        margin: 0 0.5rem;
+      }
+    }
   </style>
 </head>
-<body class="bg-black text-white ">
+<body class="bg-black text-white">
 
   <!-- Header -->
- <div id="header"></div>
-<div class="mx-auto container px-6" >
- <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
-  <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
-  <span class="text-gray-500 mx-2">»</span>
-  <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
-  <span class="text-gray-500 mx-2">»</span>
-  <a href="cybersecurity.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Cybersecurity</a>
-</nav>
-</div>
- <main class="py-12 bg-black">
-    
-    <div class="container mx-auto px-4">
-      
+  <div id="header"></div>
+
+  <!-- Breadcrumb Navigation -->
+  <div class="mx-auto container px-6">
+    <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
+      <a href="index.html" class="text-purple-400 px-2 py-1 rounded hover-bg-slide">Home</a>
+      <span class="text-gray-500 mx-2">»</span>
+      <a href="service.html" class="text-gray-400 px-2 py-1 rounded hover-bg-slide">Services</a>
+      <span class="text-gray-500 mx-2">»</span>
+      <a href="cybersecurity.html" class="text-gray-400 px-2 py-1 rounded hover-bg-slide">Cybersecurity</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <main class="py-12 bg-black">
+    <div class="container mx-auto px-4 max-w-5xl">
+
+      <!-- Cybersecurity Strategy Section -->
       <section class="mb-16">
-        <h2 class="text-3xl font-bold mb-6 text-[#019cde]">Our Cybersecurity Approach</h2>
-        <p class="mb-8 text-lg text-white">
-          In today's digital age, cybersecurity is more critical than ever. Our strategy focuses on a comprehensive approach to protect our systems and data from evolving threats.
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#019cde]">Cybersecurity Strategy</h2>
+        <p class="mb-6 text-lg text-white">
+          <strong class="text-purple-400">Future-proof your business:</strong> cybersecurity strategy powered by AI.
         </p>
-        <ul class="list-disc list-inside mb-8 space-y-4">
-          <li class="text-lg text-white">Risk Assessment and Management</li>
-          <li class="text-lg text-white">Network Security</li>
-          <li class="text-lg text-white">Incident Response</li>
-          <li class="text-lg text-white">Compliance and Regulations</li>
-        </ul>
-        <p class="text-lg text-white">
-          We employ cutting-edge technologies and best practices to ensure robust security measures. Our team is dedicated to continuously improving our defenses to stay ahead of potential threats.
+        <p class="mb-6 text-lg text-white">
+          Our CS strategy service is the competitive advantage, allowing you to support AI-driven protection without compromising progress. Be decisive about protection and progress, and accept digital innovation with confidence. We go beyond traditional defense, which constructs agility and flexibility to stay ahead of the curve.
         </p>
       </section>
-  
-      <!-- Why Choose Us Section -->
+
+      <!-- Customer Benefits -->
       <section>
-        <h2 class="text-3xl font-bold mb-8 text-white">Why Choose Us?</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          <!-- Card 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Expert Team</h3>
-            <p class="text-gray-600">
-              Our team consists of highly skilled professionals with years of experience in cybersecurity.
-            </p>
-          </div>
-          
-          <!-- Card 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Advanced Technology</h3>
-            <p class="text-gray-600">
-              We utilize the latest technologies to provide cutting-edge solutions for our clients.
-            </p>
-          </div>
-          
-          <!-- Card 3 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">24/7 Monitoring</h3>
-            <p class="text-gray-600">
-              Our systems are monitored around the clock to ensure immediate response to any potential threats.
-            </p>
-          </div>
-          
-          <!-- Card 4 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Tailored Solutions</h3>
-            <p class="text-gray-600">
-              We offer customized solutions to meet the unique needs of each client.
-            </p>
-          </div>
-          
-          <!-- Card 5 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Proactive Threat Intelligence</h3>
-            <p class="text-gray-600">
-              We leverage advanced threat intelligence to proactively identify and mitigate potential security risks.
-            </p>
-          </div>
-          
-          <!-- Card 6 -->
-          <div class="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
-            <h3 class="text-xl font-semibold mb-3 text-gray-800">Comprehensive Training</h3>
-            <p class="text-gray-600">
-              We provide thorough training programs to ensure your team is equipped to handle cybersecurity challenges.
-            </p>
-          </div>
-  
-        </div>
+        <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-white">Customer Benefits</h3>
+        <ul class="list-disc list-inside text-lg text-white space-y-3">
+          <li>Risk management</li>
+          <li>Business & security alignment</li>
+          <li>Compliance enhancement</li>
+          <li>Advanced technology solutions</li>
+        </ul>
       </section>
-  
+
     </div>
   </main>
-  
 
   <!-- Footer -->
   <div id="footer"></div>
-  <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
-          });
-          </script> 
-      
+
+  <!-- Load header and footer with jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
 
 </body>
 </html>
