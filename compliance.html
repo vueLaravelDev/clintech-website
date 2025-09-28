@@ -3,259 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compliance</title>
+    <title>Compliance Assurance | CLINTECH</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
-    }
-        .bg-dark-custom {
-            background-color: #2c3e50;
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
-        .bg-light-custom {
-            background-color: #ecf0f1;
-        }
-        .hover-shadow:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-        .icon-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background-color: #3498db;
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
             color: white;
-            border-radius: 50%;
+            scroll-behavior: smooth;
         }
-        .bg-gradient-custom {
-            background: linear-gradient(135deg, #013088 0%, #013088 100%);
-        }
-        .text-gradient {
-            background: -webkit-linear-gradient(#FFFAFA, #FFFF);
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
-    #btn:hover { 
-        animation: effect 1.0s infinite; 
-    } 
-    .hover-slide:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.hover-slide:hover {
-    color: #9f7aea;
-}
-.hover-bg-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-    background-size: 240%;
-    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-}
-
-.hover-bg-slide:hover {
-    background-position: 100%;
-    color: white; /* Text color change on hover */
-}
-    @keyframes effect { 
-        0% { 
-            transform: translateX(0px) rotate(0deg); 
-        } 
-  
-        20% { 
-            transform: translateX(-4px) rotate(-4deg); 
-        } 
-  
-        40% { 
-            transform: translateX(-2px) rotate(-2deg); 
-        } 
-  
-        60% { 
-            transform: translateX(4px) rotate(4deg); 
-        } 
-  
-        80% { 
-            transform: translateX(2px) rotate(2deg); 
-        } 
-  
-        100% { 
-            transform: translateX(0px) rotate(0deg); 
-        } 
-    } 
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+        }
     </style>
 </head>
-<body class="bg-black">
+<body>
+    <!-- Header Placeholder -->
     <div id="header"></div>
-    <div class="mx-auto container px-6" >
-        <nav class="text-sm mt-8 px-4 container mb-4  mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
-         <a href="index.html" class="text-purple-400  px-2 py-1 rounded hover-bg-slide">Home</a>
-         <span class="text-gray-500 mx-2">»</span>
-         <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
-         <span class="text-gray-500 mx-2">»</span>
-         <a href="cybersecurity.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Compliance</a>
-       </nav>
-       </div>
+    
     <!-- Hero Section -->
-    <section class="bg-black text-white py-20 text-center">
-        <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-extrabold mb-4 text-[#019cde]">Compliance and Regulation</h1>
-            <p class="text-xl mb-8">Ensuring your organization meets the highest standards of compliance and regulatory requirements.</p>
-            <a href="#overview" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover-bg-slide">Learn More</a>
+    <section class="hero-section">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Compliance Assurance</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Your track to trustability</p>
         </div>
     </section>
 
-    <!-- Regulatory Framework Section -->
-    <section id="framework" class="bg-black py-16">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <h2 class="text-3xl font-bold mb-4 text-white">Regulatory Framework</h2>
-                    <p class="text-gray-700 mb-6">Our comprehensive regulatory framework provides a structured approach to ensure compliance with industry standards and regulations.</p>
-                    <a href="service.html" class="bg-[#001d3d] text-white font-bold py-2 px-4 rounded-lg hover-bg-slide">Explore Framework</a>
+    <!-- Main Content Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8 mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8 section-title">Transform Compliance into Competitive Advantage</h2>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        In today's world, regulatory compliance is greater than requirements; it's a competitive advantage.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        Our compliance service delivers expert guidance to make sure your cybersecurity practices not only meet but outshine the needs of global regulations, for example, HIPAA, PCI, and GDPR compliance.
+                    </p>
+                    <p class="text-gray-300 text-lg text-center">
+                        We transform compliance into a competitive edge, rationalize complex mandates, and position your organization for growth and trust in the digital era.
+                    </p>
                 </div>
-                <div class="md:w-1/2 md:pl-8">
-                    <img src="compliance-2.jpg" alt="Regulatory Framework" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition-opacity duration-300">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance Insights Section -->
-    <section id="insights" class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-8 text-white">Compliance Insights</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-bold mb-4">Industry Trends</h3>
-                        <p class="text-gray-700">Keep up-to-date with the latest trends and changes in compliance regulations that may impact your industry.</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <h3 class="text-xl font-bold mb-4">Expert Analysis</h3>
-                        <p class="text-gray-700">Gain insights from our compliance experts who analyze and interpret regulations to help you stay compliant.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance Strategies Section -->
-    <section id="strategies" class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Compliance Strategies</h2>
-            <div class="flex flex-col md:flex-row -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-container mb-4">
-                            <i class="fas fa-shield-alt fa-2x"></i>
+                
+                <h2 class="text-3xl font-bold text-center mb-8 section-title">Benefits Delivered to Clients</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap text-white text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Risk Management</h3>
-                        <p class="text-gray-600">Develop effective risk management strategies to identify and mitigate potential compliance risks before they become issues.</p>
+                        <h3 class="text-2xl font-semibold mb-4">Regulatory Mastery</h3>
+                        <p class="text-gray-300">Deep expertise in global compliance frameworks and evolving regulatory landscapes.</p>
                     </div>
-                </div>
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <div class="icon-container mb-4">
-                            <i class="fas fa-file-alt fa-2x"></i>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-map-signs text-white text-3xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-4">Documentation</h3>
-                        <p class="text-gray-600">Ensure thorough documentation of compliance processes to meet regulatory requirements and facilitate audits.</p>
+                        <h3 class="text-2xl font-semibold mb-4">Compliance Roadmap</h3>
+                        <p class="text-gray-300">Clear, actionable path to achieve and maintain compliance across all regulations.</p>
+                    </div>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Risk Management</h3>
+                        <p class="text-gray-300">Proactive identification and mitigation of compliance-related risks.</p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-puzzle-piece text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Compliance Integration</h3>
+                        <p class="text-gray-300">Seamless integration of compliance requirements into business operations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compliance Services Section -->
-    <section id="services" class="bg-black py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Our Compliance Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-shadow transition-shadow duration-300">
-                    <div class="icon-container mb-4">
-                        <i class="fas fa-shield-alt fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Risk Assessment</h3>
-                    <p class="text-gray-600">Identify and evaluate potential risks to ensure your organization is protected against compliance breaches.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-shadow transition-shadow duration-300">
-                    <div class="icon-container mb-4">
-                        <i class="fas fa-file-alt fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Documentation</h3>
-                    <p class="text-gray-600">Prepare and maintain thorough documentation to support compliance with industry regulations and standards.</p>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-shadow transition-shadow duration-300">
-                    <div class="icon-container mb-4">
-                        <i class="fas fa-cogs fa-2x"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Compliance Audits</h3>
-                    <p class="text-gray-600">Conduct regular audits to ensure ongoing compliance and identify areas for improvement.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Compliance Benefits Section -->
-    <section id="benefits" class="bg-black py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Benefits of Compliance Solutions</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-bold mb-4">Enhanced Confidence</h3>
-                        <p class="text-gray-700">Increase your organization's confidence in meeting compliance requirements and reducing regulatory risks.</p>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg">
-                        <h3 class="text-xl font-bold mb-4">Improved Efficiency</h3>
-                        <p class="text-gray-700">Streamline compliance processes and enhance operational efficiency with our expert solutions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-black text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-            <p class="text-lg mb-8">Have questions or need assistance with compliance? Contact us and let our team help you achieve your compliance goals.</p>
-           <button id="btn"><a href="contactus.html"   class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover-bg-slide">Contact Us</a></button> 
-        </div>
-    </section>
+    <!-- Footer -->
     <div id="footer"></div>
-    <!-- Tailwind CSS Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
     <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous">
-</script>     
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>     
     <script> 
-     $(function(){
-       $("#header").load("header.html"); 
-       $("#footer").load("footer.html"); 
-     });
-     </script> 
+        $(function(){
+            $("#header").load("header.html"); 
+            $("#footer").load("footer.html"); 
+        });
+    </script> 
 </body>
 </html>
