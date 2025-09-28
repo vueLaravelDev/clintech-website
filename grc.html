@@ -3,199 +3,476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Strategy - GRC</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <title>Cybersecurity Strategy - GRC | CLINTECH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <style>
-        @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
-    }
-        .transition-transform {
-            transition: transform 0.3s ease;
+    <style>
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
-        .transform-hover:hover {
-            transform: scale(1.05);
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+            scroll-behavior: smooth;
         }
-        .hover-slide:hover {
-            color: #9f7aea; 
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .hover-bg-slide {
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+        }
+        
+        .hover-slide {
             position: relative;
             color: inherit;
             text-decoration: none;
-            padding: 4px 8px;
-            display: inline-block;
-            background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-            background-size: 240%;
-            transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+            padding-bottom: 2px;
         }
-
-        .hover-bg-slide:hover {
-            background-position: 100%;
-            color: white; 
+        
+        .hover-slide::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .hover-slide:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1563013546-77f13c5e0eb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .grc-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .grc-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .grc-badge i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Header styling */
+        #header {
+            background-color: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="bg-black font-sans leading-normal tracking-normal">
-  <div id="header"></div>
-    <!-- Hero Section -->
-    <div class=" px-1.5">
-        <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
-            <a href="index.html" class="text-purple-400  px-1 py-1 rounded hover-bg-slide">Home</a>
-            <span class="text-gray-500 mx-1">»</span>
-            <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
-            <span class="text-gray-500 mx-1">»</span>
-            <a href="grc.html" class="text-gray-400  px-1 py-1 rounded hover-bg-slide">Cybersecurity Strategy - GRC</a>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header">
+        <!-- This will be replaced by the loaded header.html content -->
+        <div class="bg-black py-4">
+            <div class="container mx-auto px-6 flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text">CLINTECH</div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-white hover-slide">Home</a>
+                    <a href="service.html" class="text-white hover-slide">Services</a>
+                    <a href="about.html" class="text-white hover-slide">About</a>
+                    <a href="contactus.html" class="text-white hover-slide">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Breadcrumb Navigation -->
+    <div class="mx-2 mt-8 mb-4">
+        <nav class="breadcrumb container mx-auto">
+            <a href="index.html" class="text-purple-400 hover-slide">Home</a>
+            <span class="text-gray-500 mx-2">»</span>
+            <a href="service.html" class="text-gray-400 hover-slide">Services</a>
+            <span class="text-gray-500 mx-2">»</span>
+            <span class="text-gray-400">Cybersecurity Strategy - GRC</span>
         </nav>
     </div>
-    <section class="bg-black text-white py-16 px-1">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl text-[#019cde] font-extrabold mb-4">Cybersecurity Strategy - GRC</h1>
-            <p class="text-xl mb-8">Governance, Risk, and Compliance in the Digital Age</p>
-            <a href="#" class="bg-[#001d3d] hover-bg-slide text-white font-bold py-2 px-6 rounded-full  ">Learn More</a>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Cybersecurity Strategy - GRC</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Governance, Risk, and Compliance in the Digital Age. Build a resilient security framework that aligns with your business objectives and regulatory requirements.</p>
+            <a href="#contact" class="btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- GRC Framework Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Our GRC Framework</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="grc-badge">
+                    <i class="fas fa-chess-king"></i>
+                    <h3 class="font-semibold">Governance</h3>
+                    <p class="text-gray-400 text-sm mt-2">Strategic alignment and oversight</p>
+                </div>
+                <div class="grc-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 class="font-semibold">Risk Management</h3>
+                    <p class="text-gray-400 text-sm mt-2">Threat identification and mitigation</p>
+                </div>
+                <div class="grc-badge">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3 class="font-semibold">Compliance</h3>
+                    <p class="text-gray-400 text-sm mt-2">Regulatory adherence and reporting</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Overview Section -->
-    <section id="overview" class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">Overview</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="overview" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">GRC Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Overview Card 1 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform-hover hover:shadow-2xl">
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-chess-king text-white text-3xl"></i>
+                    </div>
                     <h3 class="text-2xl font-semibold mb-4">Governance</h3>
-                    <p class="text-gray-700 mb-4">Establishing clear roles, responsibilities, and processes for cybersecurity management to align with organizational goals and regulatory requirements.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                    <p class="text-gray-300 mb-4">Establishing clear roles, responsibilities, and processes for cybersecurity management to align with organizational goals and regulatory requirements.</p>
+                    <a href="#" class="text-purple-400 hover-slide mt-4 inline-block">Learn more →</a>
                 </div>
+                
                 <!-- Overview Card 2 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform-hover hover:shadow-2xl">
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
                     <h3 class="text-2xl font-semibold mb-4">Risk Management</h3>
-                    <p class="text-gray-700 mb-4">Identifying, assessing, and mitigating risks to protect against cyber threats and ensure the resilience of business operations.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                    <p class="text-gray-300 mb-4">Identifying, assessing, and mitigating risks to protect against cyber threats and ensure the resilience of business operations.</p>
+                    <a href="#" class="text-purple-400 hover-slide mt-4 inline-block">Learn more →</a>
                 </div>
+                
                 <!-- Overview Card 3 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transition-transform transform-hover hover:shadow-2xl">
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-clipboard-check text-white text-3xl"></i>
+                    </div>
                     <h3 class="text-2xl font-semibold mb-4">Compliance</h3>
-                    <p class="text-gray-700 mb-4">Ensuring adherence to relevant laws, regulations, and standards to avoid legal issues and maintain trust with stakeholders.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                    <p class="text-gray-300 mb-4">Ensuring adherence to relevant laws, regulations, and standards to avoid legal issues and maintain trust with stakeholders.</p>
+                    <a href="#" class="text-purple-400 hover-slide mt-4 inline-block">Learn more →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Strategy Section -->
-    <section class="bg-black py-16 ">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">Our Strategy</h2>
-            <div class="flex flex-col lg:flex-row gap-8">
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Our Strategy Approach</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Strategy Card 1 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">Assessment</h3>
-                    <p class="text-gray-700">Conducting a thorough assessment of the current cybersecurity posture to identify gaps and areas for improvement.</p>
+                    <p class="text-gray-300">Conducting a thorough assessment of the current cybersecurity posture to identify gaps and areas for improvement.</p>
                 </div>
+                
                 <!-- Strategy Card 2 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">Implementation</h3>
-                    <p class="text-gray-700">Deploying security measures and controls to address identified vulnerabilities and enhance overall security posture.</p>
+                    <p class="text-gray-300">Deploying security measures and controls to address identified vulnerabilities and enhance overall security posture.</p>
                 </div>
+                
                 <!-- Strategy Card 3 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-eye text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">Monitoring</h3>
-                    <p class="text-gray-700">Continuously monitoring and evaluating security measures to ensure they remain effective against evolving threats.</p>
+                    <p class="text-gray-300">Continuously monitoring and evaluating security measures to ensure they remain effective against evolving threats.</p>
                 </div>
+                
                 <!-- Strategy Card 4 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">Reporting</h3>
-                    <p class="text-gray-700">Providing regular reports on security performance and compliance to stakeholders and management.</p>
+                    <p class="text-gray-300">Providing regular reports on security performance and compliance to stakeholders and management.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Benefits Section -->
-    <section class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 text-white text-center">Benefits</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Strategic Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Benefit Card 1 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold mb-4">Enhanced Security</h3>
-                    <p class="text-gray-700">Improves overall security posture by addressing vulnerabilities and implementing effective controls.</p>
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-lock text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Enhanced Security</h3>
+                    <p class="text-gray-300">Improves overall security posture by addressing vulnerabilities and implementing effective controls.</p>
                 </div>
+                
                 <!-- Benefit Card 2 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold mb-4">Regulatory Compliance</h3>
-                    <p class="text-gray-700">Ensures compliance with relevant regulations and standards, reducing the risk of legal issues.</p>
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Regulatory Compliance</h3>
+                    <p class="text-gray-300">Ensures compliance with relevant regulations and standards, reducing the risk of legal issues.</p>
                 </div>
+                
                 <!-- Benefit Card 3 -->
-                <div class="bg-white shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 class="text-xl font-semibold mb-4">Risk Mitigation</h3>
-                    <p class="text-gray-700">Helps in identifying and mitigating potential risks, enhancing the organization's resilience to cyber threats.</p>
+                <div class="card p-8 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Risk Mitigation</h3>
+                    <p class="text-gray-300">Helps in identifying and mitigating potential risks, enhancing the organization's resilience to cyber threats.</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <section class="py-16 bg-black">
-        <div class="container mx-auto flex flex-col md:flex-row items-center px-4">
-            <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center items-center">
-                <img src="inovative.jpg" alt="Image" class="w-72 h-auto rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="md:w-1/2 md:pl-8">
-                <h2 class="text-3xl font-bold mb-4 text-white">Innovative Solutions</h2>
-                <p class="text-white mb-6">Our innovative solutions help businesses stay ahead in the ever-evolving digital landscape. We provide tailored strategies to meet your specific needs and ensure long-term success.</p>
-                <a href="#" class="bg-[#001d3d] text-white font-bold py-2 px-4 rounded-lg hover-bg-slide">Learn More</a>
-            </div>
-        </div>
-    </section>
-   
-    <section class="bg-black  ">
-        <div class="container mx-auto px-4 relative">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 relative z-10">
-                    <h2 class="text-3xl text-white font-bold mb-4">Advanced Analytics</h2>
-                    <p class="text-white mb-6">Utilize our advanced analytics tools to gain valuable insights into your data. Our solutions provide actionable intelligence to drive informed decision-making and optimize performance.</p>
-                    <a href="#" class="bg-[#013088] text-white font-bold py-2 px-4 rounded-lg hover-bg-slide">Explore Features</a>
-                </div>
-                <div class="md:w-1/2 mt-32 flex justify-center items-center">
-                    <img src="advance.jpg" alt="Image" class="w-72 py-12 h-auto rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section class="bg-black text-white py-16">
-        <div class="container mx-auto text-center px-4">
-            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-            <p class="text-xl mb-8">Have questions or need assistance with your cybersecurity strategy? Contact us today!</p>
-            <a href="contactus.html" class="bg-[#001d3d] text-white font-bold py-2 px-6 rounded-full hover-bg-slide">Contact Us</a>
         </div>
     </section>
 
-  <div id="footer"></div>
-         <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
+    <!-- Innovative Solutions Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:space-x-12">
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0 flex justify-center items-center">
+                    <div class="card p-6">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Innovative Solutions" class="w-full h-auto rounded-lg">
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Innovative GRC Solutions</h2>
+                    <p class="text-gray-300 mb-6">Our innovative GRC solutions help businesses stay ahead in the ever-evolving digital landscape. We provide tailored strategies to meet your specific needs and ensure long-term success.</p>
+                    <p class="text-gray-300 mb-8">With our expertise in governance, risk management, and compliance, we help organizations build resilient security frameworks that align with business objectives and regulatory requirements.</p>
+                    <a href="#contact" class="btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Analytics Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:space-x-12">
+                <div class="w-full lg:w-1/2 order-2 lg:order-1">
+                    <h2 class="text-3xl font-bold mb-6 text-white">Advanced GRC Analytics</h2>
+                    <p class="text-gray-300 mb-6">Utilize our advanced analytics tools to gain valuable insights into your GRC posture. Our solutions provide actionable intelligence to drive informed decision-making and optimize performance.</p>
+                    <p class="text-gray-300 mb-8">With real-time monitoring and predictive analytics, we help organizations proactively manage risks and maintain compliance in an ever-changing threat landscape.</p>
+                    <a href="#contact" class="btn-primary">Explore Features</a>
+                </div>
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0 flex justify-center items-center order-1 lg:order-2">
+                    <div class="card p-6">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Advanced Analytics" class="w-full h-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 gradient-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 section-title">Get in Touch</h2>
+            <div class="max-w-2xl mx-auto">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Start Your GRC Journey</h3>
+                    <p class="text-lg text-gray-300 mb-6 text-center">Have questions or need assistance with your cybersecurity strategy? Contact us today!</p>
+                    
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                            <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        </div>
+                        <input type="text" name="company" placeholder="Company Name" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                        <textarea name="message" rows="4" placeholder="Tell us about your GRC needs" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+                        <button type="submit" class="btn-primary w-full">Contact Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer">
+        <!-- This will be replaced by the loaded footer.html content -->
+        <div class="bg-gray-900 py-12">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 gradient-text">CLINTECH</h3>
+                        <p class="text-gray-400">Providing comprehensive cybersecurity strategy and GRC solutions to protect your business and ensure regulatory compliance.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Services</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover-slide">Cybersecurity Strategy - GRC</a></li>
+                            <li><a href="#" class="hover-slide">SOC Maturity Assessment</a></li>
+                            <li><a href="#" class="hover-slide">Cloud Architecture Review</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover-slide">About Us</a></li>
+                            <li><a href="#" class="hover-slide">Careers</a></li>
+                            <li><a href="#" class="hover-slide">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Contact</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><i class="fas fa-map-marker-alt mr-2"></i> Faisalabad, Punjab, Pakistan</li>
+                            <li><i class="fas fa-phone mr-2"></i> +92307111229</li>
+                            <li><i class="fas fa-envelope mr-2"></i> Admin-hr@clintech.co</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
+                    <p>&copy; 2023 CLINTECH. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>     
+    <script> 
+        $(function(){
             $("#header").load("header.html"); 
             $("#footer").load("footer.html"); 
-          });
-          </script> 
-      
-     </body>
+        });
+    </script> 
+</body>
 </html>
