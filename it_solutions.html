@@ -3,208 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Architecture Review</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>IT Security Solutions | CLINTECH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom card transition styles */
-        .card {
-            transition: transform 0.5s, box-shadow 0.3s;
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: white;
+            scroll-behavior: smooth;
+        }        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+        }
+        
         .hover-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding-bottom: 2px;
-}
-
-.hover-slide::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-}
-@font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
-    }
-.hover-slide:hover::before {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-.hover-slide:hover {
-    color: #9f7aea; /* Keeps the hover color consistent */
-}
-.hover-bg-slide {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-    background-size: 240%;
-    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
-}
-
-.hover-bg-slide:hover {
-    background-position: 100%;
-    color: white; /* Text color change on hover */
-}
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+            padding-bottom: 2px;
+        }
+        
+        .hover-slide::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        
+        .hover-slide:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .breadcrumb {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 12px 20px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .security-badge {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .security-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .security-badge i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
     </style>
 </head>
-<body class="bg-black text-gray-900 roboto-bold">
-  <div id="header"></div>
-    <!-- Hero Section -->
-     <div class="mx-2">
-    <nav class="text-sm mt-8 px-4 container mx-auto py-4 bg-gray-800 rounded-md shadow-md">
-        <a href="index.html" class="text-purple-400 hover-bg-slide">Home</a>
-        <span class="text-gray-500 mx-2">»</span>
-        <span class="text-gray-400 hover-bg-slide"><a href="service.html">Services</a></span>
-        <span class="text-gray-500 mx-2">»</span>
-        <span class="text-gray-400 hover-bg-slide"><a href="it_solutions.html">IT Security Solution</a></span>
-    </nav>
-</div>
+<body>
+    <div id="header"></div>
     
-    <section class="bg-black text-white py-20 px-4">
-       
+    <div class="mx-2 mt-8 mb-4">
+        <nav class="breadcrumb container mx-auto">
+            <a href="index.html" class="text-purple-400 hover-slide">Home</a>
+            <span class="text-gray-500 mx-2">»</span>
+            <span class="text-gray-400 hover-slide"><a href="service.html">Services</a></span>
+            <span class="text-gray-500 mx-2">»</span>
+            <span class="text-gray-400">IT Security Solutions</span>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl text-[#019cde] font-bold mb-4">IT Security Solutions</h1>
-            <p class="text-lg mb-8"> Discover the key elements of our IT security strategy and how they work together to safeguard your data and ensure a resilient, secure infrastructure.</p>
-            <a href="service.html" class="bg-[#001d3d] hover:bg-[#001d3d] text-white font-semibold py-3 px-6 rounded hover-bg-slide">Get Started</a>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">IT Security Solutions</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Protect your business with our comprehensive IT security services. From data protection to network security, we provide advanced solutions to safeguard your critical assets and ensure business continuity.</p>
+            <a href="contactus.html" class="btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Security Badges Section -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 section-title">Our Security Expertise</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 class="font-semibold">Advanced Protection</h3>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-user-shield"></i>
+                    <h3 class="font-semibold">Threat Prevention</h3>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-lock"></i>
+                    <h3 class="font-semibold">Data Encryption</h3>
+                </div>
+                <div class="security-badge">
+                    <i class="fas fa-network-wired"></i>
+                    <h3 class="font-semibold">Network Security</h3>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Overview Section -->
-    <section id="overview" class="py-16">
+    <section id="overview" class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-white text-center mb-8 uppercase">Overview of IT Solutions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <!-- Card 1 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2"> Get Advanced IT Security Solutions</h3>
-                        <p class="text-gray-700 mb-4">To Secure Your Business Security is a matter of grave importance nowadays, no matter what field we are discussing. Every business wants its information to be secure and well protected. If you are one of them who wants to protect their business, CLINTECH is there for you.</p>
-                        <p> With our personalized security solutions, we help you keep all of your computer data safe and protected. The solutions we offer in this regard include data security, internet security, wireless network security, PC protection, spy protection as well as virus removal.</p>
-                        <!-- <a href="#" class="text-blue-500 hover:underline">Learn more</a> -->
+            <h2 class="text-4xl font-bold text-white text-center mb-12 section-title">Comprehensive Security Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Security Solutions -->
+                <div class="card p-6">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
                     </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">What Do We Offer Here To Ensure Your Business Security?</h3>
-                        <p class="text-gray-700 mb-2">You can avail of the following types of services from our firm: Firewall Systems
-                            <ul>
-                           <li>✔ Anti-Virus & Anti-SPAM Solutions</li>
-                           <li>✔ Data Protection Systems</li>
-                           <li>✔ Data Security & Theft Prevention</li> 
-                           <li>✔ Wireless Security</li>
-                           <li>✔ Unified Threat Management</li> 
-                           <li>✔ Penetration Testing</li>
-                           <li>✔ Security Operation Center (SOC) Security Incident Event Management System (SIEM)</li>
-                           <li>✔ Information Security Awareness Training</li></p>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Advanced Security Solutions</h3>
+                    <p class="text-gray-300 mb-4">In today's digital landscape, security is paramount for every business. CLINTECH provides personalized security solutions to protect your critical data and systems from evolving threats.</p>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-lg">Our Security Services Include:</h4>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Firewall Systems</li>
+                            <li><i class="fas fa-check"></i> Anti-Virus & Anti-SPAM</li>
+                            <li><i class="fas fa-check"></i> Data Protection Systems</li>
+                            <li><i class="fas fa-check"></i> Wireless Security</li>
+                            <li><i class="fas fa-check"></i> Unified Threat Management</li>
+                            <li><i class="fas fa-check"></i> Penetration Testing</li>
+                            <li><i class="fas fa-check"></i> Security Operation Center (SOC)</li>
+                            <li><i class="fas fa-check"></i> Security Awareness Training</li>
                         </ul>
-                        <!-- <a href="#" class="text-blue-500 hover:underline">Learn more</a> -->
+                    </div>
+                </div>
+                
+                <!-- IT Infrastructure -->
+                <div class="card p-6">
+                    <div class="service-icon">
+                        <i class="fas fa-server text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">IT Infrastructure Solutions</h3>
+                    <p class="text-gray-300 mb-4">CLINTECH provides extensive and budget-friendly infrastructure solutions to help manage your business activities efficiently and achieve your strategic goals.</p>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-lg">Our Infrastructure Services:</h4>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Data Center Solutions</li>
+                            <li><i class="fas fa-check"></i> Server Solutions</li>
+                            <li><i class="fas fa-check"></i> Network Solutions</li>
+                            <li><i class="fas fa-check"></i> Data Storage Solutions</li>
+                            <li><i class="fas fa-check"></i> Backup & Data Protection</li>
+                            <li><i class="fas fa-check"></i> Recovery Solutions</li>
+                            <li><i class="fas fa-check"></i> Virtualization</li>
+                            <li><i class="fas fa-check"></i> VPN Connectivity</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-      
-                <h2 class="text-4xl font-bold text-white text-center mt-8 mb-8" >IT INFRASTRUCTURE</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">IT Infrastructure Solutions</h3>
-                        <p class="text-gray-700 mb-4">CLINTECH provides you with extensive and budget-friendly infrastructure solutions that are greatly helpful in managing your business activities in accordance with the requirements and achievement of the goals you have set.</p> 
-                            <p>No matter whether you have IT infrastructure, software, server, network, data storage, or other IT hardware needs, we provide you with top-class solutions. With the help of our IT solutions, all of your business tasks will be regularized and problems will be fixed by our team of experts.</p>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">A Wide Range Of Services That Include In Our IT Infrastructure Solutions: </h3>
-                        <p class="text-gray-700 mb-4"> <ul>
-                            <li>✔  Data Center</li>
-                            <li>✔ Server Solutions</li>
-                            <li>✔ Network Solutions</li> 
-                            <li>✔ Data Storage Solutions</li>
-                            <li>✔ Backup & Data Protection</li> 
-                            <li>✔ Recovery Solutions</li>
-                            <li>✔ Virtualization</li>
-                            <li>✔ VPN Connectivity Solutions</li>
-                         </ul></p>
-                        <!-- <a href="#" class="text-blue-500 hover:underline">Learn more</a> -->
-                    </div>
-                </div>
-            </div>
-            <h2 class="text-4xl font-bold text-white text-center mt-8 mb-8" >Healthcare Solutions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2">IT Infrastructure Solutions</h3>
-                    <p class="text-gray-700 mb-4">CLINTECH provides you with extensive and budget-friendly infrastructure solutions that are greatly helpful in managing your business activities in accordance with the requirements and achievement of the goals you have set.</p> 
-                        <p>No matter whether you have IT infrastructure, software, server, network, data storage, or other IT hardware needs, we provide you with top-class solutions. With the help of our IT solutions, all of your business tasks will be regularized and problems will be fixed by our team of experts.</p>
-                </div>
-            </div>
-            <!-- Card 6 -->
-            <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="Star-1.png" alt="Cloud Component" class="w-24 h-24 px-2 py-2 ">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold mb-2 uppercase">Our Healthcare Solutions Include </h3>
-                    <p class="text-gray-700 mb-4">As the healthcare industry is evolving day by day, so the challenges are also increasing with time. Therefore, it has become necessary for it to keep itself improving and up-to-date to face the challenges. </p>
-                </p>A minor mistake in the field of healthcare may have disastrous outcomes. That's why one needs to be careful while dealing with this type of industry. IT plays a key role in handling the newly emerging challenges of the healthcare industry. CLINTECH provides a reliable option when it comes to getting the safest healthcare security solutions. OUR HEALTHCARE SOLUTIONS INCLUDE: Robotic Dispensing Systems Pharmacy Workflow Systems Pharmacy Management Software Nurse Call Systems Patient Management Software</p>
-                    <!-- <a href="#" class="text-blue-500 hover:underline">Learn more</a> -->
-                </div>
-            </div>
-        </div>
- 
         </div>
     </section>
-      
-    
-    <section id="contact" class="bg-black text-white py-16">
+
+    <!-- Healthcare Solutions Section -->
+    <section id="healthcare" class="py-16 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-12 section-title">Healthcare Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6">
+                    <div class="service-icon">
+                        <i class="fas fa-hospital-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Healthcare IT Solutions</h3>
+                    <p class="text-gray-300 mb-4">As the healthcare industry evolves, so do its challenges. CLINTECH provides reliable and secure healthcare solutions to help medical facilities manage patient data securely and efficiently.</p>
+                    <p class="text-gray-300">Our healthcare solutions are designed to minimize risks and ensure compliance with industry regulations, providing peace of mind in an environment where mistakes can have serious consequences.</p>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4 text-center">Our Healthcare Solutions</h3>
+                    <div class="bg-gray-800 p-4 rounded-lg">
+                        <h4 class="font-semibold mb-4 text-lg">Specialized Healthcare Services:</h4>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Robotic Dispensing Systems</li>
+                            <li><i class="fas fa-check"></i> Pharmacy Workflow Systems</li>
+                            <li><i class="fas fa-check"></i> Pharmacy Management Software</li>
+                            <li><i class="fas fa-check"></i> Nurse Call Systems</li>
+                            <li><i class="fas fa-check"></i> Patient Management Software</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-white text-center mb-12 section-title">Why Choose CLINTECH</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-headset text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">24/7 Support</h3>
+                    <p class="text-gray-300">Our dedicated support team is available around the clock to address your security concerns and provide immediate assistance.</p>
+                </div>
+                
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Certified Experts</h3>
+                    <p class="text-gray-300">Our team consists of certified security professionals with extensive experience in implementing robust security solutions.</p>
+                </div>
+                
+                <div class="card p-6 text-center">
+                    <div class="service-icon">
+                        <i class="fas fa-tools text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Custom Solutions</h3>
+                    <p class="text-gray-300">We tailor our security solutions to meet your specific business needs, ensuring optimal protection without unnecessary complexity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-16 gradient-bg">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Contact With Us</h2>
-            <p class="text-lg mb-8">CLINTECH is the fast-growing All-in-one service provider to meet all the security needs of your business. We provide top-notch security services, solutions, and training through our best-in-class delivery processes.</p>
-           <button id="btn"><a href="contactus.html"   class="hover-bg-slide bg-white text-blue-600 font-bold py-2 px-6 rounded-lg ">Contact Us</a></button> 
+            <h2 class="text-3xl font-bold mb-4">Ready to Secure Your Business?</h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">CLINTECH is a fast-growing service provider dedicated to meeting all your security needs. We deliver top-notch security services, solutions, and training through our best-in-class delivery processes.</p>
+            <a href="contactus.html" class="btn-primary bg-white text-white hover:bg-gray-100">Contact Us Today</a>
         </div>
     </section>
-    
 
     <!-- Footer -->
-   <div id="footer"></div>
-         <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
+    <div id="footer"></div>
+    
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
             $("#header").load("header.html"); 
             $("#footer").load("footer.html"); 
-          });
-          </script> 
+        });
+    </script>
 </body>
 </html>
