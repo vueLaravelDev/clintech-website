@@ -3,187 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Architecture Review</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Cloud Architecture Review | CLINTECH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom card transition styles */
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
         }
     </style>
 </head>
-<body class="bg-black text-gray-900 roboto-bold">
-  <div id="header"></div>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    
     <!-- Hero Section -->
-    <section class="bg-black text-white py-20">
+    <section class="hero-section">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl font-bold mb-4">Cloud Architecture Review</h1>
-            <p class="text-lg mb-8">Explore the core components and benefits of our cloud architecture strategy. Understand how these elements come together to provide a robust and scalable solution.</p>
-            <a href="#" class="bg-[#001d3d] hover:bg-[#001d3d] text-white font-semibold py-3 px-6 rounded">Get Started</a>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Cloud Architecture Review</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Secure and optimize your cloud with AI-generated strategy</p>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section id="overview" class="py-16">
+    <!-- Main Content Section -->
+    <section class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-white text-center mb-8">Overview of Components</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Cybersecurity-Maturity-Assessment-2.webp" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 1</h3>
-                        <p class="text-gray-700 mb-4">Detailed description of Component 1, highlighting its role in the cloud architecture and its benefits.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8 mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8 section-title">AI-Powered Cloud Assessment</h2>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        Our cloud architecture review service delivers a thorough assessment and improvement strategy, merging expertise with advanced AI technologies.
+                    </p>
+                    <p class="text-gray-300 text-lg text-center">
+                        We make sure that the cloud environment remains scalable, resilient, and efficient, strengthened against rapidly growing cyber threats.
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl font-bold text-center mb-8 section-title">Customer Benefits</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Improved Security Posture</h3>
+                        <p class="text-gray-300">Enhanced protection against evolving cyber threats</p>
                     </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Cybersecurity-Maturity-Assessment-2.webp" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 2</h3>
-                        <p class="text-gray-700 mb-4">Detailed description of Component 2, explaining its functionality and integration within the system.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Cost Optimization</h3>
+                        <p class="text-gray-300">Efficient resource utilization and cost management</p>
                     </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Cybersecurity-Maturity-Assessment-2.webp" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 3</h3>
-                        <p class="text-gray-700 mb-4">Insights into Component 3, its advantages, and how it enhances the overall architecture.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-expand-arrows-alt text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Flexibility & Scalability</h3>
+                        <p class="text-gray-300">Adaptable infrastructure that grows with your business</p>
                     </div>
-                </div>
-                <!-- More cards -->
-                <!-- Card 4 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="feature1.jpg" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 4</h3>
-                        <p class="text-gray-700 mb-4">Information about Component 4, including its key features and its impact on performance.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-check-circle text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Assurance</h3>
+                        <p class="text-gray-300">Confidence in your cloud infrastructure reliability</p>
                     </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Financial.jpg" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 5</h3>
-                        <p class="text-gray-700 mb-4">Details on Component 5, its implementation, and benefits to the architecture.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
+                    
+                    <!-- Benefit 5 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-rocket text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Enhanced Performance</h3>
+                        <p class="text-gray-300">Optimized cloud operations and faster response times</p>
                     </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="card bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="Assurance-Audit-Service-768x439.webp" alt="Cloud Component" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-2">Component 6</h3>
-                        <p class="text-gray-700 mb-4">Overview of Component 6, its functionalities, and how it integrates into the cloud infrastructure.</p>
-                        <a href="#" class="text-blue-500 hover:underline">Learn more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Benefits Section -->
-    <section class="bg-black py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-white text-center mb-8">Key Benefits</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Benefit 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="Privacy-Program-Implementation-Services-in-USA.webp" alt="Benefit Icon" class="mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Benefit 1</h3>
-                    <p class="text-gray-700 text-center">Explanation of Benefit 1 and how it enhances the cloud architecture's efficiency and effectiveness.</p>
-                </div>
-                <!-- Benefit 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="Compliance-1.webp" alt="Benefit Icon" class="mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Benefit 2</h3>
-                    <p class="text-gray-700 text-center">Description of Benefit 2, emphasizing its impact on performance and scalability.</p>
-                </div>
-                <!-- Benefit 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
-                    <img src="Data-Security-Service-in-usa.webp" alt="Benefit Icon" class="mb-4">
-                    <h3 class="text-2xl font-semibold mb-2">Benefit 3</h3>
-                    <p class="text-gray-700 text-center">Details on Benefit 3 and its contribution to the overall success of the cloud architecture.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technologies Section -->
-    <section class="py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-white text-center mb-8">Technologies Used</h2>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <!-- Technology 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
-                    <img src="ecommerce.jpg" alt="Tech Icon" class="mb-4 mx-auto">
-                    <h3 class="text-2xl font-semibold mb-2">Technology 1</h3>
-                    <p class="text-gray-700">Short description of Technology 1, including its role in the cloud architecture.</p>
-                </div>
-                <!-- Technology 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
-                    <img src="Financial.jpg" alt="Tech Icon" class="mb-4 mx-auto">
-                    <h3 class="text-2xl font-semibold mb-2">Technology 2</h3>
-                    <p class="text-gray-700">Overview of Technology 2 and its significance within the cloud infrastructure.</p>
-                </div>
-                <!-- Technology 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
-                    <img src="Media-Tech.jpg" alt="Tech Icon" class="mb-4 mx-auto">
-                    <h3 class="text-2xl font-semibold mb-2">Technology 3</h3>
-                    <p class="text-gray-700">Details about Technology 3 and its integration into the overall cloud architecture.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies Section -->
-    <section class="bg-black py-16">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-white text-center mb-8">Case Studies</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Case Study 1 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Case Study 1</h3>
-                    <p class="text-gray-700 mb-4">Summary of Case Study 1, including challenges faced, solutions implemented, and results achieved.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read more</a>
-                </div>
-                <!-- Case Study 2 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Case Study 2</h3>
-                    <p class="text-gray-700 mb-4">Overview of Case Study 2, detailing the approach taken and the outcomes.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read more</a>
-                </div>
-                <!-- Case Study 3 -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-2xl font-semibold mb-2">Case Study 3</h3>
-                    <p class="text-gray-700 mb-4">Insights from Case Study 3, including key takeaways and lessons learned.</p>
-                    <a href="#" class="text-blue-500 hover:underline">Read more</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-   <div id="footer"></div>
-         <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
+    <div id="footer"></div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>     
+    <script> 
+        $(function(){
             $("#header").load("header.html"); 
             $("#footer").load("footer.html"); 
-          });
-          </script> 
+        });
+    </script> 
 </body>
 </html>
