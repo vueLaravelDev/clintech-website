@@ -181,61 +181,52 @@
     </header>
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuIcon = mobileMenuBtn.querySelector('i');
-            const mobileServicesBtn = document.getElementById('mobile-services-btn');
-            const mobileServicesMenu = document.getElementById('mobile-services-menu');
-            const mobileServicesIcon = mobileServicesBtn.querySelector('.fa-chevron-down');
-
-            mobileMenuBtn.addEventListener('click', function() {
-                const isHidden = mobileMenu.classList.toggle('hidden');
-                mobileMenuIcon.className = isHidden ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
-                if (isHidden) {
-                    mobileServicesMenu.classList.add('hidden');
-                    mobileServicesIcon.classList.remove('rotate-180');
-                }
-            });
-
-            mobileServicesBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                mobileServicesMenu.classList.toggle('hidden');
-                mobileServicesIcon.classList.toggle('rotate-180');
-            });
-
-            document.addEventListener('click', function(e) {
-                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuIcon.className = 'fas fa-bars text-xl';
-                    mobileServicesMenu.classList.add('hidden');
-                    mobileServicesIcon.classList.remove('rotate-180');
-                }
-            });
-
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuIcon.className = 'fas fa-bars text-xl';
-                    mobileServicesMenu.classList.add('hidden');
-                    mobileServicesIcon.classList.remove('rotate-180');
-                });
-            });
+<script>
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenu.classList.remove('animate__slideOutLeft'); 
+          mobileMenu.classList.add('animate__slideInLeft');    
+          mobileMenu.classList.toggle('open');                 
+      });
+  
+      document.getElementById('mobile-menu-close').addEventListener('click', function() {
+          const mobileMenu = document.getElementById('mobile-menu');
+          mobileMenu.classList.remove('animate__slideInLeft'); 
+          mobileMenu.classList.add('animate__slideOutLeft');   
+          setTimeout(() => mobileMenu.classList.remove('open'), 300);
+      });
+  
+  
+  
+  </script>
+  <script>
+    document.getElementById('mobile-services-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-services-dropdown').classList.toggle('show');
         });
 
-        window.addEventListener('resize', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenuIcon = mobileMenuBtn.querySelector('i');
-            if (window.innerWidth >= 1024) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuIcon.className = 'fas fa-bars text-xl';
+        document.getElementById('mobile-offensive-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-offensive-dropdown').classList.toggle('show');
+        });
+
+        document.getElementById('services-toggle').addEventListener('click', function () {
+            document.getElementById('services-dropdown').classList.toggle('show');
+        });
+
+        document.getElementById('offensive-toggle').addEventListener('click', function () {
+            document.getElementById('offensive-dropdown').classList.toggle('show');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.relative')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(function (dropdown) {
+                    dropdown.classList.remove('show');
+                });
             }
         });
-    </script>
+</script>
 </body>
 </html>
+
 
 
 
