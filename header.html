@@ -21,30 +21,25 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        /* Custom styles for better mobile experience */
-        @media (max-width: 1024px) {
-            #desktop-menu {
-                display: none !important;
-            }
-            #mobile-menu-btn {
-                display: flex !important;
-            }
-        }
-        
-        @media (min-width: 1025px) {
-            #mobile-menu-btn {
-                display: none !important;
-            }
-            #mobile-menu {
-                display: none !important;
-            }
-        }
-        
-        /* Smooth transitions */
-        .transition-all {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+  /* Mobile-first: hide desktop menu on small screens */
+  @media (max-width: 1023px) {
+    #desktop-menu,
+    .lg\\:flex { /* escape colon */
+      display: none !important;
+    }
+    #mobile-menu-btn {
+      display: flex !important;
+    }
+  }
+
+  /* Desktop: hide mobile elements */
+  @media (min-width: 1024px) {
+    #mobile-menu-btn,
+    #mobile-menu {
+      display: none !important;
+    }
+  }
+</style>
 </head>
 <body class="bg-black text-white font-sans">
     <!-- Header -->
@@ -273,3 +268,4 @@
     </script>
 </body>
 </html>
+
