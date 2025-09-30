@@ -3,18 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLINTECH - Cybersecurity Services</title>
+    <title>Our Services | CLINTECH</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
+        }
+        
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #000;
             color: white;
             scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .service-card {
@@ -32,33 +44,15 @@
             border-color: rgba(1, 156, 222, 0.5);
         }
         
-        .benefits-card {
-            background: linear-gradient(135deg, rgba(0, 29, 61, 0.8) 0%, rgba(1, 48, 136, 0.8) 100%);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(1, 156, 222, 0.2);
-        }
-        
-        .benefits-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(1, 156, 222, 0.3);
-        }
-        
-        .stats-card {
-            background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
-            border-radius: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .stats-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(1, 156, 222, 0.3);
-        }
-        
-        .cta-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+        .service-icon {
+            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
+            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
         }
         
         .breadcrumb-link {
@@ -86,93 +80,27 @@
             width: 100%;
         }
         
-        .service-icon {
-            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
-            border-radius: 12px;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .benefits-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .benefits-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #019cde;
-            font-weight: bold;
-        }
-        
-        .tab-button {
-            transition: all 0.3s ease;
-            border-bottom: 3px solid transparent;
-        }
-        
-        .tab-button.active {
-            border-bottom-color: #019cde;
-            color: #019cde;
-        }
-        
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .section-divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, #019cde, transparent);
             margin: 3rem 0;
         }
         
-        .benefits-image {
-            border-radius: 12px;
-            transition: transform 0.3s ease;
+        .category-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
         
-        .benefits-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .benefit-item:hover {
-            background: rgba(1, 156, 222, 0.1);
-        }
-        
-        .benefit-icon {
-            background: rgba(1, 156, 222, 0.2);
-            border-radius: 8px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            flex-shrink: 0;
+        .category-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -194,106 +122,111 @@
         <!-- Hero Section -->
         <section class="container mx-auto px-6 py-12">
             <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Cybersecurity Services</h1>
                 <p class="text-xl text-gray-300">
-                    We provide comprehensive cybersecurity services at every step, from assessing risk to ongoing improvement. We deliver customized strategies, state-of-the-art technologies, and expert guidance to make sure your organization stays protected against ever-evolving threats.
+                    We provide comprehensive cybersecurity services at every step, from assessing risk to ongoing improvement.
                 </p>
             </div>
         </section>
-         <section id="services" class="py-16 bg-black">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-white">Services We Offer</h2>
-      <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
-        We deeply value the trust of our clients in us. Clients select our services with confidence, knowing we are the best. We provide end-to-end cybersecurity solutions to empower and protect businesses across industries.
-      </p>
-    </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 md:gap-8">
-      <!-- Service Card Start -->
-      <div class="bg-gray-900 p-6 md:p-8 rounded-lg">
-        <div class="flex items-start mb-4 md:mb-6">
-          <div class="bg-blue-900 p-3 rounded-lg mr-4">
-            <i class="fas fa-search text-blue-400 text-2xl"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-white">Advanced Detection and Response</h3>
-        </div>
-        <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
-          Advanced security operations services for high-level threat protection.
-        </p>
-        
-      </div>
-      <!-- Repeat for the other 3 cards -->
-      
-      <div class="bg-gray-900 p-6 md:p-8 rounded-lg">
-        <div class="flex items-start mb-4 md:mb-6">
-          <div class="bg-blue-900 p-3 rounded-lg mr-4">
-            <i class="fas fa-robot text-blue-400 text-2xl"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-white">Data Privacy and AI Security</h3>
-        </div>
-        <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
-          Ensuring ethical AI adoption with a privacy focus.
-        </p>
-        
-      </div>
+        <!-- Strategic Services -->
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold text-center mb-12 category-title">Strategic Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Cybersecurity Strategy -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-chess-knight text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Cybersecurity Strategy</h3>
+                    <p class="text-gray-300 text-lg">Future-proof your business: cybersecurity strategy powered by AI</p>
+                </div>
 
-      <div class="bg-gray-900 p-6 md:p-8 rounded-lg">
-        <div class="flex items-start mb-4 md:mb-6">
-          <div class="bg-blue-900 p-3 rounded-lg mr-4">
-            <i class="fas fa-balance-scale text-blue-400 text-2xl"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-white">Governance, Risk Management, and Compliance</h3>
-        </div>
-        <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
-          For today's evolving threats, comprehensive GRC is provided.
-        </p>
-        
-      </div>
+                <!-- Cloud Architecture Review -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-cloud text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Cloud Architecture Review</h3>
+                    <p class="text-gray-300 text-lg">Secure and optimize your cloud with AI-generated strategy</p>
+                </div>
+            </div>
+        </section>
 
-      <div class="bg-gray-900 p-6 md:p-8 rounded-lg">
-        <div class="flex items-start mb-4 md:mb-6">
-          <div class="bg-blue-900 p-3 rounded-lg mr-4">
-            <i class="fas fa-sync-alt text-blue-400 text-2xl"></i>
-          </div>
-          <h3 class="text-lg md:text-xl font-bold text-white">Secure Digital Transformation</h3>
-        </div>
-        <p class="text-gray-400 mb-4 md:mb-6 text-sm md:text-base">
-          Faster innovation with digital transformation.
-        </p>
-        
-      </div>
-    </div>
-  </div>
-</section>
-        <!-- Services Navigation -->
-        
+        <div class="section-divider container mx-auto"></div>
+
+        <!-- Compliance & Risk Services -->
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold text-center mb-12 category-title">Compliance & Risk Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Compliance -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Compliance</h3>
+                    <p class="text-gray-300 text-lg">Assurance: your track to trustability</p>
+                </div>
+
+                <!-- Risk Management -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Risk Management</h3>
+                    <p class="text-gray-300 text-lg">Cyber risks can threaten operational reputation and integrity</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider container mx-auto"></div>
+
+        <!-- Audit & Security Services -->
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold text-center mb-12 category-title">Audit & Security Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Assurance and Audit -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Assurance and Audit</h3>
+                    <p class="text-gray-300 text-lg">Constant resilience: are your ears and eyes in today's world</p>
+                </div>
+
+                <!-- SOC Audit Services -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-clipboard-check text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">SOC Audit Services</h3>
+                    <p class="text-gray-300 text-lg">SOC compliance with complete audit services</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider container mx-auto"></div>
+
+        <!-- Payment Security -->
+        <section class="container mx-auto px-6 py-12">
+            <h2 class="text-3xl font-bold text-center mb-12 category-title">Payment Security</h2>
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
+                <!-- Payment Security (GRC) -->
+                <div class="service-card p-8 rounded-xl text-center">
+                    <div class="service-icon mx-auto">
+                        <i class="fas fa-credit-card text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Payment Security (GRC)</h3>
+                    <p class="text-gray-300 text-lg">Securing sensitive payment data</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <div id="footer"></div>
 
-    <script>
-        // Tab functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const tabId = this.getAttribute('data-tab');
-                    
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-                    
-                    // Add active class to current button and content
-                    this.classList.add('active');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
-    </script>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
@@ -303,6 +236,3 @@
     </script>
 </body>
 </html>
-
-
-
