@@ -32,9 +32,6 @@
         .service-card {
             transition: all 0.3s ease;
             border: 1px solid rgba(1, 156, 222, 0.2);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
             background: linear-gradient(135deg, rgba(0, 29, 61, 0.9) 0%, rgba(1, 48, 136, 0.9) 100%);
         }
         
@@ -47,12 +44,11 @@
         .service-icon {
             background: linear-gradient(135deg, #019cde 0%, #013088 100%);
             border-radius: 12px;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
         }
         
         .breadcrumb-link {
@@ -79,29 +75,6 @@
         .breadcrumb-link:hover::after {
             width: 100%;
         }
-        
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #019cde, transparent);
-            margin: 3rem 0;
-        }
-        
-        .category-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-        }
-        
-        .category-title::after {
-            content: '';
-            position: absolute;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
-            bottom: -10px;
-            left: 20%;
-            border-radius: 2px;
-        }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen">
@@ -124,100 +97,83 @@
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Cybersecurity Services</h1>
                 <p class="text-xl text-gray-300">
-                    We provide comprehensive cybersecurity services at every step, from assessing risk to ongoing improvement.
+                    Comprehensive cybersecurity solutions for your business protection
                 </p>
             </div>
         </section>
 
-        <!-- Strategic Services -->
+        <!-- Services We Offer Section -->
         <section class="container mx-auto px-6 py-12">
-            <h2 class="text-3xl font-bold text-center mb-12 category-title">Strategic Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold mb-6 text-white">Services We Offer</h2>
+                <p class="text-lg text-gray-300">
+                    We deeply value the trust of our clients in us. Clients select our services with confidence, knowing we are the best. We provide end-to-end cybersecurity solutions to empower and protect businesses across industries.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Cybersecurity Strategy -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-chess-knight text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-chess-knight text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Cybersecurity Strategy</h3>
-                    <p class="text-gray-300 text-lg">Future-proof your business: cybersecurity strategy powered by AI</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Cybersecurity Strategy</h3>
+                    <p class="text-gray-300 text-sm">Future-proof your business with AI-powered strategy</p>
                 </div>
 
                 <!-- Cloud Architecture Review -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-cloud text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-cloud text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Cloud Architecture Review</h3>
-                    <p class="text-gray-300 text-lg">Secure and optimize your cloud with AI-generated strategy</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Cloud Architecture Review</h3>
+                    <p class="text-gray-300 text-sm">Secure and optimize your cloud infrastructure</p>
                 </div>
-            </div>
-        </section>
 
-        <div class="section-divider container mx-auto"></div>
-
-        <!-- Compliance & Risk Services -->
-        <section class="container mx-auto px-6 py-12">
-            <h2 class="text-3xl font-bold text-center mb-12 category-title">Compliance & Risk Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Compliance -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Compliance</h3>
-                    <p class="text-gray-300 text-lg">Assurance: your track to trustability</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Compliance</h3>
+                    <p class="text-gray-300 text-sm">Your track to trustability and regulatory adherence</p>
                 </div>
 
                 <!-- Risk Management -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Risk Management</h3>
-                    <p class="text-gray-300 text-lg">Cyber risks can threaten operational reputation and integrity</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Risk Management</h3>
+                    <p class="text-gray-300 text-sm">Protect operational reputation and integrity</p>
                 </div>
-            </div>
-        </section>
 
-        <div class="section-divider container mx-auto"></div>
-
-        <!-- Audit & Security Services -->
-        <section class="container mx-auto px-6 py-12">
-            <h2 class="text-3xl font-bold text-center mb-12 category-title">Audit & Security Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Assurance and Audit -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-search text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-search text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Assurance and Audit</h3>
-                    <p class="text-gray-300 text-lg">Constant resilience: are your ears and eyes in today's world</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Assurance and Audit</h3>
+                    <p class="text-gray-300 text-sm">Constant resilience for today's threats</p>
                 </div>
 
                 <!-- SOC Audit Services -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-clipboard-check text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-clipboard-check text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">SOC Audit Services</h3>
-                    <p class="text-gray-300 text-lg">SOC compliance with complete audit services</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">SOC Audit Services</h3>
+                    <p class="text-gray-300 text-sm">Complete SOC compliance and audit services</p>
                 </div>
-            </div>
-        </section>
 
-        <div class="section-divider container mx-auto"></div>
-
-        <!-- Payment Security -->
-        <section class="container mx-auto px-6 py-12">
-            <h2 class="text-3xl font-bold text-center mb-12 category-title">Payment Security</h2>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-2xl mx-auto">
                 <!-- Payment Security (GRC) -->
-                <div class="service-card p-8 rounded-xl text-center">
-                    <div class="service-icon mx-auto">
-                        <i class="fas fa-credit-card text-white text-2xl"></i>
+                <div class="service-card p-6 rounded-xl text-center">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-credit-card text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-white">Payment Security (GRC)</h3>
-                    <p class="text-gray-300 text-lg">Securing sensitive payment data</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Payment Security (GRC)</h3>
+                    <p class="text-gray-300 text-sm">Securing sensitive payment data ecosystems</p>
                 </div>
             </div>
         </section>
