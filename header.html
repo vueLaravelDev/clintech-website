@@ -21,32 +21,33 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-  /* Mobile-first: hide desktop menu on small screens */
-  @media (max-width: 1023px) {
-    #desktop-menu,
-    .lg\\:flex { /* escape colon */
-      display: none !important;
-    }
-    #mobile-menu-btn {
-      display: flex !important;
-    }
-  }
+        @media (max-width: 1023px) {
+            #desktop-menu {
+                display: none !important;
+            }
+            #mobile-menu-btn {
+                display: flex !important;
+            }
+        }
 
-  /* Desktop: hide mobile elements */
-  @media (min-width: 1024px) {
-    #mobile-menu-btn,
-    #mobile-menu {
-      display: none !important;
-    }
-  }
-</style>
+        @media (min-width: 1024px) {
+            #mobile-menu-btn {
+                display: none !important;
+            }
+            #mobile-menu {
+                display: none !important;
+            }
+        }
+
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
 </head>
 <body class="bg-black text-white font-sans">
-    <!-- Header -->
     <header class="sticky top-0 z-50 bg-gradient-to-r from-cyber-dark to-cyber-primary shadow-lg">
         <nav class="container mx-auto px-4 sm:px-6 py-4">
             <div class="flex items-center justify-between">
-                <!-- Logo -->
                 <div class="flex items-center">
                     <a href="#" class="text-xl sm:text-2xl font-bold text-white hover:text-cyber-light transition-colors duration-300">
                         <i class="fas fa-shield-alt mr-2 text-cyber-blue"></i>
@@ -54,17 +55,15 @@
                     </a>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div id="desktop-menu" class="hidden lg:flex items-center space-x-6 xl:space-x-8">
                     <a href="index.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     
-                    <!-- Services Dropdown -->
                     <div class="relative group">
                         <button class="flex items-center text-white font-medium hover:text-cyber-light transition-colors duration-300">
-                           <a href="service.html"> Services </a>
+                            <a href="service.html"> Services </a>
                             <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div class="absolute top-full left-0 mt-2 w-80 bg-cyber-primary border border-cyber-blue/20 rounded-lg shadow-2xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
@@ -134,7 +133,6 @@
                     </a>
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="hidden lg:flex items-center space-x-3">
                     <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
                         <i class="fas fa-exclamation-circle"></i>
@@ -146,20 +144,17 @@
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-white hover:text-cyber-light transition-colors duration-300">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-cyber-blue/20">
                 <div class="space-y-4 pt-4">
                     <a href="index.html" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
                         <i class="fas fa-home mr-3"></i>Home
                     </a>
                     
-                    <!-- Mobile Services -->
                     <div>
                         <button id="mobile-services-btn" class="flex items-center justify-between w-full text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
                             <span><i class="fas fa-concierge-bell mr-3"></i>Services</span>
@@ -179,14 +174,13 @@
                     <a href="offensive&defensive.html" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
                         <i class="fas fa-fist-raised mr-3"></i>Offensive & Defensive
                     </a>
-                    <a href="about.html" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
+                    <a href="about" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
                         <i class="fas fa-info-circle mr-3"></i>About Us
                     </a>
-                    <a href="contactus.html" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
+                    <a href="contactus" class="block text-white font-medium hover:text-cyber-light transition-colors duration-300 py-2">
                         <i class="fas fa-phone-alt mr-3"></i>Contact Us
                     </a>
                     
-                    <!-- Mobile Action Buttons -->
                     <div class="space-y-3 pt-4 border-t border-cyber-blue/20">
                         <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transition-all duration-300">
                             <i class="fas fa-exclamation-circle"></i>
@@ -203,37 +197,29 @@
     </header>
 
     <script>
-        // Mobile menu functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuIcon = mobileMenuBtn.querySelector('i');
-
-            // Mobile Services dropdown
             const mobileServicesBtn = document.getElementById('mobile-services-btn');
             const mobileServicesMenu = document.getElementById('mobile-services-menu');
             const mobileServicesIcon = mobileServicesBtn.querySelector('.fa-chevron-down');
 
-            // Toggle main mobile menu
             mobileMenuBtn.addEventListener('click', function() {
                 const isHidden = mobileMenu.classList.toggle('hidden');
                 mobileMenuIcon.className = isHidden ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
-                
-                // Close dropdowns when closing main menu
                 if (isHidden) {
                     mobileServicesMenu.classList.add('hidden');
                     mobileServicesIcon.classList.remove('rotate-180');
                 }
             });
 
-            // Toggle services dropdown
             mobileServicesBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 mobileServicesMenu.classList.toggle('hidden');
                 mobileServicesIcon.classList.toggle('rotate-180');
             });
 
-            // Close mobile menu when clicking outside
             document.addEventListener('click', function(e) {
                 if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     mobileMenu.classList.add('hidden');
@@ -243,7 +229,6 @@
                 }
             });
 
-            // Close dropdowns when clicking on a link
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', function() {
                     mobileMenu.classList.add('hidden');
@@ -254,12 +239,10 @@
             });
         });
 
-        // Handle window resize
         window.addEventListener('resize', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenuIcon = mobileMenuBtn.querySelector('i');
-            
             if (window.innerWidth >= 1024) {
                 mobileMenu.classList.add('hidden');
                 mobileMenuIcon.className = 'fas fa-bars text-xl';
@@ -268,5 +251,3 @@
     </script>
 </body>
 </html>
-
-
