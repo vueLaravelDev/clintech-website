@@ -3,240 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity Operating Model</title>
+    <title>Assurance and Audit | CLINTECH</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-      @font-face {
-    font-family: 'Montserrat';
-    src: url('Montserrat-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-    }
-    body {
-        font-family: 'Montserrat', sans-serif !important;
-    }
-
-    h1 {
-        font-family: 'Montserrat', sans-serif !important  ;
-    }
-        .bg-gradient-custom {
-            background: linear-gradient(135deg, #013088 0%, #0083b0 100%);
+        :root {
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
-        .bg-light-custom {
-            background: #f7f7f7;
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: white;
+            scroll-behavior: smooth;
         }
-        .hover-scale:hover {
-            transform: scale(1.05);
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .hover-slide:hover {
-    color: #9f7aea; /* Keeps the hover color consistent */
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .hover-bg-slide {
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+        }
+        
+        .section-title {
             position: relative;
-            color: inherit;
-            text-decoration: none;
-            padding: 4px 8px;
             display: inline-block;
-            background: linear-gradient(120deg, transparent 0%, transparent 50%, #9f7aea 50%);
-            background-size: 240%;
-            transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+            margin-bottom: 3rem;
         }
-
-        .hover-bg-slide:hover {
-            background-position: 100%;
-            color: white; /* Text color change on hover */
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            bottom: -10px;
+            left: 20%;
+            border-radius: 2px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1563013546-77f13c5e0eb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 0;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
         }
     </style>
 </head>
-<body class="bg-black">
-  <div id="header"></div>
-  <div class=" px-1">
-    <nav class="text-sm mt-8 px-4 container mb-4 mx-auto py-4 bg-gray-800 rounded-md shadow-md flex flex-wrap items-center">
-        <a href="index.html" class="text-purple-400  px-1 py-1 rounded hover-bg-slide">Home</a>
-        <span class="text-gray-500 mx-1">»</span>
-        <a href="service.html" class="text-gray-400  px-2 py-1 rounded hover-bg-slide">Services</a>
-        <span class="text-gray-500 mx-1">»</span>
-        <a href="operating.html" class="text-gray-400  px-1 py-1 rounded hover-bg-slide">Cybersecurity Operating Model</a>
-    </nav>
-</div>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header"></div>
+    
     <!-- Hero Section -->
-    <section class="bg-black text-white py-20 text-center">
-        <div class="container mx-auto px-4">
-            <h1 class="text-5xl text-[#019cde] font-extrabold mb-4">Cybersecurity Operating Model</h1>
-            <p class="text-xl mb-8">Building a robust cybersecurity framework to protect your organization's assets and data.</p>
-            <a href="#" class="bg-white text-blue-600 font-bold py-2 px-6 rounded-lg hover:bg-gray-200 transition-colors">Learn More</a>
+    <section class="hero-section">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Assurance and Audit</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Constant resilience: are your ears and eyes in today's world</p>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section id="overview" class="bg-black py-16">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="model.jpg" alt="Overview" class="w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition-opacity duration-300">
+    <!-- Main Content Section -->
+    <section class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="card p-8 mb-12">
+                    <h2 class="text-3xl font-bold text-center mb-8 section-title">Cybersecurity Assurance and Audit Services</h2>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        Emerging threats need constant resilience. Cybersecurity assurance and audit services are your ears and eyes in today's world.
+                    </p>
+                    <p class="text-gray-300 text-lg mb-6 text-center">
+                        Our specialist audits deliver a thorough security check-up, ranking you against industry standards and regulations. We also authenticate existing controls, confirming your defenses are working as intended.
+                    </p>
+                    <p class="text-gray-300 text-lg text-center">
+                        Enhance stakeholder confidence by illustrating robust cybersecurity.
+                    </p>
                 </div>
-                <div class="md:w-1/2 md:pl-8">
-                    <h2 class="text-3xl font-bold mb-4 text-white">Overview</h2>
-                    <p class="text-gray-700 mb-6">Our Cybersecurity Operating Model integrates best practices, frameworks, and technologies to ensure comprehensive protection against cyber threats. We provide a structured approach to manage risks, respond to incidents, and maintain compliance.</p>
-                    <a href="#" class="bg-[#001d3d] text-white font-bold py-2 px-4 rounded-lg hover-bg-slide">Explore Framework</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Framework Section -->
-    <section id="framework" class="py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
-                    <h3 class="text-2xl font-bold mb-4">Risk Management</h3>
-                    <p class="text-gray-600 mb-4">Identify, assess, and mitigate risks to safeguard your organization's critical assets. Our approach ensures that potential threats are managed effectively.</p>
-                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
-                    <h3 class="text-2xl font-bold mb-4">Incident Response</h3>
-                    <p class="text-gray-600 mb-4">Prepare for and respond to cybersecurity incidents with a clear, actionable plan. We provide support for quick recovery and minimizing impact.</p>
-                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow-lg hover-scale transition-transform duration-300">
-                    <h3 class="text-2xl font-bold mb-4">Compliance & Governance</h3>
-                    <p class="text-gray-600 mb-4">Ensure adherence to relevant regulations and standards. Our services help you stay compliant and maintain effective governance.</p>
-                    <!-- <a href="#" class="text-blue-600 hover:underline">Read More</a> -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16 bg-black">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-white mb-8">Key Features</h2>
-            <div class="flex flex-wrap -mx-4">
-                <div class="w-full md:w-1/3 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover hover:bg-blue-50 transition-colors">
-                        <h3 class="text-xl font-bold mb-4">24/7 Monitoring</h3>
-                        <p class="text-gray-700">Our team provides round-the-clock monitoring to detect and respond to threats in real time, ensuring continuous protection.</p>
+                
+                <h2 class="text-3xl font-bold text-center mb-8 section-title">Benefits Delivered to Clients</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-search text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">In-depth Security Insights</h3>
+                        <p class="text-gray-300">Comprehensive analysis of your security posture</p>
                     </div>
-                </div>
-                <div class="w-full md:w-1/3 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover hover:bg-blue-50 transition-colors">
-                        <h3 class="text-xl font-bold mb-4">Advanced Threat Detection</h3>
-                        <p class="text-gray-700">Utilize cutting-edge technology and analytics to identify and neutralize sophisticated threats before they impact your business.</p>
+                    
+                    <!-- Benefit 2 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Compliance Validation</h3>
+                        <p class="text-gray-300">Verification against industry standards and regulations</p>
                     </div>
-                </div>
-                <div class="w-full md:w-1/3 px-4 mb-8">
-                    <div class="bg-white p-8 rounded-lg shadow-lg card-hover hover:bg-blue-50 transition-colors">
-                        <h3 class="text-xl font-bold mb-4">Customizable Solutions</h3>
-                        <p class="text-gray-700">Our solutions are tailored to meet your specific needs, providing flexibility and adaptability to address evolving threats.</p>
+                    
+                    <!-- Benefit 3 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Actionable Improvements</h3>
+                        <p class="text-gray-300">Practical recommendations for security enhancement</p>
+                    </div>
+                    
+                    <!-- Benefit 4 -->
+                    <div class="card p-8 text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake text-white text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4">Improved Stakeholder Confidence</h3>
+                        <p class="text-gray-300">Enhanced trust through demonstrated security strength</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="bg-black text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-            <p class="text-lg mb-8">Have questions or need more information? Contact us to discuss how our Cybersecurity Operating Model can benefit your organization.</p>
-            <a href="contactus.html" class="bg-[#001d3d] text-white font-bold py-2 px-6 rounded-md hover-bg-slide ">Contact Us</a>
-        </div>
-    </section>
-    <footer class="bg-gradient-to-r from-[#019cde] via-[#019cde] to-[#013088]   py-14 px-16 font-sans tracking-wide relative">
-        <div class="w-full">
-           <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 ">
-             
-              
-             <div>
-               <h2 class="text-white text-lg font-semibold mb-4">Quick Links</h2>
-               <ul class="space-y-4">
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Newsroom</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Tailwind CSS</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Careers</a>
-                 </li>
-               </ul>
-             </div>
-     
-             <div>
-               <h2 class="text-white text-lg font-semibold mb-4">Follow Us</h2>
-               <ul class="space-y-4">
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Github</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">linkedin</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Twitter</a>
-                 </li>
-               </ul>
-             </div>
-     
-             <div>
-               <h2 class="text-white text-lg font-semibold mb-4">Company</h2>
-               <ul class="space-y-4">
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">About</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Privacy Policy</a>
-                 </li>
-                 <li>
-                   <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">Terms &amp; Conditions</a>
-                 </li>
-               </ul>
-             </div>
-     
-             <div class="flex items-center lg:justify-center">
-               <a href='javascript:void(0)'><img src="logo1.png" alt="logo" class='w-60' /></a>
-             </div>
-           </div>
-     
-           <hr class="my-8 border-gray-600" />
-     
-           <div class="flex sm:justify-between flex-wrap gap-6">
-             <div class="flex space-x-5">
-               <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">
-                 <svg class="w-5 h-5 fill-gray-400 hover:fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                   <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63
-                       .772-1.63 1.558V12h2.77l-.443 2.89h-2.327V22C18.343 21.128 22 16.991 22 12"></path>
-                 </svg>
-               </a>
-               <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">
-                 <svg class="w-5 h-5 fill-gray-400 hover:fill-white" viewBox="0 0 24 24" aria-hidden="true">
-                   <path d="M12 2C6.486 2 2 6.486 2 12c0 5.513 4.486 10 10 10s10-4.487 10-10c0-5.514-4.486-10-10-10zm0 1.542c4.951 0 8.458 3.392 8.458 8.458 0 4.949-3.391 8.458-8.458 8.458-4.948 0-8.458-3.391-8.458-8.458
-                           0-4.949 3.392-8.458 8.458-8.458zM9.743 16.747V7.128l6.027 4.31-6.027 4.309z">
-                   </path>
-                 </svg>
-               </a>
-               <a href="javascript:void(0)" class="text-gray-300 hover:text-white text-sm transition-all">
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="fill-gray-400 hover:fill-white w-5 h-5"
-                   viewBox="0 0 24 24">
-                   <path fill-rule="evenodd"
-                     d="M21 5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5zm-2.5 8.2v5.3h-2.79v-4.93a1.4 1.4 0 0 0-1.4-1.4c-.77 0-1.39.63-1.39 1.4v4.93h-2.79v-8.37h2.79v1.11c.48-.78 1.47-1.3 2.32-1.3 1.8 0 3.26 1.46 3.26 3.26zM6.88 8.56a1.686 1.686 0 0 0 0-3.37 1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm1.39 1.57v8.37H5.5v-8.37h2.77z"
-                     clip-rule="evenodd"></path>
-                 </svg>
-               </a>
-             </div>
-     
-             <p class='text-gray-300 text-sm'>© CLINTECH. All rights reserved.
-             </p>
-           </div>
-       </div>
-         </footer>
-         <script
-         src="https://code.jquery.com/jquery-3.3.1.js"
-         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-         crossorigin="anonymous">
-     </script>     
-         <script> 
-          $(function(){
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>     
+    <script> 
+        $(function(){
             $("#header").load("header.html"); 
             $("#footer").load("footer.html"); 
-          });
-          </script> 
+        });
+    </script> 
 </body>
 </html>
