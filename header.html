@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLINTECH - Cybersecurity Solutions</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+    <!-- <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -18,7 +18,25 @@
                 }
             }
         }
-    </script>
+    </script> -->
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'cyber-dark': '#001d3d', // Keep this as a deep navy for backgrounds
+                    'cyber-primary': '#013088', // Keep this as a primary blue
+                    'cyber-blue': '#019cde', // This is close to the logo's blue, but let's adjust it slightly
+                    'cyber-light': '#61dafb', // Keep this as a light accent
+
+                    // New colors based on the logo
+                    'logo-blue': '#00529B', // A more accurate representation of the blue in the logo
+                    'logo-gray': '#333333'  // Dark gray for "PRIVATE LIMITED" and tagline
+                }
+            }
+        }
+    }
+</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-black text-white font-sans">
@@ -217,5 +235,6 @@
     </script>
 </body>
 </html>
+
 
 
