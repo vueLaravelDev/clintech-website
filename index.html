@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLINTECH - Complete Cybersecurity Solutions for the AI Era</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com  "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css  ">
+    <link rel="preconnect" href="https://fonts.googleapis.com  ">
+    <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #000;
             color: white;
             scroll-behavior: smooth;
-        }
-
-        /* Brand-aligned gradients */
+        /* }
         .gradient-bg {
-            background: linear-gradient(135deg, #001D3D 0%, #002a55 100%);
+            background: linear-gradient(135deg, #001d3d 0%, #013088 100%);
         }
         .gradient-hero {
-            background: linear-gradient(135deg, #001D3D 0%, #003a75 50%, #019CDE 100%);
-        }
-
-        /* Carousel */
+            background: linear-gradient(135deg, #001d3d 0%, #013088 50%, #019cde 100%);
+        } */
+            .gradient-bg {
+              background: linear-gradient(135deg, #001D3D 0%, #00529B 100%);
+            }
+            
+            .gradient-hero {
+              background: linear-gradient(135deg, #001D3D 0%, #00529B 50%, #019cde 100%);
+            }
         .carousel-slide {
             background-size: cover;
             background-position: center;
@@ -39,33 +42,50 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.6);
             z-index: 1;
         }
         .carousel-content {
             position: relative;
             z-index: 2;
         }
-
-        /* Cards */
-        .service-card, .industry-card {
+        .hero-section {
+            background: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .service-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.08);
-            background: rgba(10, 20, 40, 0.6);
-            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,255,255,0.1);
+            height: 100%;
         }
-        .service-card:hover, .industry-card:hover {
-            transform: translateY(-6px);
-            border-color: #019CDE;
-            box-shadow: 0 8px 24px rgba(1, 156, 222, 0.25);
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(1, 48, 136, 0.3);
+            border-color: rgba(255,255,255,0.2);
         }
-
-        /* Buttons */
+        .core-value-card {
+            transition: all 0.3s ease;
+        }
+        .core-value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
         .btn-clintech {
-            background: linear-gradient(135deg, #019CDE 0%, #003a75 100%);
+            /* background: linear-gradient(135deg, #013088 0%, #001d3d 100%); */
+          background: linear-gradient(135deg, #00529B 0%, #001D3D 100%);
             color: white;
             border: none;
-            padding: 0.85rem 1.75rem;
+            padding: 0.75rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -73,50 +93,87 @@
             border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(1, 156, 222, 0.3);
+            box-shadow: 0 4px 14px rgba(1, 48, 136, 0.3);
             text-decoration: none;
             display: inline-block;
             text-align: center;
         }
         .btn-clintech:hover {
-            transform: translateY(-3px);
-            background: linear-gradient(135deg, #003a75 0%, #019CDE 100%);
-            box-shadow: 0 6px 18px rgba(1, 156, 222, 0.4);
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #001D3D 0%, #00529B 100%);
+            box-shadow: 0 6px 20px rgba(1, 48, 136, 0.4);
+            /* background: linear-gradient(135deg, #001d3d 0%, #013088 100%); */
         }
+        
         .btn-clintech i {
             margin-right: 0.5rem;
         }
-
-        /* Stats */
         .stat-number {
             font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(to right, #019CDE, #ffffff);
+            font-weight: 700;
+             background: linear-gradient(135deg, #00529B 0%, #019cde 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            /* background: linear-gradient(135deg, #019cde 0%, #013088 100%); */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
+        }
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
         @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-        .animate-fadeInUp { animation: fadeInUp 0.8s ease-out; }
-        .animate-slideInLeft { animation: slideInLeft 0.8s ease-out; }
-        .animate-slideInRight { animation: slideInRight 0.8s ease-out; }
-        .animate-delay-300 { animation-delay: 0.3s; animation-fill-mode: both; }
-        .animate-delay-600 { animation-delay: 0.6s; animation-fill-mode: both; }
-        .animate-delay-900 { animation-delay: 0.9s; animation-fill-mode: both; }
-
-        /* Chatbot */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out;
+        }
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+            animation-fill-mode: both;
+        }
+        .animate-delay-600 {
+            animation-delay: 0.6s;
+            animation-fill-mode: both;
+        }
+        .animate-delay-900 {
+            animation-delay: 0.9s;
+            animation-fill-mode: both;
+        }
         #chatbotImage {
             animation: bounce 3s infinite;
             transition: transform 0.3s ease;
@@ -124,15 +181,18 @@
         }
         #chatbotImage:hover {
             animation: none;
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-15px); }
-            60% { transform: translateY(-8px); }
+        .industry-btn {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
         }
-
-        /* Carousel dots */
+        .industry-btn.active {
+            background: #001d3d !important;
+            border-color: #019cde;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(1, 156, 222, 0.2);
+        }
         .carousel-dot {
             width: 12px;
             height: 12px;
@@ -142,39 +202,48 @@
             transition: all 0.3s ease;
         }
         .carousel-dot.active {
-            background: #019CDE;
-            transform: scale(1.25);
+            background: #019cde;
+            transform: scale(1.2);
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .stat-number { font-size: 2rem; }
-            .carousel-slide { min-height: 70vh; }
-            h1 { font-size: 2.5rem !important; }
-            h2 { font-size: 2rem !important; }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .banner-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .carousel-slide {
+                min-height: 70vh;
+            }
         }
     </style>
 </head>
 <body class="bg-black text-white min-h-screen flex flex-col">
-    <div id="header"></div>
+  <div id="header"></div>
 
     <!-- Carousel Section -->
     <section class="relative overflow-hidden">
-        <!-- Slide 1 -->
+        <!-- Slide 1: Emergent security solutions -->
         <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
             <div class="carousel-content flex items-center justify-center min-h-screen">
                 <div class="container mx-auto px-6 text-center">
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fadeInUp">
-                        <span class="text-cyan-400">Emergent Security Solutions</span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp">
+                        <span class="bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+                            Emergent Security Solutions
+                        </span>
                     </h1>
-                    <p class="text-lg md:text-xl mb-6 animate-fadeInUp animate-delay-300 max-w-2xl mx-auto">
+                    <p class="text-2xl md:text-3xl mb-8 animate-fadeInUp animate-delay-300">
                         Run your business smoothly and confidently without any security threats or breaches.
                     </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-fadeInUp animate-delay-900">
-                        <a href="#contact" class="btn-clintech px-6 py-3 text-base">
+                    <p class="text-lg md:text-xl mb-10 text-gray-300 max-w-3xl mx-auto animate-fadeInUp animate-delay-600">
+                        Our cutting-edge security solutions adapt to emerging threats, providing proactive protection for your business operations.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp animate-delay-900">
+                        <a href="#contact" class="btn-clintech text-lg px-8 py-4">
                             <i class="fas fa-shield-alt"></i> Get Protected Now
                         </a>
-                        <a href="#services" class="bg-transparent border-2 border-cyan-400 text-cyan-300 py-3 px-6 rounded-lg font-semibold hover:bg-cyan-400 hover:text-gray-900 transition-all text-base">
+                        <a href="#services" class="bg-transparent border-2 border-white text-white py-4 px-8 rounded-lg font-semibold hover:bg-white hover:text-black transition-all text-lg">
                             <i class="fas fa-rocket"></i> Explore Solutions
                         </a>
                     </div>
@@ -182,66 +251,79 @@
             </div>
         </div>
 
-        <!-- Slide 2 -->
+        <!-- Slide 2: Protect your future with cybersecurity experts -->
         <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')">
-            <div class="carousel-content flex items-center justify-center min-h-screen">
-                <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 gap-10 items-center">
-                        <div class="text-left">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-6 animate-slideInLeft">
-                                Protect Your Future with <span class="text-cyan-400">Cybersecurity Experts</span>
-                            </h2>
-                            <p class="text-lg mb-6 text-gray-300 animate-slideInLeft animate-delay-300">
-                                We empower your growth as you capitalize on security.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-3 animate-slideInLeft animate-delay-600">
-                                <a href="#services" class="btn-clintech px-5 py-2.5 text-base">
-                                    <i class="fas fa-eye"></i> Learn More
-                                </a>
-                                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white py-2.5 px-5 rounded-lg font-semibold transition-colors text-base">
-                                    <i class="fas fa-exclamation-triangle"></i> Emergency Response
-                                </a>
+    <div class="carousel-content flex items-center justify-center min-h-screen">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInLeft">
+                        Protect Your Future with <span class="text-blue-400">Cybersecurity Experts</span>
+                    </h2>
+                    <p class="text-xl mb-8 text-gray-300 animate-slideInLeft animate-delay-300">
+                        We empower your growth, as you capitalize on security. 
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animate-slideInLeft animate-delay-600">
+                        <a href="#services" class="btn-clintech">
+                            <i class="fas fa-eye"></i> Learn More
+                        </a>
+                        <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-exclamation-triangle"></i> Emergency Response
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center animate-slideInRight animate-delay-300">
+                    <div class="bg-gradient-to-br from-blue-600 to-purple-700 p-8 rounded-2xl shadow-2xl">
+                        <div class="grid grid-cols-2 gap-6 text-center">
+                            <div>
+                                <div class="text-3xl font-bold text-white">98%</div>
+                                <div class="text-blue-200">Detection Rate</div>
                             </div>
-                        </div>
-                        <div class="flex justify-center animate-slideInRight animate-delay-300">
-                            <div class="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 p-6 rounded-2xl backdrop-blur-sm border border-cyan-800/30">
-                                <div class="grid grid-cols-2 gap-5 text-center">
-                                    <div><div class="text-2xl font-bold text-cyan-300">98%</div><div class="text-cyan-200 text-sm">Detection Rate</div></div>
-                                    <div><div class="text-2xl font-bold text-cyan-300"><2min</div><div class="text-cyan-200 text-sm">Response Time</div></div>
-                                    <div><div class="text-2xl font-bold text-cyan-300">200+</div><div class="text-cyan-200 text-sm">Clients Protected</div></div>
-                                    <div><div class="text-2xl font-bold text-cyan-300">24/7</div><div class="text-cyan-200 text-sm">Monitoring</div></div>
-                                </div>
+                            <div>
+                                <div class="text-3xl font-bold text-white">&lt;2min</div>
+                                <div class="text-blue-200">Response Time</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-white">200+</div>
+                                <div class="text-blue-200">Clients Protected</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-bold text-white">24/7</div>
+                                <div class="text-blue-200">Monitoring</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Slide 3 -->
+        <!-- Slide 3: Complete cybersecurity services -->
         <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
             <div class="carousel-content flex items-center justify-center min-h-screen">
                 <div class="container mx-auto px-6">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="flex justify-center animate-slideInLeft animate-delay-300">
                             <div class="relative">
-                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Expert Team" class="rounded-xl shadow-xl w-full max-w-md">
-                                <div class="absolute -bottom-5 -right-5 bg-cyan-600 p-3 rounded-lg shadow-lg">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Expert Team" class="rounded-xl shadow-2xl w-full max-w-md">
+                                <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-xl shadow-xl">
                                     <div class="text-center">
-                                        <div class="text-xl font-bold text-white">50+</div>
-                                        <div class="text-cyan-100 text-xs">Security Experts</div>
+                                        <div class="text-2xl font-bold text-white">50+</div>
+                                        <div class="text-blue-200">Security Experts</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-left">
-                            <h2 class="text-3xl md:text-5xl font-bold mb-6 animate-slideInRight">
-                                Complete <span class="text-cyan-400">Cybersecurity Services</span>
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInRight">
+                                Complete <span class="text-blue-400">Cybersecurity Services</span>
                             </h2>
-                            <p class="text-lg mb-6 text-gray-300 animate-slideInRight animate-delay-300">
-                                Everything you need to secure your business in the AI Era.
+                            <p class="text-xl mb-8 text-gray-300 animate-slideInRight animate-delay-300">
+                              Everything you need to secure with solutions for the AI Era
                             </p>
-                            <a href="#services" class="btn-clintech animate-slideInRight animate-delay-900 px-5 py-2.5 text-base">
+                            
+                            <a href="service" class="btn-clintech animate-slideInRight animate-delay-900">
                                 <i class="fas fa-cogs"></i> Explore All Services
                             </a>
                         </div>
@@ -250,58 +332,55 @@
             </div>
         </div>
 
-        <!-- Navigation -->
-        <button id="prevSlide" class="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10">
-            <i class="fas fa-chevron-left"></i>
+        <!-- Navigation Arrows -->
+        <button id="prevSlide" class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all z-10">
+            <i class="fas fa-chevron-left text-xl"></i>
         </button>
-        <button id="nextSlide" class="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all z-10">
-            <i class="fas fa-chevron-right"></i>
+        <button id="nextSlide" class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all z-10">
+            <i class="fas fa-chevron-right text-xl"></i>
         </button>
 
-        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10">
+        <!-- Dots Navigation -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
             <button class="carousel-dot active" onclick="currentSlide(1)"></button>
             <button class="carousel-dot" onclick="currentSlide(2)"></button>
             <button class="carousel-dot" onclick="currentSlide(3)"></button>
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="py-16 bg-gray-900/50">
+    <!-- Stats Section -->
+    <section class="py-16 bg-gray-900">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
                     <div class="stat-number">200+</div>
-                    <p class="text-gray-400 mt-1">Clients Protected</p>
+                    <p class="text-gray-400">Clients Protected</p>
                 </div>
-                <div class="p-4">
+                <div class="p-6">
                     <div class="stat-number">98%</div>
-                    <p class="text-gray-400 mt-1">Threat Detection</p>
+                    <p class="text-gray-400">Threat Detection Rate</p>
                 </div>
-                <div class="p-4">
+                <div class="p-6">
                     <div class="stat-number">24/7</div>
-                    <p class="text-gray-400 mt-1">Monitoring</p>
+                    <p class="text-gray-400">Security Monitoring</p>
                 </div>
-                <div class="p-4">
+                <div class="p-6">
                     <div class="stat-number">50+</div>
-                    <p class="text-gray-400 mt-1">Security Experts</p>
+                    <p class="text-gray-400">Security Experts</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
+    <!-- About Section -->
     <section id="about" class="py-16 gradient-bg">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl md:text-4xl font-bold mb-6">About CLINTECH Private Limited</h2>
-                    <p class="text-gray-300 mb-5">
-                        CLINTECH was launched in 2017 with an objective to provide beyond-comparison cybersecurity services for businesses.
-                    </p>
-                    <p class="text-gray-300 mb-7">
-                        We offer expert guidance in information security to ensure the highest level of protection, visibility, and innovation — all at budget-friendly rates.
-                    </p>
-                    <a href="#contact" class="btn-clintech px-6 py-3">
+                    <p class="text-gray-300 mb-6">CLINTECH was launched in 2017 with an objective to provide beyond-comparison cybersecurity services for businesses. We offer expert guidance in information security to ensure that you receive the highest level of protection, leading visibility, innovative security protection, and budget-friendly opportunities.</p>
+                    <p class="text-gray-300 mb-8">CLINTECH provides top-tier information technology solutions, ensuring that you can operate your business securely and confidently, free from a security or breach landscape.</p>
+                    <a href="#contact" class="btn-clintech">
                         <i class="fas fa-user-tie"></i> Meet Our Experts
                     </a>
                 </div>
@@ -312,132 +391,310 @@
         </div>
     </section>
 
-    <!-- Industries -->
+    <!-- Services Section -->
+    
+    <!-- Industries Section -->
     <section id="industries" class="py-16 bg-black">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Industries We Serve</h2>
-                <p class="text-lg text-gray-400">Tailored cybersecurity for every sector</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Industries We Serve</h2>
+                <p class="text-xl text-gray-300">Our cybersecurity solutions are tailored to meet the unique needs of various industries</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Repeat for each industry -->
-                <div class="industry-card p-6 rounded-xl">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-cyan-900/20 p-3 rounded-lg mr-4">
-                            <i class="fas fa-university text-cyan-400"></i>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Industry 1 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-university text-blue-400 text-xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold">Bank & Financial Services</h3>
+                        <h3 class="text-xl font-bold">Bank and Financial Services</h3>
                     </div>
-                    <p class="text-gray-400 text-sm">Robust protection for transactions, customer data, and regulatory compliance.</p>
+                    <p class="text-gray-400">In the rapidly growing era of finance, our cybersecurity solutions ensure the integrity, confidentiality, and availability of sensitive financial data. From safeguarding transactions to protecting customer information, we provide robust defences against cyber threats, guaranteeing a secure and resilient financial ecosystem.</p>
                 </div>
-                <!-- Add other 6 industries similarly (omitted for brevity but keep your original content) -->
-                <div class="industry-card p-6 rounded-xl md:col-span-3">
-                    <div class="flex items-start mb-4">
-                        <div class="bg-cyan-900/20 p-3 rounded-lg mr-4">
-                            <i class="fas fa-hospital text-cyan-400"></i>
+
+                <!-- Industry 2 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-laptop-code text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Technology and Media</h3>
+                    </div>
+                    <p class="text-gray-400">With AI-driven cybersecurity, we safeguard digital media and technology. Our solutions safeguard intellectual property, streaming platforms to secure user data, provide 24/7 monitoring, advanced threat intelligence, compliance automation, and a zero-trust framework, ensuring uninterrupted digital innovation.</p>
+                </div>
+
+                <!-- Industry 3 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-oil-well text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Oil and Power</h3>
+                    </div>
+                    <p class="text-gray-400">Secure gas and oil operations with IT-OT cybersecurity. We secure sensitive infrastructure, avoid cyber threats, ensure compliance, 24/7 monitoring, risk assessment, and protective threat intelligence for operational resilience.</p>
+                </div>
+
+                <!-- Industry 4 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-plane text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Airlines</h3>
+                    </div>
+                    <p class="text-gray-400">With AI-driven protection, we enhance airline cybersecurity. We protect payment systems, passenger data, real-time threat detection, and flight operations with PCI DSS, vendor risk management, and ensure a disruption-free and seamless air travel.</p>
+                </div>
+
+                <!-- Industry 5 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shopping-cart text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">E-commerce</h3>
+                    </div>
+                    <p class="text-gray-400">With AI-driven cybersecurity, we provide secure e-commerce. By securing customer data, payment systems, bot mitigation, supply chain, and 24/7 threat monitoring, for a secure and seamless online shopping experience.</p>
+                </div>
+
+                <!-- Industry 6 -->
+                <div class="bg-gray-900 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-store text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Retail</h3>
+                    </div>
+                    <p class="text-gray-400">We protect retail with AI-driven cybersecurity. We secure digital stores, POS systems, and customer data with PCI compliance, fraud prevention, cloud security, 24/7 monitoring, and uninterrupted business operations.</p>
+                </div>
+
+                <!-- Industry 7 -->
+                <div class="bg-gray-900 p-6 rounded-lg md:col-span-2 lg:col-span-3 mx-auto">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-hospital text-blue-400 text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold">Healthcare</h3>
                     </div>
-                    <p class="text-gray-400 text-sm">AI-powered security for EHRs, medical devices, and telehealth platforms.</p>
+                    <p class="text-gray-400">With Cybersecurity powered by AI, we protect health care. With continuous monitoring, threat intelligence, we secure EHRs, medical devices, and telehealth platforms, ensuring patient safety, operational resilience, and regulatory compliance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section id="contact" class="py-20 gradient-hero">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Secure Your Business?</h2>
-            <p class="text-lg text-gray-200 max-w-2xl mx-auto mb-8">
-                Contact us today for a comprehensive security assessment.
+    <!-- Core Values Section -->
+    <section class="py-20 bg-black">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Our Core Values</h2>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                A globally recognized company has shared principles and beliefs that strengthen the core of its business. 
+                These values inspire personal commitment and define customer value. For CLINTECH, these four commitments 
+                guide our daily operations and relationships.
             </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Value 1 -->
+            <div class="group relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-gray-800 hover:border-blue-500 transition-all duration-300 hover:transform hover:-translate-y-2">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                </div>
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-users text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Customer Focused</h3>
+                <p class="text-gray-300 leading-relaxed">We strive to exceed customer expectations at every step, delivering added value, building trust, and establishing long-term partnerships.</p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="group relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-gray-800 hover:border-green-500 transition-all duration-300 hover:transform hover:-translate-y-2">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-handshake text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Achieving Together</h3>
+                <p class="text-gray-300 leading-relaxed">We see our customers as integral partners. Together we work, celebrate, and achieve success through aligned goals and shared vision.</p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="group relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-gray-800 hover:border-purple-500 transition-all duration-300 hover:transform hover:-translate-y-2">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                </div>
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-600 to-purple-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-lightbulb text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Proactive</h3>
+                <p class="text-gray-300 leading-relaxed">We continuously improve our competencies, ensuring we stay ahead in providing high-quality, innovative security solutions.</p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="group relative bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl border border-gray-800 hover:border-orange-500 transition-all duration-300 hover:transform hover:-translate-y-2">
+                <div class="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="w-3 h-3 bg-orange-500 rounded-full animate-pulse"></div>
+                </div>
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-tasks text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Engaged to Perform</h3>
+                <p class="text-gray-300 leading-relaxed">We embrace challenges with energy, converting them into growth opportunities through efficient execution and perfect performance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Secure Your Business?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">Contact us today for a comprehensive security assessment and discover how we can protect your digital assets.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+92 307 1110229" class="btn-clintech px-6 py-3">
+                <a href="tel:+92 307 1110229" class="btn-clintech">
                     <i class="fas fa-phone"></i> Call Now
                 </a>
-                <a href="mailto:Admin-hr@clintech.co" class="bg-white text-gray-900 py-3 px-6 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <a href="mailto:Admin-hr@clintech.co" class="bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
                     <i class="fas fa-envelope"></i> Email Us
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <div id="footer"></div>
 
-    <!-- Chatbot -->
-    <img id="chatbotImage" src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png" alt="Chatbot" class="w-14 h-14 fixed bottom-6 right-6 z-40">
+    <!-- Chatbot Toggle -->
+    <img id="chatbotImage" src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png  " alt="Chatbot" class="w-16 h-16 fixed bottom-8 right-8 shadow-xl rounded-full z-40">
 
-    <div id="chatbotContainer" class="fixed bottom-6 right-6 z-50 w-full max-w-md bg-gray-900 text-white shadow-2xl rounded-xl overflow-hidden hidden">
-        <div class="p-4 bg-cyan-900 flex justify-between items-center">
+    <!-- Chatbot Container -->
+    <div id="chatbotContainer" class="fixed bottom-8 right-8 z-50 w-full max-w-md bg-white shadow-2xl rounded-xl overflow-hidden hidden transition-all duration-300">
+        <div class="p-4 bg-blue-900 text-white text-lg font-semibold flex justify-between items-center">
             <div class="flex items-center">
-                <img src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png" class="w-7 h-7 mr-2">
+                <img src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png  " alt="Chatbot" class="w-8 h-8 mr-2">
                 CLINTECH Assistant
             </div>
-            <button id="closeBtn" class="text-white text-xl">&times;</button>
+            <button id="closeBtn" class="text-white text-xl hover:text-gray-300">&times;</button>
         </div>
-        <div id="chatbox" class="p-4 h-48 overflow-y-auto bg-gray-800">
-            <div class="bg-gray-700 p-3 rounded-lg mb-3">
-                <p>Hello! 👋 Please enter your email, and we'll contact you shortly.</p>
+        <div id="chatbox" class="p-4 h-64 overflow-y-auto bg-gray-50">
+            <div class="bg-gray-200 text-gray-800 p-3 rounded-lg mb-4">
+                <p>Hello! 👋 Please enter your email address below, and we'll get back to you with more information.</p>
             </div>
         </div>
-        <div class="p-4 border-t border-gray-700">
-            <div class="flex">
-                <input id="userInput" type="email" class="flex-grow bg-gray-800 border border-gray-600 p-3 rounded-l focus:outline-none focus:ring-2 focus:ring-cyan-500" placeholder="your@email.com">
-                <button id="sendEmailBtn" class="bg-cyan-600 hover:bg-cyan-500 px-4 rounded-r font-medium">Send</button>
+        <div class="p-4 border-t bg-white">
+            <div class="flex items-center">
+                <div class="relative flex-grow mr-2">
+                    <input id="userInput" type="email" class="w-full border border-gray-300 p-3 pl-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email...">
+                    <i class="fas fa-envelope text-gray-400 absolute left-3 top-3.5"></i>
+                </div>
+                <button id="sendEmailBtn" class="btn-clintech px-4 py-2">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
             </div>
-            <p class="text-xs text-gray-500 mt-2 text-center">We respect your privacy.</p>
+            <p class="text-xs text-gray-500 mt-2 text-center">We respect your privacy. Your email is safe with us.</p>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js  "></script>
     <script>
         $(function(){
-            $("#header").load("header.html");
-            $("#footer").load("footer.html");
+            $("#header").load("header.html"); 
+            $("#footer").load("footer.html"); 
         });
-
+    </script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Carousel
-            let current = 0;
+            // Carousel Functionality
+            let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.carousel-slide');
             const dots = document.querySelectorAll('.carousel-dot');
-            const total = slides.length;
+            const totalSlides = slides.length;
 
-            function show(n) {
-                slides.forEach(s => s.style.display = 'none');
-                dots.forEach(d => d.classList.remove('active'));
-                slides[n].style.display = 'block';
-                dots[n].classList.add('active');
-                current = n;
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.style.display = 'none';
+                    slide.classList.remove('active');
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show current slide
+                slides[index].style.display = 'block';
+                slides[index].classList.add('active');
+                dots[index].classList.add('active');
+                
+                currentSlideIndex = index;
             }
 
-            document.getElementById('nextSlide').onclick = () => show((current + 1) % total);
-            document.getElementById('prevSlide').onclick = () => show((current - 1 + total) % total);
-            window.currentSlide = (n) => show(n - 1);
+            function nextSlide() {
+                const next = (currentSlideIndex + 1) % totalSlides;
+                showSlide(next);
+            }
 
-            show(0);
-            setInterval(() => show((current + 1) % total), 6000);
+            function prevSlide() {
+                const prev = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+                showSlide(prev);
+            }
 
-            // Chatbot
-            const toggle = document.getElementById('chatbotImage');
-            const container = document.getElementById('chatbotContainer');
-            const close = document.getElementById('closeBtn');
-            const send = document.getElementById('sendEmailBtn');
-            const input = document.getElementById('userInput');
-            const box = document.getElementById('chatbox');
+            // Initialize carousel
+            showSlide(0);
 
-            toggle.onclick = () => { container.classList.remove('hidden'); toggle.classList.add('hidden'); };
-            close.onclick = () => { container.classList.add('hidden'); toggle.classList.remove('hidden'); };
+            // Event listeners
+            document.getElementById('nextSlide').addEventListener('click', nextSlide);
+            document.getElementById('prevSlide').addEventListener('click', prevSlide);
 
-            send.onclick = () => {
-                const email = input.value.trim();
-                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    box.innerHTML += `<div class="text-right mt-2"><span class="bg-cyan-700 text-white p-2 rounded">${email}</span></div>`;
-                    input.value = '';
-                } else {
-                    alert('Please enter a valid email.');
-                }
+            // Auto-play carousel
+            setInterval(nextSlide, 6000);
+
+            // Global function for dot navigation
+            window.currentSlide = function(index) {
+                showSlide(index - 1);
             };
+
+            // Chatbot Functionality
+            const chatbotToggle = document.getElementById('chatbotImage');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const closeBtn = document.getElementById('closeBtn');
+            const sendEmailBtn = document.getElementById('sendEmailBtn');
+            const userInput = document.getElementById('userInput');
+            const chatbox = document.getElementById('chatbox');
+
+            chatbotToggle.addEventListener('click', () => {
+                chatbotContainer.classList.remove('hidden');
+                chatbotToggle.classList.add('hidden');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                chatbotContainer.classList.add('hidden');
+                chatbotToggle.classList.remove('hidden');
+            });
+
+            sendEmailBtn.addEventListener('click', () => {
+                const email = userInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email && emailRegex.test(email)) {
+                    const messageHtml = `
+                        <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mb-4 flex items-start">
+                            <img src="https://cdn3.iconfinder.com/data/icons/chat-bot-emoji-blue-filled-color/300/14134081Untitled-3-512.png  " class="w-8 h-8 mr-3 rounded-full">
+                            <div>
+                                <span class="font-medium">You:</span> ${email}
+                                <p class="text-xs text-blue-600 mt-1">Thank you! Our team will contact you shortly.</p>
+                            </div>
+                        </div>`;
+                    chatbox.innerHTML += messageHtml;
+                    chatbox.scrollTop = chatbox.scrollHeight;
+                    userInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendEmailBtn.click();
+                }
+            });
         });
     </script>
 </body>
