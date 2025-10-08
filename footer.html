@@ -22,59 +22,65 @@
         h1 {
             font-family: 'Montserrat', sans-serif !important;
         }
+        
+        .logo-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
-  <footer class="bg-gradient-to-r from-[#183653] to-[#123567] py-12 shadow-lg border-t border-gray-800">
+  <footer class="bg-gradient-to-r from-[#183653] to-[#123567] py-12 shadow-lg border-t border-gray-700">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                    <div class="flex items-center">
-                        <a href="index.html">
-                            <img src="logo4.png" alt="CLINTECH Logo" class="h-10 w-auto md:h-14 lg:h-16 hover:opacity-90 transition-opacity duration-300">
+                        <a href="index.html" class="logo-container">
+                            <!-- Replace with your actual logo file -->
+                            <img src="logo4.png" alt="CLINTECH Logo" class="h-12 w-auto md:h-16 lg:h-20 hover:opacity-90 transition-opacity duration-300" 
+                                 onerror="this.src='https://via.placeholder.com/200x60/3B82F6/FFFFFF?text=CLINTECH'">
                         </a>
                     </div>
                     <p class="text-gray-300 mt-4">Providing beyond-comparison cybersecurity services since 2017.</p>
                 </div>
-                <!-- <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white">Advanced Detection and Response</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Data Privacy and AI Security</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Governance, Risk Management, and Compliance</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white">Secure Digital Transformation</a></li>
-                    </ul>
-                </div> -->
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-white">Company</h3>
                     <ul class="space-y-2">
                         <li><a href="about.html" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300">About Us</a></li>
-                        <!-- <li><a href="#" class="text-gray-400 hover:text-white">Our Team</a></li> -->
-                        <!-- <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li> -->
-                        <!-- <li><a href="#" class="text-gray-400 hover:text-white">News</a></li> -->
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-semibold mb-4 text-white">Contact</h3>
                     <ul class="space-y-2">
-                        <li class="text-gray-300"><i class="fas fa-map-marker-alt mr-2 text-[#3B82F6]"></i> Faisalabad, Punjab, Pakistan</li>
-                        <li class="text-gray-300"><i class="fas fa-phone mr-2 text-[#3B82F6]"></i> +92 307 1110229</li>
-                        <li class="text-gray-300"><i class="fas fa-envelope mr-2 text-[#3B82F6]"></i> Admin-hr@clintech.co</li>
+                        <li class="text-gray-300 flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 text-[#3B82F6] mt-1"></i>
+                            <span>Faisalabad, Punjab, Pakistan</span>
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-phone mr-2 text-[#3B82F6]"></i>
+                            <span>+92 307 1110229</span>
+                        </li>
+                        <li class="text-gray-300 flex items-center">
+                            <i class="fas fa-envelope mr-2 text-[#3B82F6]"></i>
+                            <span>Admin-hr@clintech.co</span>
+                        </li>
                     </ul>
                     <div class="flex space-x-4 mt-4">
-                        <a href="https://www.linkedin.com/in/clintech-technologies" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300">
-                            <i class="fab fa-linkedin fa-lg"></i>
+                        <a href="https://www.linkedin.com/in/clintech-technologies" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300 text-xl">
+                            <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300">
-                            <i class="fab fa-twitter fa-lg"></i>
+                        <a href="#" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300 text-xl">
+                            <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.facebook.com/share/KJyAkBzsZAbHK6x1/?mibextid=qi2Omg" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300">
-                            <i class="fab fa-facebook fa-lg"></i>
+                        <a href="https://www.facebook.com/share/KJyAkBzsZAbHK6x1/?mibextid=qi2Omg" class="text-gray-300 hover:text-[#3B82F6] transition-colors duration-300 text-xl">
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
                 <p>© 2023 CLINTECH. All rights reserved.</p>
             </div>
         </div>
