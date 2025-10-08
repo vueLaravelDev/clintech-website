@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #001d3d;
-            --secondary: #019cde;
-            --accent: #9f7aea;
+            --primary: #183653;
+            --secondary: #123567;
+            --accent: #3B82F6;
         }
         
         body {
@@ -24,25 +24,25 @@
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
         .service-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(1, 156, 222, 0.2);
-            background: linear-gradient(135deg, rgba(0, 29, 61, 0.9) 0%, rgba(1, 48, 136, 0.9) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: linear-gradient(135deg, rgba(24, 54, 83, 0.9) 0%, rgba(18, 53, 103, 0.9) 100%);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(1, 156, 222, 0.3);
-            border-color: rgba(1, 156, 222, 0.5);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+            border-color: rgba(59, 130, 246, 0.5);
         }
         
         .service-icon {
-            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
+            background: linear-gradient(135deg, #3B82F6 0%, #123567 100%);
             border-radius: 12px;
             width: 60px;
             height: 60px;
@@ -64,12 +64,12 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #9f7aea;
+            background: #3B82F6;
             transition: width 0.3s ease;
         }
         
         .breadcrumb-link:hover {
-            color: #9f7aea;
+            color: #3B82F6;
         }
         
         .breadcrumb-link:hover::after {
@@ -86,7 +86,7 @@
         <!-- Breadcrumb -->
         <section class="container mx-auto px-6 py-8">
             <nav class="text-sm bg-gray-900 p-4 rounded-lg shadow-md">
-                <a href="index.html" class="breadcrumb-link text-purple-400">Home</a>
+                <a href="index.html" class="breadcrumb-link text-blue-400">Home</a>
                 <span class="text-gray-500 mx-2">»</span>
                 <span class="text-gray-400">Services</span>
             </nav>
@@ -95,7 +95,7 @@
         <!-- Hero Section -->
        <section class="container mx-auto px-6 py-12">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-[#019cde] mb-6"></h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-[#3B82F6] mb-6"></h1>
                 <p class="text-xl text-gray-300">
                     We provide comprehensive cybersecurity services at every step, from assessing risk to ongoing improvement. We deliver customized strategies, state-of-the-art technologies, and expert guidance to make sure your organization stays protected against ever-evolving threats.
                 </p>
@@ -203,4 +203,3 @@
     </script>
 </body>
 </html>
-
