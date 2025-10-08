@@ -10,15 +10,10 @@
             theme: {
                 extend: {
                     colors: {
-                        // Brand colors from your logo
-                        'logo-blue': '#00529B',     // Deep navy (used in symbol & tagline)
-                        'logo-cyan': '#019CDE',     // Bright cyan (used in "CLINTECH" text)
-                        'logo-gray': '#333333',     // Dark gray for secondary text
-
-                        // Optional UI variants
-                        'cyber-dark': '#00529B',
-                        'cyber-primary': '#333333',
-                        'cyber-light': '#61DAFB'
+                        'dark-navy': '#0A192F',
+                        'light-navy': '#112240',
+                        'cyber-blue': '#3B82F6',
+                        'cyber-teal': '#06D6A0'
                     }
                 }
             }
@@ -26,158 +21,177 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="bg-gray-800 text-white font-sans">
+<body class="bg-black text-white font-sans">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-gradient-to-r from-[#123567] to[#3B82F6] shadow-lg">
-        <nav class="container mx-auto px-6 py-2">
+    <header class="sticky top-0 z-50 bg-dark-navy border-b border-cyber-blue/30 shadow-xl">
+        <nav class="container mx-auto px-6 py-3">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="index.html">
-                        <img src="logo4.png" alt="CLINTECH Logo" class="h-10 w-auto md:h-12 lg:h-16 hover:opacity-90 transition-opacity duration-300">
+                    <a href="index.html" class="flex items-center space-x-3 group">
+                        <div class="bg-cyber-blue/10 p-2 rounded-lg group-hover:bg-cyber-blue/20 transition-colors duration-300">
+                            <img src="logo4.png" alt="CLINTECH Logo" class="h-8 w-auto md:h-10 lg:h-12"
+                                 onerror="this.src='https://via.placeholder.com/160x48/3B82F6/FFFFFF?text=CLINTECH'">
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="text-white font-bold text-lg tracking-tight">CLINTECH</div>
+                            <div class="text-cyber-blue text-xs font-medium">CYBERSECURITY</div>
+                        </div>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <div id="desktop-menu" class="hidden lg:flex items-center space-x-6">
-                    <a href="index.html" class="text-white font-medium hover:text-logo-cyan transition-colors duration-300 relative group">
-                        Home
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-logo-cyan transition-all duration-300 group-hover:w-full"></span>
+                <div id="desktop-menu" class="hidden lg:flex items-center space-x-1">
+                    <a href="index.html" class="px-4 py-2 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300 group">
+                        <i class="fas fa-home mr-2"></i>Home
                     </a>
 
                     <!-- Services Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                            <a href="service.html" class="flex items-center">Services</a>
+                        <button class="flex items-center px-4 py-2 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                            <i class="fas fa-concierge-bell mr-2"></i>Services
                             <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
-                        <div class="absolute top-full left-0 mt-2 w-80 bg-cyber-primary border border-logo-blue/20 rounded-lg shadow-2xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                            <a href="cybersecurity.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-shield-alt mr-3 text-logo-cyan"></i>
+                        <div class="absolute top-full left-0 mt-1 w-72 bg-light-navy border border-cyber-blue/30 rounded-xl shadow-2xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 backdrop-blur-sm">
+                            <a href="cybersecurity.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-shield-alt text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">Cybersecurity Strategy</div>
-                                    <div class="text-xs text-gray-300">Comprehensive security planning</div>
+                                    <div class="text-white font-medium text-sm">Cybersecurity Strategy</div>
+                                    <div class="text-gray-400 text-xs">Future-proof security planning</div>
                                 </div>
                             </a>
-                            <a href="it_solutions.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-laptop-code mr-3 text-logo-cyan"></i>
+                            <a href="it_solutions.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-laptop-code text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">Risk Management</div>
-                                    <div class="text-xs text-gray-300">Advanced technical security</div>
+                                    <div class="text-white font-medium text-sm">Risk Management</div>
+                                    <div class="text-gray-400 text-xs">Protect operational integrity</div>
                                 </div>
                             </a>
-                            <a href="SOC_assesment.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-chart-line mr-3 text-logo-cyan"></i>
+                            <a href="SOC_assesment.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-chart-line text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">SOC Maturity Assessment</div>
-                                    <div class="text-xs text-gray-300">Security operations evaluation</div>
+                                    <div class="text-white font-medium text-sm">SOC Assessment</div>
+                                    <div class="text-gray-400 text-xs">Security operations evaluation</div>
                                 </div>
                             </a>
-                            <a href="grc.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-balance-scale mr-3 text-logo-cyan"></i>
+                            <a href="grc.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-balance-scale text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">GRC Solutions</div>
-                                    <div class="text-xs text-gray-300">Governance, risk & compliance</div>
+                                    <div class="text-white font-medium text-sm">GRC Solutions</div>
+                                    <div class="text-gray-400 text-xs">Governance & compliance</div>
                                 </div>
                             </a>
-                            <a href="operating.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-cogs mr-3 text-logo-cyan"></i>
+                            <a href="operating.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-cogs text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">Assurance and Audit</div>
-                                    <div class="text-xs text-gray-300">Constant resilience: are your ears and eyes in today's world</div>
+                                    <div class="text-white font-medium text-sm">Assurance & Audit</div>
+                                    <div class="text-gray-400 text-xs">Continuous resilience</div>
                                 </div>
                             </a>
-                            <a href="compliance.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-file-contract mr-3 text-logo-cyan"></i>
+                            <a href="compliance.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-file-contract text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">Compliance</div>
-                                    <div class="text-xs text-gray-300">Regulatory compliance support</div>
+                                    <div class="text-white font-medium text-sm">Compliance</div>
+                                    <div class="text-gray-400 text-xs">Regulatory adherence</div>
                                 </div>
                             </a>
-                            <a href="cloud.html" class="flex items-center px-6 py-3 hover:bg-logo-blue/20 transition-colors duration-200">
-                                <i class="fas fa-cloud mr-3 text-logo-cyan"></i>
+                            <a href="cloud.html" class="flex items-center px-4 py-3 hover:bg-cyber-blue/10 transition-all duration-200 group">
+                                <div class="w-8 h-8 bg-cyber-blue/20 rounded-lg flex items-center justify-center mr-3 group-hover:bg-cyber-blue/30">
+                                    <i class="fas fa-cloud text-cyber-blue text-sm"></i>
+                                </div>
                                 <div>
-                                    <div class="text-white font-medium">Cloud Architecture Review</div>
-                                    <div class="text-xs text-gray-300">Secure and optimize your cloud with AI-generated strategy</div>
+                                    <div class="text-white font-medium text-sm">Cloud Architecture</div>
+                                    <div class="text-gray-400 text-xs">Secure cloud optimization</div>
                                 </div>
                             </a>
                         </div>
                     </div>
 
-                    <a href="offensive&defensive.html" class="text-white font-medium hover:text-logo-cyan transition-colors duration-300 relative group">
-                        Offensive & Defensive
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-logo-cyan transition-all duration-300 group-hover:w-full"></span>
+                    <a href="offensive&defensive.html" class="px-4 py-2 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-shield-alt mr-2"></i>Offensive & Defensive
                     </a>
-                    <a href="about" class="text-white font-medium hover:text-logo-cyan transition-colors duration-300 relative group">
-                        About Us
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-logo-cyan transition-all duration-300 group-hover:w-full"></span>
+                    <a href="about" class="px-4 py-2 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-info-circle mr-2"></i>About Us
                     </a>
-                    <a href="contactus" class="text-white font-medium hover:text-logo-cyan transition-colors duration-300 relative group">
-                        Contact Us
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-logo-cyan transition-all duration-300 group-hover:w-full"></span>
+                    <a href="contactus" class="px-4 py-2 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-phone-alt mr-2"></i>Contact Us
                     </a>
                 </div>
 
                 <!-- Action Buttons -->
                 <div class="hidden lg:flex items-center space-x-3">
-                    <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
+                    <button class="flex items-center space-x-2 px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg border border-red-400/30">
                         <i class="fas fa-exclamation-circle"></i>
-                        <span class="text-sm">Experiencing a Breach?</span>
+                        <span class="text-sm">Emergency</span>
                     </button>
-                    <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-logo-blue to-logo-cyan text-white font-semibold rounded-lg hover:from-logo-cyan hover:to-logo-blue transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
+                    <button class="flex items-center space-x-2 px-4 py-2 bg-cyber-blue text-white font-semibold rounded-lg hover:bg-blue-500 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg border border-cyber-blue/50">
                         <i class="fas fa-headset"></i>
-                        <span class="text-sm">Talk to an Expert</span>
+                        <span class="text-sm">Expert Help</span>
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="text-white hover:text-logo-cyan transition-colors duration-300 lg:hidden">
+                <button id="mobile-menu-btn" class="text-gray-300 hover:text-cyber-blue transition-colors duration-300 lg:hidden">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
-            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-logo-blue/20">
-                <div class="space-y-4 pt-4">
-                    <a href="index.html" class="block text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                        <i class="fas fa-home mr-3"></i>Home
+            <div id="mobile-menu" class="lg:hidden hidden mt-4 pb-4 border-t border-cyber-blue/20">
+                <div class="space-y-2 pt-4">
+                    <a href="index.html" class="flex items-center px-4 py-3 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-home mr-3 w-5"></i>Home
                     </a>
 
                     <div>
-                        <button id="mobile-services-btn" class="flex items-center justify-between w-full text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                            <span><i class="fas fa-concierge-bell mr-3"></i>Services</span>
+                        <button id="mobile-services-btn" class="flex items-center justify-between w-full px-4 py-3 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                            <span class="flex items-center">
+                                <i class="fas fa-concierge-bell mr-3 w-5"></i>Services
+                            </span>
                             <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
                         </button>
-                        <div id="mobile-services-menu" class="hidden mt-2 ml-6 space-y-2">
-                            <a href="cybersecurity.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">Cybersecurity Strategy</a>
-                            <a href="it_solutions.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">Risk Management</a>
-                            <a href="SOC_assesment.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">SOC Maturity Assessment</a>
-                            <a href="grc.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">GRC Solutions</a>
-                            <a href="operating.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">Assurance and Audit</a>
-                            <a href="compliance.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">Compliance</a>
-                            <a href="cloud.html" class="block text-sm text-gray-300 hover:text-logo-cyan transition-colors duration-300 py-2">Cloud Architecture Review</a>
+                        <div id="mobile-services-menu" class="hidden mt-1 ml-8 space-y-1">
+                            <a href="cybersecurity.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">Cybersecurity Strategy</a>
+                            <a href="it_solutions.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">Risk Management</a>
+                            <a href="SOC_assesment.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">SOC Assessment</a>
+                            <a href="grc.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">GRC Solutions</a>
+                            <a href="operating.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">Assurance & Audit</a>
+                            <a href="compliance.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">Compliance</a>
+                            <a href="cloud.html" class="block px-4 py-2 text-sm text-gray-400 hover:text-cyber-blue hover:bg-cyber-blue/5 rounded transition-colors duration-300">Cloud Architecture</a>
                         </div>
                     </div>
 
-                    <a href="offensive&defensive.html" class="block text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                        <i class="fas fa-shield-alt mr-3"></i>Offensive & Defensive
+                    <a href="offensive&defensive.html" class="flex items-center px-4 py-3 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-shield-alt mr-3 w-5"></i>Offensive & Defensive
                     </a>
-                    <a href="about" class="block text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                        <i class="fas fa-info-circle mr-3"></i>About Us
+                    <a href="about" class="flex items-center px-4 py-3 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-info-circle mr-3 w-5"></i>About Us
                     </a>
-                    <a href="contactus" class="block text-white font-medium hover:text-logo-cyan transition-colors duration-300">
-                        <i class="fas fa-phone-alt mr-3"></i>Contact Us
+                    <a href="contactus" class="flex items-center px-4 py-3 text-gray-300 font-medium hover:text-cyber-blue hover:bg-cyber-blue/5 rounded-lg transition-all duration-300">
+                        <i class="fas fa-phone-alt mr-3 w-5"></i>Contact Us
                     </a>
 
-                    <div class="space-y-3 pt-4 border-t border-logo-blue/20">
-                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transition-all duration-300">
+                    <div class="space-y-3 pt-4 border-t border-cyber-blue/20">
+                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-500 transition-all duration-300">
                             <i class="fas fa-exclamation-circle"></i>
-                            <span>Experiencing a Breach?</span>
+                            <span>Emergency Response</span>
                         </button>
-                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-logo-blue to-logo-cyan text-white font-semibold rounded-lg hover:from-logo-cyan hover:to-logo-blue transition-all duration-300">
+                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-cyber-blue text-white font-semibold rounded-lg hover:bg-blue-500 transition-all duration-300">
                             <i class="fas fa-headset"></i>
-                            <span>Talk to an Expert</span>
+                            <span>Talk to Expert</span>
                         </button>
                     </div>
                 </div>
@@ -209,4 +223,3 @@
     </script>
 </body>
 </html>
-
