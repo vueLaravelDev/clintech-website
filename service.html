@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #183653;
-            --secondary: #123567;
-            --accent: #3B82F6;
+            --primary: #001d3d;
+            --secondary: #019cde;
+            --accent: #9f7aea;
         }
         
         body {
@@ -24,25 +24,25 @@
         }
         
         .gradient-text {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         
         .service-card {
             transition: all 0.3s ease;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            background: linear-gradient(135deg, rgba(24, 54, 83, 0.9) 0%, rgba(18, 53, 103, 0.9) 100%);
+            border: 1px solid rgba(1, 156, 222, 0.2);
+            background: linear-gradient(135deg, rgba(0, 29, 61, 0.9) 0%, rgba(1, 48, 136, 0.9) 100%);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
-            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 15px 30px rgba(1, 156, 222, 0.3);
+            border-color: rgba(1, 156, 222, 0.5);
         }
         
         .service-icon {
-            background: linear-gradient(135deg, #3B82F6 0%, #123567 100%);
+            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
             border-radius: 12px;
             width: 60px;
             height: 60px;
@@ -64,40 +64,16 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #3B82F6;
+            background: #9f7aea;
             transition: width 0.3s ease;
         }
         
         .breadcrumb-link:hover {
-            color: #3B82F6;
+            color: #9f7aea;
         }
         
         .breadcrumb-link:hover::after {
             width: 100%;
-        }
-        
-        .btn-clintech {
-            background: linear-gradient(135deg, #123567 0%, #183653 100%);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(24, 54, 83, 0.3);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .btn-clintech:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, #183653 0%, #123567 100%);
-            box-shadow: 0 6px 20px rgba(24, 54, 83, 0.4);
         }
     </style>
 </head>
@@ -110,132 +86,109 @@
         <!-- Breadcrumb -->
         <section class="container mx-auto px-6 py-8">
             <nav class="text-sm bg-gray-900 p-4 rounded-lg shadow-md">
-                <a href="index.html" class="breadcrumb-link text-blue-400">Home</a>
+                <a href="index.html" class="breadcrumb-link text-purple-400">Home</a>
                 <span class="text-gray-500 mx-2">»</span>
                 <span class="text-gray-400">Services</span>
             </nav>
         </section>
 
         <!-- Hero Section -->
-        <section class="container mx-auto px-6 py-12">
+       <section class="container mx-auto px-6 py-12">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                    <span class="gradient-text">Our Cybersecurity Services</span>
-                </h1>
+                <h1 class="text-4xl md:text-5xl font-bold text-[#019cde] mb-6"></h1>
                 <p class="text-xl text-gray-300">
                     We provide comprehensive cybersecurity services at every step, from assessing risk to ongoing improvement. We deliver customized strategies, state-of-the-art technologies, and expert guidance to make sure your organization stays protected against ever-evolving threats.
                 </p>
-                <div class="mt-8">
-                    <a href="#contact" class="btn-clintech">
-                        <i class="fas fa-shield-alt"></i> Get Protected Now
-                    </a>
-                </div>
             </div>
         </section>
 
         <!-- Services We Offer Section -->
         <section class="container mx-auto px-6 py-12">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-bold mb-6 text-white">Services We Offer</h2>
-                <p class="text-lg text-gray-300">Comprehensive cybersecurity solutions tailored to your business needs</p>
+        <div class="max-w-4xl mx-auto text-center mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-white">Services We Offer</h2>
+           
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cybersecurity Strategy -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="cybersecurity.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-chess-knight text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Cybersecurity Strategy</h3>
+                    <p class="text-gray-300 text-sm">Future-proof your business with AI-powered strategy</p>
+                </a>
             </div>
 
-            <!-- Services Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Cybersecurity Strategy -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="cybersecurity.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-chess-knight text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Cybersecurity Strategy</h3>
-                        <p class="text-gray-300 text-sm">Future-proof your business with AI-powered strategy</p>
-                    </a>
-                </div>
-
-                <!-- Cloud Architecture Review -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="cloud.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-cloud text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Cloud Architecture Review</h3>
-                        <p class="text-gray-300 text-sm">Secure and optimize your cloud infrastructure</p>
-                    </a>
-                </div>
-
-                <!-- Compliance -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="compliance.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-shield-alt text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Compliance</h3>
-                        <p class="text-gray-300 text-sm">Your track to trustability and regulatory adherence</p>
-                    </a>
-                </div>
-
-                <!-- Risk Management -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="it_solutions.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-chart-line text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Risk Management</h3>
-                        <p class="text-gray-300 text-sm">Protect operational reputation and integrity</p>
-                    </a>
-                </div>
-
-                <!-- Assurance and Audit -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="operating.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-search text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Assurance and Audit</h3>
-                        <p class="text-gray-300 text-sm">Constant resilience for today's threats</p>
-                    </a>
-                </div>
-
-                <!-- SOC Audit Services -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="SOC_assesment.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-clipboard-check text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">SOC Audit Services</h3>
-                        <p class="text-gray-300 text-sm">Complete SOC compliance and audit services</p>
-                    </a>
-                </div>
-
-                <!-- Payment Security (GRC) -->
-                <div class="service-card p-6 rounded-xl text-center">
-                    <a href="grc.html" class="service-link">
-                        <div class="service-icon mx-auto mb-4">
-                            <i class="fas fa-credit-card text-white text-xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 text-white">Payment Security (GRC)</h3>
-                        <p class="text-gray-300 text-sm">Securing sensitive payment data ecosystems</p>
-                    </a>
-                </div>
+            <!-- Cloud Architecture Review -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="cloud.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-cloud text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Cloud Architecture Review</h3>
+                    <p class="text-gray-300 text-sm">Secure and optimize your cloud infrastructure</p>
+                </a>
             </div>
-        </section>
 
-        <!-- CTA Section -->
-        <section id="contact" class="py-16 bg-gradient-to-r from-[#183653] to-[#123567]">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Secure Your Business?</h2>
-                <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10">Contact us today for a comprehensive security assessment and discover how we can protect your digital assets.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="tel:+92 307 1110229" class="btn-clintech">
-                        <i class="fas fa-phone"></i> Call Now
-                    </a>
-                    <a href="mailto:Admin-hr@clintech.co" class="bg-white text-black py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors">
-                        <i class="fas fa-envelope"></i> Email Us
-                    </a>
-                </div>
+            <!-- Compliance -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="compliance.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Compliance</h3>
+                    <p class="text-gray-300 text-sm">Your track to trustability and regulatory adherence</p>
+                </a>
             </div>
-        </section>
+
+            <!-- Risk Management -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="it_solutions.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Risk Management</h3>
+                    <p class="text-gray-300 text-sm">Protect operational reputation and integrity</p>
+                </a>
+            </div>
+
+            <!-- Assurance and Audit -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="operating.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-search text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Assurance and Audit</h3>
+                    <p class="text-gray-300 text-sm">Constant resilience for today's threats</p>
+                </a>
+            </div>
+
+            <!-- SOC Audit Services -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="SOC_assesment.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-clipboard-check text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">SOC Audit Services</h3>
+                    <p class="text-gray-300 text-sm">Complete SOC compliance and audit services</p>
+                </a>
+            </div>
+
+            <!-- Payment Security (GRC) -->
+            <div class="service-card p-6 rounded-xl text-center">
+                <a href="grc.html" class="service-link">
+                    <div class="service-icon mx-auto mb-4">
+                        <i class="fas fa-credit-card text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-white">Payment Security (GRC)</h3>
+                    <p class="text-gray-300 text-sm">Securing sensitive payment data ecosystems</p>
+                </a>
+            </div>
+        </div>
+    </section>
     </main>
 
     <!-- Footer -->
@@ -250,3 +203,4 @@
     </script>
 </body>
 </html>
+
