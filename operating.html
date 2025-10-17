@@ -10,159 +10,120 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #001d3d;
-            --secondary: #019cde;
-            --accent: #9f7aea;
-        }
-        
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0f0f0f;
-            color: white;
             scroll-behavior: smooth;
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
+
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 12px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            border: 1px solid #dbeafe; /* blue-200 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        
+
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
         }
-        
+
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            color: #1e3a8a; /* text-blue-900 */
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
-            width: 60%;
+            width: 50px;
             height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            background: #3B82F6;
             bottom: -10px;
-            left: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
-        
+
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1563013546-77f13c5e0eb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 120px 0;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
-            display: inline-block;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+            background: linear-gradient(135deg, #eff6ff, #dbeafe); /* bg-blue-50 to blue-200 */
+            padding: 100px 0;
         }
     </style>
 </head>
-<body>
-    <!-- Header Placeholder -->
+<body class="bg-blue-50 text-blue-900 min-h-screen flex flex-col">
+    <!-- Header -->
     <div id="header"></div>
-    
-    <!-- Hero Section -->
+
+    <!-- Hero Section (Image Removed) -->
     <section class="hero-section">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">Assurance and Audit</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Constant resilience: are your ears and eyes in today's world</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">Assurance and Audit</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-blue-800">
+                Constant resilience: are your ears and eyes in today's world
+            </p>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <section class="py-16 bg-gray-900">
+    <!-- Main Content -->
+    <section class="py-16">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="card p-8 mb-12">
-                    <!-- <h2 class="text-3xl font-bold text-center mb-8 section-title">Cybersecurity Assurance and Audit Services</h2> -->
-                    <p class="text-gray-300 text-lg mb-6 text-center">
+                    <p class="text-blue-800 text-lg mb-6 text-center">
                         Emerging threats need constant resilience. Cybersecurity assurance and audit services are your ears and eyes in today's world.
                     </p>
-                    <p class="text-gray-300 text-lg mb-6 text-center">
+                    <p class="text-blue-800 text-lg mb-6 text-center">
                         Our specialist audits deliver a thorough security check-up, ranking you against industry standards and regulations. We also authenticate existing controls, confirming your defenses are working as intended.
                     </p>
-                    <p class="text-gray-300 text-lg text-center">
+                    <p class="text-blue-800 text-lg text-center">
                         Enhance stakeholder confidence by illustrating robust cybersecurity.
                     </p>
                 </div>
-                
-                <h2 class="text-3xl font-bold text-center mb-8 section-title">Benefits Delivered to Clients</h2>
+
+                <h2 class="text-3xl font-bold text-center mb-10 section-title">Benefits Delivered to Clients</h2>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- Benefit 1 -->
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-search text-white text-3xl"></i>
+                            <i class="fas fa-search text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">In-depth Security Insights</h3>
-                        <!-- <p class="text-gray-300">Comprehensive analysis of your security posture</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">In-depth Security Insights</h3>
                     </div>
-                    
-                    <!-- Benefit 2 -->
+
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-clipboard-check text-white text-3xl"></i>
+                            <i class="fas fa-clipboard-check text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Compliance Validation</h3>
-                        <!-- <p class="text-gray-300">Verification against industry standards and regulations</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Compliance Validation</h3>
                     </div>
-                    
-                    <!-- Benefit 3 -->
+
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-lightbulb text-white text-3xl"></i>
+                            <i class="fas fa-lightbulb text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Actionable Improvements</h3>
-                        <!-- <p class="text-gray-300">Practical recommendations for security enhancement</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Actionable Improvements</h3>
                     </div>
-                    
-                    <!-- Benefit 4 -->
+
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-handshake text-white text-3xl"></i>
+                            <i class="fas fa-handshake text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Improved Stakeholder Confidence</h3>
-                        <!-- <p class="text-gray-300">Enhanced trust through demonstrated security strength</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Improved Stakeholder Confidence</h3>
                     </div>
                 </div>
             </div>
@@ -171,18 +132,13 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>     
-    <script> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
         $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
         });
-    </script> 
+    </script>
 </body>
 </html>
-
