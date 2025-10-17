@@ -12,146 +12,143 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f0f9ff; /* Tailwind's bg-blue-50 = #f0f9ff */
-            color: #1e40af; /* text-blue-700 */
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #019cde, #001d3d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
+            scroll-behavior: smooth;
         }
 
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 12px;
             overflow: hidden;
-            background: rgba(240, 249, 255, 0.7); /* light blue-50 with transparency */
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(187, 247, 255, 0.6);
+            background: white;
+            border: 1px solid #dbeafe; /* blue-200 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(30, 64, 175, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #019cde, #001d3d);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
         }
 
         .section-title {
             position: relative;
             display: inline-block;
-            margin-bottom: 3rem;
-            color: #3b82f6; /* text-blue-500 */
+            margin-bottom: 2.5rem;
+            color: #1e3a8a; /* blue-900 */
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            width: 60%;
+            width: 50px;
             height: 4px;
-            background: linear-gradient(90deg, #019cde, #001d3d);
+            background: #3B82F6;
             bottom: -10px;
-            left: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
 
         .hero-section {
-            background: linear-gradient(rgba(240, 249, 255, 0.9), rgba(240, 249, 255, 0.9)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            padding: 120px 0;
-            color: #1e40af;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe); /* bg-blue-50 to blue-200 */
+            padding: 100px 0;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #019cde, #001d3d);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
             padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
             display: inline-block;
+            text-decoration: none;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
         }
     </style>
 </head>
-<body class="bg-blue-50 text-blue-700">
+<body class="bg-blue-50 text-blue-900 min-h-screen flex flex-col">
+    <!-- Header -->
     <div id="header"></div>
 
+    <!-- Hero Section (Image Removed) -->
     <section class="hero-section">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-blue-500">Risk Management</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Cyber risks can threaten operational reputation and integrity</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">Risk Management</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-blue-800">
+                Cyber risks can threaten operational reputation and integrity
+            </p>
         </div>
     </section>
 
+    <!-- Main Content -->
     <section class="py-16">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
                 <div class="card p-8 mb-12">
-                    <p class="text-blue-700 text-lg mb-6 text-center">
+                    <p class="text-blue-800 text-lg mb-6 text-center">
                         In today's world, where cyber risks threaten the integrity of operations and reputation, effective risk management is needed.
                     </p>
-                    <p class="text-blue-700 text-lg mb-6 text-center">
-                        Risk management service delivers a complete framework for mitigating, assessing, and identifying cyber risks according to the unique needs of the organization.
+                    <p class="text-blue-800 text-lg mb-6 text-center">
+                        Our risk management service delivers a complete framework for identifying, assessing, and mitigating cyber risks according to your organization's unique needs.
                     </p>
-                    <p class="text-blue-700 text-lg mb-6 text-center">
-                        Whether it be a cloud, GenAI, or quantum computing, we make sure you are covered.
+                    <p class="text-blue-800 text-lg mb-6 text-center">
+                        Whether it's cloud, GenAI, or quantum computing—we’ve got you covered.
                     </p>
-                    <p class="text-blue-700 text-lg text-center">
-                        Our approach enhances the posture of cybersecurity while aligning the risk management with business objectives, while driving both resilience and growth.
+                    <p class="text-blue-800 text-lg text-center">
+                        Our approach enhances your cybersecurity posture while aligning risk strategy with business objectives—driving both resilience and growth.
                     </p>
                 </div>
 
-                <h2 class="text-3xl font-bold text-center mb-8 section-title">Benefits Delivered to Clients</h2>
+                <h2 class="text-3xl font-bold text-center mb-10 section-title">Benefits Delivered to Clients</h2>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="card p-8 text-center">
+                    <div class="card p-6 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-search text-white text-3xl"></i>
+                            <i class="fas fa-search text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-blue-500">Complete Risk Identification</h3>
+                        <h3 class="text-xl font-bold mb-2 text-blue-900">Complete Risk Identification</h3>
                     </div>
-                    <div class="card p-8 text-center">
+                    <div class="card p-6 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-blue-500">Mitigation Strategies</h3>
+                        <h3 class="text-xl font-bold mb-2 text-blue-900">Mitigation Strategies</h3>
                     </div>
-                    <div class="card p-8 text-center">
+                    <div class="card p-6 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-chart-line text-white text-3xl"></i>
+                            <i class="fas fa-chart-line text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-blue-500">Improved Decision Making</h3>
+                        <h3 class="text-xl font-bold mb-2 text-blue-900">Improved Decision Making</h3>
                     </div>
-                    <div class="card p-8 text-center">
+                    <div class="card p-6 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-exclamation-triangle text-white text-3xl"></i>
+                            <i class="fas fa-exclamation-triangle text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-blue-500">Vulnerability Management</h3>
+                        <h3 class="text-xl font-bold mb-2 text-blue-900">Vulnerability Management</h3>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <div id="footer"></div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
