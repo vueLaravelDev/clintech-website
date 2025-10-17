@@ -10,150 +10,130 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #001d3d;
-            --secondary: #019cde;
-            --accent: #9f7aea;
-        }
-        
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #0f0f0f;
-            color: white;
             scroll-behavior: smooth;
         }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
+
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-radius: 12px;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: white;
+            border: 1px solid #dbeafe; /* blue-200 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        
+
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
         }
-        
+
         .service-icon {
-            width: 80px;
-            height: 80px;
+            width: 72px;
+            height: 72px;
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
         }
-        
+
         .section-title {
             position: relative;
             display: inline-block;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
+            color: #1e3a8a; /* blue-900 */
         }
-        
+
         .section-title::after {
             content: '';
             position: absolute;
-            width: 60%;
+            width: 50px;
             height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            background: #3B82F6;
             bottom: -10px;
-            left: 20%;
+            left: 50%;
+            transform: translateX(-50%);
             border-radius: 2px;
         }
-        
+
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            padding: 120px 0;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe); /* bg-blue-50 to blue-200 */
+            padding: 100px 0;
         }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
             padding: 12px 28px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(1, 156, 222, 0.3);
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
             display: inline-block;
+            text-decoration: none;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(1, 156, 222, 0.4);
+            box-shadow: 0 6px 15px rgba(59, 130, 246, 0.4);
         }
     </style>
 </head>
-<body>
-    <!-- Header Placeholder -->
+<body class="bg-blue-50 text-blue-900 min-h-screen flex flex-col">
+    <!-- Header -->
     <div id="header"></div>
-    
-    <!-- Hero Section -->
+
+    <!-- Hero Section (Image Removed) -->
     <section class="hero-section">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">SOC Audit Services</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">SOC compliance with complete audit services</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">SOC Audit Services</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto text-blue-800">
+                SOC compliance with complete audit services
+            </p>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <section class="py-16 bg-gray-900">
+    <!-- Main Content -->
+    <section class="py-16">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto">
                 <div class="card p-8 mb-12">
-                    <!-- <h2 class="text-3xl font-bold text-center mb-8 section-title">Complete SOC Audit Services</h2> -->
-                    <p class="text-gray-300 text-lg mb-6 text-center">
-                        We deliver SOC audit services that cover SOC1, SOC2 reports, and guide your business in every step of the journey.
+                    <p class="text-blue-800 text-lg mb-6 text-center">
+                        We deliver SOC audit services that cover SOC 1, SOC 2 reports, and guide your business in every step of the journey.
                     </p>
-                    <p class="text-gray-300 text-lg mb-6 text-center">
+                    <p class="text-blue-800 text-lg mb-6 text-center">
                         Our experts reduce last-minute issues and confirm that your controls are practical and well-designed.
                     </p>
-                    <p class="text-gray-300 text-lg text-center">
-                        Organizations that seek to outsource or enhance their monitoring, our experience with SOC providers and service companies enables you to align the compliance strategy with your security operations. The result is not only the audit report but a strong compliance and security posture that holds up the growth of the business.
+                    <p class="text-blue-800 text-lg text-center">
+                        Organizations that seek to outsource or enhance their monitoring, our experience with SOC providers and service companies enables you to align the compliance strategy with your security operations. The result is not only the audit report but a strong compliance and security posture that supports business growth.
                     </p>
                 </div>
-                
-                <h2 class="text-3xl font-bold text-center mb-8 section-title">Benefits Delivered to Clients</h2>
+
+                <h2 class="text-3xl font-bold text-center mb-10 section-title">Benefits Delivered to Clients</h2>
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Benefit 1 -->
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-user-tie text-white text-3xl"></i>
+                            <i class="fas fa-user-tie text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Specialized Expertise</h3>
-                        <!-- <p class="text-gray-300">Deep knowledge of SOC frameworks and audit requirements</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Specialized Expertise</h3>
                     </div>
-                    
-                    <!-- Benefit 2 -->
+
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-shield-alt text-white text-3xl"></i>
+                            <i class="fas fa-shield-alt text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Operational Confidence</h3>
-                        <!-- <p class="text-gray-300">Assurance that your controls are effective and well-designed</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Operational Confidence</h3>
                     </div>
-                    
-                    <!-- Benefit 3 -->
+
                     <div class="card p-8 text-center">
                         <div class="service-icon">
-                            <i class="fas fa-cogs text-white text-3xl"></i>
+                            <i class="fas fa-cogs text-white text-2xl"></i>
                         </div>
-                        <h3 class="text-2xl font-semibold mb-4">Tailored Approach</h3>
-                        <!-- <p class="text-gray-300">Customized solutions aligned with your specific business needs</p> -->
+                        <h3 class="text-2xl font-semibold mb-4 text-blue-900">Tailored Approach</h3>
                     </div>
                 </div>
             </div>
@@ -162,18 +142,13 @@
 
     <!-- Footer -->
     <div id="footer"></div>
-    
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous">
-    </script>     
-    <script> 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
         $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
         });
-    </script> 
+    </script>
 </body>
 </html>
-
