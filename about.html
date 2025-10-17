@@ -12,54 +12,44 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            color: white;
             scroll-behavior: smooth;
         }
-        
-        .mission-vision-card {
-            background: linear-gradient(135deg, rgba(0, 29, 61, 0.9) 0%, rgba(1, 48, 136, 0.9) 100%);
-            border: 1px solid rgba(1, 156, 222, 0.2);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .mission-vision-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(1, 156, 222, 0.2);
-            border-color: rgba(1, 156, 222, 0.5);
-        }
-        
+
+        .mission-vision-card,
         .feature-card {
-            background: rgba(30, 30, 30, 0.7);
-            border: 1px solid rgba(1, 156, 222, 0.2);
+            background: white;
+            border: 1px solid #dbeafe; /* blue-200 */
+            border-radius: 12px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             height: 100%;
         }
-        
+
+        .mission-vision-card:hover,
         .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(1, 156, 222, 0.2);
-            border-color: rgba(1, 156, 222, 0.5);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+            border-color: #93c5fd; /* blue-300 */
         }
-        
+
         .feature-icon {
-            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             border-radius: 12px;
-            width: 70px;
-            height: 70px;
+            width: 64px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.25rem;
         }
-        
+
         .breadcrumb-link {
             position: relative;
             padding: 0.25rem 0;
             transition: all 0.3s ease;
+            color: #4f46e5; /* indigo-600 */
         }
-        
+
         .breadcrumb-link::after {
             content: '';
             position: absolute;
@@ -67,95 +57,69 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #9f7aea;
+            background: #4f46e5;
             transition: width 0.3s ease;
         }
-        
+
         .breadcrumb-link:hover {
-            color: #9f7aea;
+            color: #4338ca; /* indigo-700 */
         }
-        
+
         .breadcrumb-link:hover::after {
             width: 100%;
         }
-        
-        .benefits-list li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .benefits-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #019cde;
-            font-weight: bold;
-        }
-        
+
         .section-divider {
             height: 2px;
-            background: linear-gradient(90deg, transparent, #019cde, transparent);
+            background: linear-gradient(90deg, transparent, #3B82F6, transparent);
             margin: 3rem 0;
         }
-        
-        .social-icon {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(1, 156, 222, 0.3);
-        }
-        
+
         .btn-primary {
-            background: linear-gradient(135deg, #019cde 0%, #013088 100%);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
-            border: none;
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
             border-radius: 0.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(1, 48, 136, 0.3);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
             text-decoration: none;
             display: inline-block;
         }
-        
+
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(1, 48, 136, 0.4);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
         }
-        
+
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #eff6ff, #dbeafe); /* bg-blue-50 to blue-200 */
+            padding: 100px 0;
         }
     </style>
 </head>
-<body class="bg-black text-white min-h-screen">
+<body class="bg-blue-50 text-blue-900 min-h-screen">
     <!-- Header -->
     <div id="header"></div>
 
     <!-- Main Content -->
     <main>
         <!-- Breadcrumb -->
-        <section class="container mx-auto px-6 py-8">
-            <nav class="text-sm bg-gray-900 p-4 rounded-lg shadow-md">
-                <a href="index.html" class="breadcrumb-link text-purple-400">Home</a>
-                <span class="text-gray-500 mx-2">»</span>
-                <span class="text-gray-400">About Us</span>
+        <section class="container mx-auto px-6 py-6">
+            <nav class="text-sm bg-blue-100 p-4 rounded-lg shadow-sm">
+                <a href="index.html" class="breadcrumb-link">Home</a>
+                <span class="text-blue-500 mx-2">»</span>
+                <span class="text-blue-700 font-medium">About Us</span>
             </nav>
         </section>
 
-        <!-- Hero Section -->
-        <section class="hero-section py-20">
+        <!-- Hero Section (Image Removed) -->
+        <section class="hero-section">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-[#019cde] mb-6">About CLINTECH</h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">About CLINTECH</h1>
+                <p class="text-xl text-blue-800 max-w-3xl mx-auto">
                     Your Trusted Partner In Every Information Security Challenge
                 </p>
             </div>
@@ -165,24 +129,24 @@
         <section class="container mx-auto px-6 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Mission -->
-                <div class="mission-vision-card rounded-xl p-8">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-bullseye text-white text-2xl"></i>
+                <div class="mission-vision-card p-8">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Our Mission</h3>
-                    <p class="text-gray-300 text-center">
-                        Being a reliable cybersecurity service provider, we are committed to delivering exceptionally good and effective security solutions that would probably help in achieving long-term goals. Hence, our goal is to provide satisfactory and unique services to our clients.
+                    <h3 class="text-2xl font-bold mb-4 text-center text-blue-900">Our Mission</h3>
+                    <p class="text-blue-800 text-center">
+                        Being a reliable cybersecurity service provider, we are committed to delivering exceptionally good and effective security solutions that help our clients achieve long-term goals. Our aim is to provide satisfactory and unique services tailored to each client.
                     </p>
                 </div>
-                
+
                 <!-- Vision -->
-                <div class="mission-vision-card rounded-xl p-8">
-                    <div class="feature-icon mx-auto">
-                        <i class="fas fa-eye text-white text-2xl"></i>
+                <div class="mission-vision-card p-8">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye text-white text-xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4 text-center">Our Vision</h3>
-                    <p class="text-gray-300 text-center">
-                        We aim to become a competent, trustworthy, and dynamic security solution provider through a comprehensive portfolio of cutting-edge security solutions, services, and products for our clients across various types of industries.
+                    <h3 class="text-2xl font-bold mb-4 text-center text-blue-900">Our Vision</h3>
+                    <p class="text-blue-800 text-center">
+                        We aim to become a competent, trustworthy, and dynamic security solution provider through a comprehensive portfolio of cutting-edge security solutions, services, and products for clients across diverse industries.
                     </p>
                 </div>
             </div>
@@ -191,23 +155,21 @@
         <!-- About CLINTECH Section -->
         <section class="container mx-auto px-6 py-16">
             <div class="max-w-4xl mx-auto text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#019cde] mb-6">CLINTECHNOLOGIES</h2>
-                <p class="text-lg text-gray-300 mb-6">
-                    As a well-established and reputable cybersecurity service provider, CLINTECH is dedicated to delivering security solutions to businesses at competitive rates. Established in 2012, our competent team of highly certified and qualified professionals puts their best expertise and knowledge to deliver top-notch security solutions that are suitable for every client's needs and preferences.
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">CLINTECHNOLOGIES</h2>
+                <p class="text-lg text-blue-800 mb-6">
+                    As a well-established and reputable cybersecurity service provider, CLINTECH is dedicated to delivering security solutions to businesses at competitive rates. Established in 2012, our team of highly certified professionals applies deep expertise to deliver top-notch, customized security solutions.
                 </p>
-                <p class="text-lg text-gray-300 mb-6">
-                    At CLINTECH, we apply a simplified approach for the management of security infrastructure and provide high-end security solutions to remove the need for a variety of bolt-on and standalone security devices.
+                <p class="text-lg text-blue-800 mb-6">
+                    We simplify security infrastructure management and provide high-end integrated solutions—eliminating the need for multiple bolt-on or standalone security devices.
                 </p>
-                <p class="text-lg text-gray-300 mb-6">
-                    Next-generation security solutions and systems help you execute your business in a secure and protected way. Advanced security technologies are matchless in terms of performance, intelligence, and deployment, successfully enabling you to analyze, detect, prevent, and fix all internal security threats and breaches.
+                <p class="text-lg text-blue-800 mb-6">
+                    Our next-generation security systems enable you to operate securely by intelligently analyzing, detecting, preventing, and resolving internal threats and breaches—with unmatched performance and ease of deployment.
                 </p>
-                <p class="text-lg text-gray-300">
-                    We can serve you the best beyond your expectations.
+                <p class="text-lg text-blue-800">
+                    We strive to exceed your expectations at every step.
                 </p>
             </div>
-            
-            <!-- Features Grid -->
-            
+        </section>
     </main>
 
     <!-- Footer -->
@@ -216,10 +178,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
-            $("#header").load("header.html"); 
-            $("#footer").load("footer.html"); 
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
         });
     </script>
 </body>
 </html>
-
