@@ -35,7 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(30, 58, 138, 0.6);
+            background: rgba(0, 0, 0, 0.6); /* Darker overlay for text contrast */
             z-index: 1;
         }
 
@@ -46,7 +46,7 @@
 
         .service-card {
             transition: all 0.3s ease;
-            border: 1px solid #dbeafe; /* blue-200 */
+            border: 1px solid #dbeafe;
             background: white;
             height: 100%;
         }
@@ -54,16 +54,7 @@
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(30, 64, 175, 0.15);
-            border-color: #93c5fd; /* blue-300 */
-        }
-
-        .core-value-card {
-            transition: all 0.3s ease;
-        }
-
-        .core-value-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: #93c5fd;
         }
 
         .btn-clintech {
@@ -135,16 +126,14 @@
 <body class="bg-blue-50 text-blue-900 min-h-screen flex flex-col">
     <div id="header"></div>
 
-    <!-- Carousel Section (UNCHANGED - Sliders Kept) -->
+    <!-- Carousel Section -->
     <section class="relative overflow-hidden">
         <!-- Slide 1 -->
         <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
             <div class="carousel-content flex items-center justify-center min-h-screen">
                 <div class="container mx-auto px-6 text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp">
-                        <span class="bg-gradient-to-r from-blue-200 via-blue-500 to-blue-700 bg-clip-text text-transparent">
-                            Emergent Security Solutions
-                        </span>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeInUp text-white">
+                        Emergent Security Solutions
                     </h1>
                     <p class="text-2xl md:text-3xl mb-8 animate-fadeInUp text-blue-100">
                         Run your business smoothly and confidently without any security threats or breaches.
@@ -170,7 +159,7 @@
                 <div class="container mx-auto px-6">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="text-left">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInLeft text-blue-100">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInLeft text-white">
                                 Protect Your Future with <span class="text-blue-300">Cybersecurity Experts</span>
                             </h2>
                             <p class="text-xl mb-8 text-blue-200 animate-slideInLeft animate-delay-300">
@@ -180,7 +169,7 @@
                                 <a href="#services" class="btn-clintech">
                                     <i class="fas fa-eye"></i> Learn More
                                 </a>
-                                <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-blue-50 py-3 px-6 rounded-lg font-semibold transition-colors">
+                                <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
                                     <i class="fas fa-exclamation-triangle"></i> Emergency Response
                                 </a>
                             </div>
@@ -188,10 +177,10 @@
                         <div class="flex justify-center animate-slideInRight animate-delay-300">
                             <div class="bg-gradient-to-br from-blue-600 to-emerald-700 p-8 rounded-2xl shadow-2xl">
                                 <div class="grid grid-cols-2 gap-6 text-center">
-                                    <div><div class="text-3xl font-bold text-blue-50">98%</div><div class="text-blue-200">Detection Rate</div></div>
-                                    <div><div class="text-3xl font-bold text-blue-50"><2min</div><div class="text-blue-200">Response Time</div></div>
-                                    <div><div class="text-3xl font-bold text-blue-50">200+</div><div class="text-blue-200">Clients Protected</div></div>
-                                    <div><div class="text-3xl font-bold text-blue-50">24/7</div><div class="text-blue-200">Monitoring</div></div>
+                                    <div><div class="text-3xl font-bold text-white">98%</div><div class="text-blue-200">Detection Rate</div></div>
+                                    <div><div class="text-3xl font-bold text-white"><2min</div><div class="text-blue-200">Response Time</div></div>
+                                    <div><div class="text-3xl font-bold text-white">200+</div><div class="text-blue-200">Clients Protected</div></div>
+                                    <div><div class="text-3xl font-bold text-white">24/7</div><div class="text-blue-200">Monitoring</div></div>
                                 </div>
                             </div>
                         </div>
@@ -210,14 +199,14 @@
                                 <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Expert Team" class="rounded-xl shadow-2xl w-full max-w-md">
                                 <div class="absolute -bottom-6 -right-6 bg-gradient-to-r from-blue-600 to-emerald-600 p-4 rounded-xl shadow-xl">
                                     <div class="text-center">
-                                        <div class="text-2xl font-bold text-blue-50">50+</div>
+                                        <div class="text-2xl font-bold text-white">50+</div>
                                         <div class="text-blue-200">Security Experts</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="text-left">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInRight text-blue-100">
+                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInRight text-white">
                                 Complete <span class="text-blue-300">Cybersecurity Services</span>
                             </h2>
                             <p class="text-xl mb-8 text-blue-200 animate-slideInRight animate-delay-300">
@@ -233,10 +222,10 @@
         </div>
 
         <!-- Navigation Arrows -->
-        <button id="prevSlide" class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-blue-900/50 hover:bg-blue-900/70 text-blue-100 p-4 rounded-full transition-all z-10">
+        <button id="prevSlide" class="absolute left-6 top-1/2 transform -translate-y-1/2 bg-blue-900/50 hover:bg-blue-900/70 text-white p-4 rounded-full transition-all z-10">
             <i class="fas fa-chevron-left text-xl"></i>
         </button>
-        <button id="nextSlide" class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-blue-900/50 hover:bg-blue-900/70 text-blue-100 p-4 rounded-full transition-all z-10">
+        <button id="nextSlide" class="absolute right-6 top-1/2 transform -translate-y-1/2 bg-blue-900/50 hover:bg-blue-900/70 text-white p-4 rounded-full transition-all z-10">
             <i class="fas fa-chevron-right text-xl"></i>
         </button>
 
@@ -300,7 +289,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Industry cards remain as-is (dark cards on light bg are acceptable for contrast) -->
                 <div class="bg-blue-900 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-700 p-3 rounded-lg mr-4">
@@ -310,7 +298,6 @@
                     </div>
                     <p class="text-blue-200">In the rapidly growing era of finance, our cybersecurity solutions ensure the integrity, confidentiality, and availability of sensitive financial data...</p>
                 </div>
-                <!-- Repeat other 6 industry cards similarly -->
                 <div class="bg-blue-900 p-6 rounded-lg">
                     <div class="flex items-center mb-4">
                         <div class="bg-blue-700 p-3 rounded-lg mr-4">
@@ -379,7 +366,6 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Value cards -->
                 <div class="group relative bg-gradient-to-br from-blue-900 to-blue-800 p-8 rounded-2xl border border-blue-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:-translate-y-2">
                     <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-users text-blue-50 text-2xl"></i>
@@ -471,7 +457,6 @@
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Carousel functionality (same as before)
             let currentSlideIndex = 0;
             const slides = document.querySelectorAll('.carousel-slide');
             const dots = document.querySelectorAll('.carousel-dot');
@@ -531,8 +516,13 @@
                     alert('Please enter a valid email address.');
                 }
             });
+
+            userInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendEmailBtn.click();
+                }
+            });
         });
     </script>
 </body>
 </html>
-
