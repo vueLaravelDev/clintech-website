@@ -19,16 +19,36 @@
             }
         }
     </script>
+    <style>
+        @media (max-width: 768px) {
+    #desktop-menu {
+        display: none;
+    }
+
+    #mobile-menu-btn {
+        display: block;
+    }
+}
+
+/* Default: Show desktop, hide mobile by default */
+#desktop-menu {
+    display: flex;
+}
+
+#mobile-menu-btn {
+    display: none;
+}
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-blue-200 text-blue-900 font-sans"> <!-- Light theme body -->
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-gradient-to-r from-blue-100 via-blue-400 to-blue-600 shadow-lg">
+    <header class="sticky top-0 z-50 bg-gradient-to-r from-blue-200 via-blue-500 to-blue-700 shadow-lg">
         <nav class="container mx-auto px-6 py-2">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-white hover:text-cyber-light transition-colors duration-300">
+                    <a href="index.html" class="text-2xl font-bold text-white hover:text-cyber-primary transition-colors duration-300">
                         <img src="logo4.png" alt="CLINTECH Logo" class="h-8 w-auto md:h-10 lg:h-10"
                              onerror="this.src='https://via.placeholder.com/160x48/3B82F6/FFFFFF?text=CLINTECH'">
                     </a>
@@ -36,14 +56,14 @@
 
                 <!-- Desktop Menu -->
                 <div id="desktop-menu" class="hidden lg:flex items-center space-x-6">
-                    <a href="index.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                    <a href="index.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
                         Home
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
 
                     <!-- Services Dropdown -->
                     <div class="relative group">
-                        <button class="flex items-center text-white font-medium hover:text-cyber-light transition-colors duration-300">
+                        <button class="flex items-center text-white font-medium hover:text-cyber-primary transition-colors duration-300">
                             <a href="service.html" class="flex items-center">
                                 Services
                                 <i class="fas fa-chevron-down ml-2 text-xs group-hover:rotate-180 transition-transform duration-300"></i>
@@ -102,15 +122,15 @@
                         </div>
                     </div>
 
-                    <a href="offensive&defensive.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                    <a href="offensive&defensive.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
                         Offensive & Defensive
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="about.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                    <a href="about.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
                         About Us
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
-                    <a href="contactus.html" class="text-white font-medium hover:text-cyber-light transition-colors duration-300 relative group">
+                    <a href="contactus.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
                         Contact Us
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
@@ -118,14 +138,18 @@
 
                 <!-- Action Buttons -->
                 <div class="hidden lg:flex items-center space-x-3">
+                    <a href="contactus.html">
                     <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-lg hover:from-red-500 hover:to-red-400 transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
                         <i class="fas fa-exclamation-circle"></i>
                         <span class="text-sm">Experiencing a Breach?</span>
                     </button>
+                    </a>
+                        <a href="contactus.html">
                     <button class="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyber-blue to-cyber-primary text-white font-semibold rounded-lg hover:from-cyber-primary hover:to-cyber-blue transform hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
                         <i class="fas fa-headset"></i>
                         <span class="text-sm">Talk to an Expert</span>
                     </button>
+                        </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -218,6 +242,7 @@
     </script>
 </body>
 </html>
+
 
 
 
