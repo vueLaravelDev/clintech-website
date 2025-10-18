@@ -19,7 +19,37 @@
             }
         }
     </script>
-  
+  <style>
+      /* Default desktop view */
+#mobile-menu-btn {
+    display: none;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+#desktop-menu {
+    display: flex;
+}
+
+/* Mobile view (triggered by narrow screens or zooming in) */
+@media (max-width: 768px) {
+    #mobile-menu-btn {
+        display: block;
+    }
+
+    #desktop-menu {
+        display: none;
+    }
+
+    /* Optionally: show menu if JS adds/removes classes */
+    #mobile-menu {
+        display: block; /* or 'hidden' if using Tailwind or JS toggling */
+    }
+}
+
+  </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="bg-blue-200 text-blue-900 font-sans"> <!-- Light theme body -->
@@ -104,7 +134,7 @@
                     </div>
 
                     <a href="offensive&defensive.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
-                        Offensive & Defensive
+                        Offensive&Defensive
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyber-blue transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="about.html" class="text-white font-medium hover:text-cyber-primary transition-colors duration-300 relative group">
@@ -164,7 +194,7 @@
                     </div>
 
                     <a href="offensive&defensive.html" class="block text-blue-900 font-medium hover:text-cyber-blue transition-colors duration-300">
-                        <i class="fas fa-shield-alt mr-3 text-blue-600"></i>Offensive & Defensive
+                        <i class="fas fa-shield-alt mr-3 text-blue-600"></i>Offensive&Defensive
                     </a>
                     <a href="about.html" class="block text-blue-900 font-medium hover:text-cyber-blue transition-colors duration-300">
                         <i class="fas fa-info-circle mr-3 text-blue-600"></i>About Us
@@ -182,7 +212,7 @@
                         </button>
                             </a>
                             <a href="contactus.html">
-                        <button class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyber-blue to-cyber-primary text-white font-semibold rounded-lg hover:from-cyber-primary hover:to-cyber-blue transition-all duration-300">
+                        <button class="w-full flex items-center justify-center space-x-2 space-y-2 px-4 py-3 bg-gradient-to-r from-cyber-blue to-cyber-primary text-white font-semibold rounded-lg hover:from-cyber-primary hover:to-cyber-blue transition-all duration-300">
                             <i class="fas fa-headset"></i>
                             <span>Talk to an Expert</span>
                         </button>
@@ -223,6 +253,7 @@
     </script>
 </body>
 </html>
+
 
 
 
