@@ -154,41 +154,47 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
-            <div class="carousel-content flex items-center justify-center min-h-screen">
-                <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="text-left px-8 ml-4">
-                            <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-slideInLeft text-white">
-                                Protect Your Future with <span class="text-blue-300">Cybersecurity Experts</span>
-                            </h2>
-                            <p class="text-xl mb-8 text-blue-200 animate-slideInLeft animate-delay-300">
-                                We empower your growth, as you capitalize on security.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 animate-slideInLeft animate-delay-600">
-                                <a href="#services" class="btn-clintech">
-                                    <i class="fas fa-eye"></i> Learn More
-                                </a>
-                                <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors">
-                                    <i class="fas fa-exclamation-triangle"></i> Emergency Response
-                                </a>
-                            </div>
-                        </div>
-                        <!-- <div class="flex justify-center animate-slideInRight animate-delay-300">
-                            <div class="bg-gradient-to-br from-blue-600 to-emerald-700 p-8 rounded-2xl shadow-2xl">
-                                <div class="grid grid-cols-2 gap-6 text-center">
-                                    <div><div class="text-3xl font-bold text-white">98%</div><div class="text-blue-200">Detection Rate</div></div>
-                                    <div><div class="text-3xl font-bold text-white"><2min</div><div class="text-blue-200">Response Time</div></div>
-                                    <div><div class="text-3xl font-bold text-white">200+</div><div class="text-blue-200">Clients Protected</div></div>
-                                    <div><div class="text-3xl font-bold text-white">24/7</div><div class="text-blue-200">Monitoring</div></div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
+        <div class="carousel-slide relative bg-cover bg-center min-h-screen"
+     style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <div class="relative z-10 flex items-center justify-center min-h-screen">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="text-left px-4 md:px-8 ml-0 md:ml-4 space-y-6">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white opacity-0 translate-x-[-30px] animate-fade-in animate-slide-in">
+            Protect Your Future with <span class="text-blue-300">Cybersecurity Experts</span>
+          </h2>
+          <p class="text-lg md:text-xl text-blue-200 opacity-0 translate-x-[-30px] transition-all duration-700 delay-150">
+            We empower your growth, as you capitalize on security.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 opacity-0 translate-x-[-30px] transition-all duration-700 delay-300">
+            <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-flex items-center gap-2">
+              <i class="fas fa-eye"></i> Learn More
+            </a>
+            <a href="#contact" class="bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors inline-flex items-center gap-2">
+              <i class="fas fa-exclamation-triangle"></i> Emergency Response
+            </a>
+          </div>
         </div>
 
+        <!-- Visual Element (Optional: abstract security graphic or just empty space) -->
+        <div class="hidden md:block opacity-0 translate-y-8 transition-all duration-700 delay-500 flex justify-center">
+          <div class="bg-gradient-to-br from-blue-500/20 to-emerald-500/20 backdrop-blur-sm border border-white/10 p-8 rounded-2xl shadow-2xl">
+            <div class="text-center">
+              <div class="inline-block p-6 rounded-full bg-black/30">
+                <i class="fas fa-shield-alt text-blue-300 text-5xl"></i>
+              </div>
+              <p class="mt-4 text-white text-lg font-medium">Always On. Always Secure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
         <!-- Slide 3 -->
         <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')">
             <div class="carousel-content flex items-center justify-center min-h-screen">
@@ -524,8 +530,20 @@
             });
         });
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.opacity-0');
+    animatedElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.remove('opacity-0', 'translate-x-[-30px]', 'translate-y-8');
+        el.classList.add('opacity-100', 'translate-x-0', 'translate-y-0');
+      }, 100 * index);
+    });
+  });
+</script>
 </body>
 </html>
+
 
 
 
