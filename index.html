@@ -454,6 +454,12 @@
             $("#footer").load("footer.html"); 
         });
     </script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("GzueaMhB0IdcMf-cO"); 
+  })();
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let currentSlideIndex = 0;
@@ -503,18 +509,30 @@
             const sendEmailBtn = document.getElementById('sendEmailBtn');
             const userInput = document.getElementById('userInput');
             sendEmailBtn.addEventListener('click', () => {
-                const email = userInput.value.trim();
-                if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    document.getElementById('chatbox').innerHTML += `
-                        <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mb-4">
-                            <span class="font-medium">You:</span> ${email}
-                            <p class="text-xs text-blue-600 mt-1">Thank you! Our team will contact you shortly.</p>
-                        </div>`;
-                    userInput.value = '';
-                } else {
-                    alert('Please enter a valid email address.');
-                }
+    const email = userInput.value.trim();
+    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        // Create params object to pass to template
+        const templateParams = {
+            user_email: email
+        };
+
+        emailjs.send('service_vfhml2f', 'template_bsktklo', templateParams)
+            .then(function(response) {
+                document.getElementById('chatbox').innerHTML += `
+                    <div class="bg-blue-100 text-blue-800 p-3 rounded-lg mb-4">
+                        <span class="font-medium">You:</span> ${email}
+                        <p class="text-xs text-blue-600 mt-1">✅ Email sent successfully! We'll contact you shortly.</p>
+                    </div>`;
+                userInput.value = '';
+            }, function(error) {
+                alert('❌ Failed to send email. Please try again later.');
+                console.error('EmailJS error:', error);
             });
+    } else {
+        alert('Please enter a valid email address.');
+    }
+});
+
 
             userInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
@@ -526,6 +544,7 @@
   
 </body>
 </html>
+
 
 
 
