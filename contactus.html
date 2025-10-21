@@ -9,7 +9,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-    body { font-family: 'Inter', sans-serif; }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
   </style>
 </head>
 <body class="bg-blue-50 text-blue-900 min-h-screen">
@@ -25,124 +27,118 @@
         </p>
       </div>
 
-      <!-- <div class="grid lg:grid-cols-3 gap-8"> -->
-        <!-- Contact Info Card -->
-        <!-- <div class="bg-white rounded-2xl p-8 shadow-sm border border-blue-100 h-fit"> -->
-          <!-- <h2 class="text-2xl font-semibold text-blue-900 mb-6">Contact Information</h2>
-          <p class="text-blue-700 mb-8">
-            Reach out via email or phone, or visit us in Faisalabad.
-          </p> -->
-
-          <!-- <ul class="space-y-6 mb-10">
-            <li class="flex items-start gap-4">
-              <div class="mt-1 text-blue-600">
-                <i class="fas fa-envelope text-lg"></i>
-              </div>
-              <span class="text-blue-800">Admin-hr@clintech.co</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="mt-1 text-blue-600">
-                <i class="fas fa-phone text-lg"></i>
-              </div>
-              <span class="text-blue-800">+92 307 1110229</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <div class="mt-1 text-blue-600">
-                <i class="fas fa-map-marker-alt text-lg"></i>
-              </div>
-              <span class="text-blue-800">Faisalabad, Punjab, Pakistan</span>
-            </li>
-          </ul> -->
-
-          <!-- Social Links -->
-          <!-- <div class="flex gap-4">
-            <a href="https://www.facebook.com/share/KJyAkBzsZAbHK6x1/?mibextid=qi2Omg" target="_blank" class="bg-blue-600 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition text-white">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/clintech-technologies" target="_blank" class="bg-blue-600 hover:bg-blue-700 w-12 h-12 rounded-full flex items-center justify-center transition text-white">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="javascript:void(0)" class="bg-blue-600 opacity-60 cursor-not-allowed w-12 h-12 rounded-full flex items-center justify-center transition text-white">
-              <i class="fas fa-question"></i>
-            </a>
+      <!-- Contact Form -->
+      <div class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-sm border border-blue-100">
+        <form class="space-y-6" id="contactForm">
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm text-blue-700 mb-2">First Name</label>
+              <input type="text" placeholder="John"
+                class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
+            </div>
+            <div>
+              <label class="block text-sm text-blue-700 mb-2">Last Name</label>
+              <input type="text" placeholder="Doe"
+                class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
+            </div>
           </div>
-        </div> -->
 
-        <!-- Contact Form -->
-        <div class="lg:col-span-2 bg-white p-8 rounded-2xl shadow-sm border border-blue-100">
-          <form class="space-y-6">
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm text-blue-700 mb-2">First Name</label>
-                <input type="text" placeholder="John" class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
-              </div>
-              <div>
-                <label class="block text-sm text-blue-700 mb-2">Last Name</label>
-                <input type="text" placeholder="Doe" class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
-              </div>
-            </div>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm text-blue-700 mb-2">Phone</label>
-                <input type="tel" placeholder="+92 300 1234567" class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
-              </div>
-              <div>
-                <label class="block text-sm text-blue-700 mb-2">Email</label>
-                <input type="email" placeholder="you@example.com" class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
-              </div>
-            </div>
-
+          <div class="grid sm:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm text-blue-700 mb-2">Message</label>
-              <textarea rows="4" placeholder="How can we help you?" class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition resize-none"></textarea>
+              <label class="block text-sm text-blue-700 mb-2">Phone</label>
+              <input type="tel" id="phone" placeholder="+92 300 1234567"
+                class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
             </div>
-
             <div>
-              <label class="block text-sm text-blue-600 mb-3">Subject</label>
-              <div class="flex flex-wrap gap-4">
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" name="subject" value="general" class="sr-only peer" checked />
-                  <span class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
-                    <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
-                  </span>
-                  <span class="text-blue-800">General Inquiry</span>
-                </label>
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" name="subject" value="support" class="sr-only peer" />
-                  <span class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
-                    <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
-                  </span>
-                  <span class="text-blue-800">Technical Support</span>
-                </label>
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" name="subject" value="feedback" class="sr-only peer" />
-                  <span class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
-                    <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
-                  </span>
-                  <span class="text-blue-800">Website Feedback</span>
-                </label>
-              </div>
+              <label class="block text-sm text-blue-700 mb-2">Email</label>
+              <input type="email" id="email" placeholder="you@example.com"
+                class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition" />
             </div>
+          </div>
 
-            <button type="submit" class="mt-4 w-full sm:w-auto sm:ml-auto flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-white transition">
-              <i class="fas fa-paper-plane"></i>
-              Send Message
-            </button>
-          </form>
-        </div>
+          <div>
+            <label class="block text-sm text-blue-700 mb-2">Message</label>
+            <textarea rows="4" placeholder="How can we help you?"
+              class="w-full px-4 py-3 bg-transparent border-b border-blue-200 focus:border-blue-600 outline-none text-blue-900 placeholder-blue-400 transition resize-none"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm text-blue-600 mb-3">Subject</label>
+            <div class="flex flex-wrap gap-4">
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="subject" value="general" class="sr-only peer" checked />
+                <span
+                  class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
+                  <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
+                </span>
+                <span class="text-blue-800">General Inquiry</span>
+              </label>
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="subject" value="support" class="sr-only peer" />
+                <span
+                  class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
+                  <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
+                </span>
+                <span class="text-blue-800">Technical Support</span>
+              </label>
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="subject" value="feedback" class="sr-only peer" />
+                <span
+                  class="peer-checked:bg-blue-600 border-2 border-blue-100 w-5 h-5 rounded-full flex items-center justify-center mr-3">
+                  <span class="w-2 h-2 bg-white rounded-full opacity-0 peer-checked:opacity-100"></span>
+                </span>
+                <span class="text-blue-800">Website Feedback</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="mt-4 w-full sm:w-auto sm:ml-auto flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium text-white transition">
+            <i class="fas fa-paper-plane"></i>
+            Send Message
+          </button>
+        </form>
       </div>
     </div>
   </section>
 
   <div id="footer"></div>
 
+  <!-- Load header and footer -->
   <script>
-    $(function(){
+    $(function () {
       $("#header").load("header.html");
       $("#footer").load("footer.html");
     });
   </script>
+
+  <!-- Form Validation Script -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+
+      const phoneValid = /^\+\d{10,}$/.test(phone); // must start with + and have at least 10 digits
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!phone && !email) {
+        alert("Please enter either a phone number or an email address.");
+        e.preventDefault();
+        return;
+      }
+
+      if (phone && !phoneValid) {
+        alert("Please enter a valid phone number with country code (e.g., +923001234567).");
+        e.preventDefault();
+        return;
+      }
+
+      if (email && !emailValid) {
+        alert("Please enter a valid email address.");
+        e.preventDefault();
+        return;
+      }
+    });
+  </script>
 </body>
 </html>
-
